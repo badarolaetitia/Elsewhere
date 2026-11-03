@@ -1,56 +1,78 @@
-# Welcome to your Expo app 👋
+# Elsewhere
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Everyone’s going there. Find somewhere better.**
 
-## Get started
+Find alternatives to places you want to visit, based on the food, style,
+atmosphere or experience that caught your eye.
 
-1. Install dependencies
+For dinner, enter a restaurant, city, date, time and party size to explore
+similar options and look for reservations. Live table availability and queue
+times are not connected yet.
 
-   ```bash
-   npm install
-   ```
+## Development
 
-2. Start the app
+Use Node 22.13 or newer. Install dependencies with `npm install` and add
+`GEMINI_API_KEY` and `GEOAPIFY_API_KEY` to a root `.env` file. Do not commit secrets.
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```sh
+npm run web
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Checks
 
-### Other setup steps
+```sh
+npm run typecheck
+npm test
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Accounts and private sync
 
-## Learn more
+Create a Supabase project on the Free plan. In its SQL Editor, run
+`supabase/migrations/202611020001_private_items.sql` once. The migration enables
+row-level security for saved places, visits and dinner plans; each user can access
+only their own records. It also adds a self-only account deletion function.
 
-To learn more about developing your project with Expo, look at the following resources:
+Copy `.env.example` to a local `.env` without overwriting your existing provider
+keys. Add the project URL and its publishable key as
+`EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. These two
+values are intended for the client. Never use a service-role or secret key there.
+Restart Expo after changing environment variables.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+In Supabase Authentication → URL Configuration, set the public site's URL and add
+`http://localhost:8086/account` for local development, your deployed `/account`
+URL for web, and `elsewhere://account` for a native development build. Email links
+must be opened in the same browser/device because sign-in uses PKCE. To support
+manual codes, include `{{ .Token }}` in the Supabase sign-in email template.
+Configure a production email sender before opening signups to arbitrary users;
+the default sender is for development and has recipient/rate restrictions.
 
-## Join the community
+Google and Apple sign-in are supported only after configuring those providers in
+Supabase. Then set `EXPO_PUBLIC_AUTH_PROVIDERS=google,apple` (or just the enabled
+provider). Leave it empty to use email only. Provider secrets belong in Supabase,
+not in this repository.
 
-Join our community of developers creating universal apps.
+Guests can search and save locally. Ratings require sign-in. After signing in,
+users choose whether to import this device's guest records. Existing account
+records take precedence. Saves, visits and plans are scoped to the current user;
+failed uploads remain pending locally. Signed-in records are removed from this
+device on sign-out. Account deletion removes the auth user and cascades to private
+records. Multi-device edits use the last successfully uploaded change per record;
+there is no collaborative editing or real-time subscription yet.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Public hosting
+
+GitHub hosts the source code. The working web app needs a server-capable host for
+Expo Router API routes; GitHub Pages alone cannot run `/places`. Configure provider
+secrets on the host, never in browser-exposed variables. Verify login, email
+callbacks and isolation with two real test accounts after connecting Supabase.
+The local tests mock the cloud service; they do not prove a deployed database's
+RLS configuration or email delivery.
+
+Before a public launch, configure distributed search rate limits and provider
+spending limits, resolve remaining dependency advisories, and restore web-search
+quota for verified recommendation quality. The app is not deployed by adding a
+Supabase project or making the repository public.
+
+## Hosted prototype and guide
+
+The invite-only prototype is available at https://elsewhere-discover.readylime71.chatgpt.site. Search and local saves work without signing in; invited accounts add private ratings and cloud sync. Public self-registration is disabled. The owner is initially the only approved tester. See [the app guide and roadmap](docs/ELSEWHERE_GUIDE.md) for creating tester accounts, current limitations, Google Places, reservations, and sponsorship plans. See [hosting notes](hosting/README.md) for deployment and usage controls.

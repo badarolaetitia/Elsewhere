@@ -1,0 +1,2 @@
+import {Text,View} from 'react-native';
+export default function Brand(){return <View accessibilityLabel="Elsewhere" style={{flexDirection:'row',alignItems:'center',gap:10,marginBottom:28,marginTop:8}}><View style={{width:32,height:32,borderRadius:10,backgroundColor:'#174D43',alignItems:'center',justifyContent:'center'}}><Text style={{fontSize:25,color:'#E7D9AD',fontWeight:'600',lineHeight:30}}>↗</Text></View><Text style={{fontSize:15,letterSpacing:3,fontWeight:'800',color:'#174D43'}}>ELSEWHERE</Text></View>}

@@ -1,11 +1,20 @@
+import {searchAuthHeaders} from "../lib/search-auth";
+import {useAccount} from '../components/account-provider';
+import Brand from "../components/brand";
+import BookingPanel from "../components/booking-panel";
+import { normalizeSearchContext, type SearchContext } from "../lib/search-context";
+import { readSavedPlaces, toggleSavedPlace } from "../lib/taste-profile";
+import SearchSuggestions from "../components/search-suggestions";
 import {
     router,
     useLocalSearchParams,
+    useFocusEffect,
 } from "expo-router";
 import { normalizeKeywords, toggleKeyword as toggleSelection } from "../lib/places-ranking";
 
 import {
     useEffect,
+    useCallback,
     useRef,
     useState,
 } from "react";
@@ -13,9 +22,11 @@ import {
 import {
     ActivityIndicator,
     Pressable,
+  Linking,
     ScrollView,
     StyleSheet,
     Text,
+    TextInput,
     View,
 } from "react-native";
 
@@ -42,21 +53,20 @@ const DEFAULT_FILTERS: SearchFilters = {
   distance: "all",
   selectedKeywords: [],
 };
-
-// Keyword selection order does not change the meaning of a filter set.
 function filterKey(filters: SearchFilters) {
   return JSON.stringify([filters.preference, filters.distance, [...filters.selectedKeywords].sort()]);
 }
 
-function filterSummary(filters: SearchFilters) {
+function filterSummary(filters: SearchFilters, nearby = false) {
   const preference = preferenceOptions.find(option => option.value === filters.preference)?.label ?? "Local";
-  const distance = filters.distance === "all" ? "All city" : `within ${filters.distance} km`;
-  return `Showing: ${preference} · ${distance}${filters.selectedKeywords.length ? ` · focused on ${filters.selectedKeywords.join(", ")}` : ""}`;
+  const distance = filters.distance === "all" ? (nearby ? "Within 15 km" : "Citywide") : `within ${filters.distance} km`;
+  return `${preference} · ${distance}${filters.selectedKeywords.length ? ` · ${filters.selectedKeywords.join(", ")}` : ""}`;
 }
 
 type PlaceClassification = {
   category: string;
   categoryFamily: string;
+  intentSummary?: string;
   experienceKeywords: string[];
 };
 
@@ -71,8 +81,10 @@ type SearchedPlace = {
 };
 
 type Recommendation = {
+  metadata?: Record<string,string>;
   name: string;
   address: string;
+  booking?: {status: string; label: string; url: string; date: string; time: string; partySize: number};
   categories: string[];
   distance: number | null;
   latitude: number | null;
@@ -88,6 +100,8 @@ type Recommendation = {
 
   elsewhereScore: number;
 
+  experienceEvidence?: Record<string, {status: string; summary: string; sources: {title: string; url: string}[]}>;
+  personalizationReason?: string;
   whySimilar: string;
   whyTryInstead: string;
 };
@@ -103,6 +117,9 @@ type PlacesResponse = {
   candidateCount?: number;
 
   recommendations?: Recommendation[];
+  searchSuggestions?: string[];
+  researchStatus?: "grounded" | "metadata-only";
+  searchArea?: "city" | "nearby";
 
   preference?: ElsewherePreference;
 
@@ -127,14 +144,14 @@ const preferenceOptions: {
 
   {
     value: "hidden-gem",
-    label: "Hidden gem",
+    label: "Hidden gems",
     description:
       "Distinctive and less obvious",
   },
 
   {
     value: "popular-worth-it",
-    label: "Popular but worth it",
+    label: "Popular",
     description:
       "Known places that still fit",
   },
@@ -153,7 +170,7 @@ const distanceOptions: {
 }[] = [
   {
     value: "all",
-    label: "All city",
+    label: "Citywide",
   },
 
   {
@@ -191,15 +208,31 @@ export default function ResultsScreen() {
         ? rawPlace[0]
         : "Selected place";
 
-  return <SearchResults key={searchedQuery} searchedQuery={searchedQuery} />;
+  let initialContext: SearchContext | undefined;
+  try { if (typeof params.context === 'string') initialContext = normalizeSearchContext(JSON.parse(params.context)); } catch {  }
+  return <SearchResults key={initialContext ? `${searchedQuery}:${JSON.stringify(initialContext)}` : searchedQuery} searchedQuery={searchedQuery} initialContext={initialContext} />;
 }
 
-function SearchResults({ searchedQuery }: { searchedQuery: string }) {
+function SearchResults({ searchedQuery, initialContext }: { searchedQuery: string; initialContext?: SearchContext }) {
+  const {dataVersion}=useAccount();
+  const [savedPlaces, setSavedPlaces] = useState(readSavedPlaces());
+  useFocusEffect(useCallback(()=>{setSavedPlaces(readSavedPlaces());},[]));
+  useEffect(()=>{setSavedPlaces(readSavedPlaces());},[dataVersion]);
+  const [showAdjustments, setShowAdjustments] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<string[]>([]);
+  const [retryVersion, setRetryVersion] = useState(0);
+  const [refinement, setRefinement] = useState('');
+  function refineSearch() {
+    if (!refinement.trim()) return;
+    const context = normalizeSearchContext({...initialContext, intent: [initialContext?.intent, refinement.trim()].filter(Boolean).join('; ')});
+    router.replace({pathname:'/results',params:{place:searchedQuery,context:JSON.stringify(context)}});
+  }
   const searchIdRef = useRef<string | undefined>(undefined);
-  // Controls edit drafts; only an explicit submission updates appliedFilters.
   const [draftFilters, setDraftFilters] = useState<SearchFilters>(DEFAULT_FILTERS);
+  const [searchArea, setSearchArea] = useState("city");
+  const [researchStatus, setResearchStatus] = useState<string>("grounded");
+  const [searchSuggestions, setSearchSuggestions] = useState<string[]>([]);
   const [appliedFilters, setAppliedFilters] = useState<SearchFilters>(DEFAULT_FILTERS);
-  // Commit the summary with its results, never ahead of an in-flight request.
   const [displayedFilters, setDisplayedFilters] = useState<SearchFilters | null>(null);
   const pendingKeyRef = useRef<string | null>(null);
   const controllerRef = useRef<AbortController | null>(null);
@@ -294,6 +327,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               method: "POST",
 
               headers: {
+                ...await searchAuthHeaders(),
                 "Content-Type":
                   "application/json",
               },
@@ -305,6 +339,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                   place:
                     searchedQuery,
 
+                  ...(initialContext ? {context: initialContext} : {}),
                   searchId: searchIdRef.current,
                   preference: appliedFilters.preference,
                   selectedKeywords: appliedFilters.selectedKeywords,
@@ -354,6 +389,9 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
         );
 
         setDisplayedFilters(appliedFilters);
+        setSearchSuggestions(result.searchSuggestions ?? []);
+        setSearchArea(result.searchArea ?? "city");
+        setResearchStatus(result.researchStatus ?? "grounded");
 
         setRecommendations(
           result.recommendations ??
@@ -368,7 +406,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
           return;
         }
 
-        console.error(
+        console.warn(
           "Elsewhere results error:",
           error
         );
@@ -396,7 +434,10 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
   }, [
     searchedQuery,
     appliedFilters,
+    retryVersion,
   ]);
+
+  const selectedKeywords = displayedFilters?.selectedKeywords ?? [];
 
   const topAlternative =
     recommendations[0] ??
@@ -419,9 +460,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
         </Text>
       </Pressable>
 
-      <Text style={styles.logo}>
-        ELSEWHERE
-      </Text>
+      <Brand/>
 
       <Text style={styles.eyebrow}>
         YOU SEARCHED FOR
@@ -432,6 +471,12 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
           searchedQuery}
       </Text>
 
+      {initialContext?.mode === 'tonight' && <View style={styles.emptyCard}>
+        <Text style={styles.emptyTitle}>Dining preferences</Text>
+        <Text style={styles.emptyText}>{initialContext.date} · {initialContext.time} · {initialContext.partySize} guests · {initialContext.city}</Text>
+        <Text style={styles.emptyText}>Check availability on the booking site.</Text>
+      </View>}
+      {initialContext?.intent ? <Text style={styles.location}>{initialContext.intent.replace(/Priority \d+: /g,'').split('; ').join(' · ')}</Text> : null}
       {searchedPlace !== null && (
         <Text
           style={styles.location}
@@ -445,54 +490,15 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
         </Text>
       )}
 
-      {searchedPlace !== null &&
-        classification !== null && (
-          <View
-            style={styles.placeCard}
-          >
-            <Text
-              style={
-                styles.darkLabel
-              }
-            >
-              SELECTED PLACE
-            </Text>
-
-            <Text
-              style={
-                styles.placeName
-              }
-            >
-              {searchedPlace.name}
-            </Text>
-
-            <Text
-              style={
-                styles.placeAddress
-              }
-            >
-              {
-                searchedPlace.formatted
-              }
-            </Text>
-
-            <View
-              style={
-                styles.categoryBadge
-              }
-            >
-              <Text
-                style={
-                  styles.categoryBadgeText
-                }
-              >
-                {
-                  classification.category
-                }
-              </Text>
-            </View>
-          </View>
-        )}
+      <Pressable accessibilityRole="button" accessibilityState={{expanded:showAdjustments}} onPress={()=>setShowAdjustments(!showAdjustments)} style={{paddingVertical:16,marginVertical:12,borderTopWidth:1,borderBottomWidth:1,borderColor:'#D8D3CB'}}>
+        <Text style={{fontSize:16,fontWeight:'600'}}>{showAdjustments?'Close filters':'Filters & preferences'}</Text>
+      </Pressable>
+      {showAdjustments && <View>
+      <View style={{gap:10,marginVertical:18}}>
+        <Text style={styles.emptyTitle}>Refine your search</Text>
+        <TextInput accessibilityLabel="Refine your search" placeholder="Describe what you’d prefer…" value={refinement} onChangeText={setRefinement} maxLength={200} style={{borderWidth:1,borderColor:'#D8D3CB',borderRadius:14,padding:14,backgroundColor:'#FFFCF4'}} />
+        <Pressable accessibilityRole="button" onPress={refineSearch} disabled={!refinement.trim() || loading}><Text style={styles.back}>Update search</Text></Pressable>
+      </View>
 
       <View testID="filter-controls">
       {classification !== null && (
@@ -506,7 +512,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.lightLabel
             }
           >
-            WHAT DO YOU WANT TO KEEP?
+            MATCH PREFERENCES
           </Text>
 
           <Text
@@ -514,18 +520,10 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.analysisTitle
             }
           >
-            Tap what matters to you
+            Select the details that matter
           </Text>
 
-          <Text
-            style={
-              styles.analysisText
-            }
-          >
-            Elsewhere will give extra
-            weight to the experiences
-            you select.
-          </Text>
+
 
           <View
             style={
@@ -577,36 +575,16 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
             )}
           </View>
 
-          {draftFilters.selectedKeywords.length ===
-            0 && (
-            <Text
-              style={
-                styles.selectionHint
-              }
-            >
-              Nothing selected means
-              Elsewhere considers the
-              whole experience.
-            </Text>
-          )}
         </View>
       )}
 
       <Text
         style={styles.sectionTitle}
       >
-        What kind of Elsewhere?
+        Your preference
       </Text>
 
-      <Text
-        style={
-          styles.preferenceIntro
-        }
-      >
-        Local is the default, but you
-        can change what “better”
-        means for this search.
-      </Text>
+
 
       <View accessibilityRole="radiogroup" accessibilityLabel="Recommendation preference"
         style={
@@ -669,17 +647,10 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
       <Text
         style={styles.sectionTitle}
       >
-        How far would you go?
+        Distance
       </Text>
 
-      <Text
-        style={
-          styles.preferenceIntro
-        }
-      >
-        All city keeps discovery wide.
-        Distances are measured from the searched place.
-      </Text>
+
 
       <View accessibilityRole="radiogroup" accessibilityLabel="Distance from searched place"
         style={
@@ -700,7 +671,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                   )
                 }
                 accessibilityRole="radio"
-                accessibilityLabel={option.label}
+                accessibilityLabel={option.value === "all" && searchArea === "nearby" ? "Within 15 km" : option.label}
                 aria-checked={selected}
                 accessibilityState={{checked: selected}}
                 disabled={!classification}
@@ -718,7 +689,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                       styles.distanceButtonTextSelected,
                   ]}
                 >
-                  {option.label}
+                  {option.value === "all" && searchArea === "nearby" ? "Within 15 km" : option.label}
                 </Text>
               </Pressable>
             );
@@ -728,27 +699,28 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
 
       <Text style={styles.filterHint} testID="filter-status" accessibilityLiveRegion="polite">
         {hasUnappliedChanges
-          ? "You have unapplied changes. Press Update results when you’re ready."
+          ? "Apply your changes to update the results."
           : loading && displayedFilters !== null
-            ? "Updating results… You can keep editing your filters."
-            : "Choose your filters, then press Update results."}
+            ? "Updating results…"
+            : ""}
       </Text>
       <Pressable
         testID="update-results"
         accessibilityRole="button"
-        accessibilityLabel="Update results"
+        accessibilityLabel="Apply filters"
         accessibilityState={{disabled: !canUpdate}}
         disabled={!canUpdate}
         onPress={updateResults}
         style={[styles.updateButton, !canUpdate && styles.updateButtonDisabled]}
       >
-        <Text style={styles.updateButtonText}>Update results</Text>
+        <Text style={styles.updateButtonText}>Apply filters</Text>
       </Pressable>
       </View>
+      </View>}
 
       {displayedFilters !== null && (
         <Text testID="applied-filter-summary" style={styles.appliedSummary} accessibilityLiveRegion="polite">
-          {filterSummary(displayedFilters)}
+          {filterSummary(displayedFilters, searchArea === "nearby")}
         </Text>
       )}
       {loading && displayedFilters !== null && (
@@ -758,8 +730,11 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
         </View>
       )}
       {error.length > 0 && displayedFilters !== null && (
-        <Text style={styles.errorText} accessibilityRole="alert">{error} Your previous results are still shown.</Text>
+        <Text style={styles.errorText} accessibilityRole="alert">{error} Previous results are shown below.</Text>
       )}
+
+      {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
+      {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Some details could not be verified. Check with the venue before visiting.</Text>}
 
       <View
         style={
@@ -772,18 +747,10 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.sectionTitle
             }
           >
-            Better alternatives
+            Recommended alternatives
           </Text>
 
-          <Text
-            style={
-              styles.helperText
-            }
-          >
-            Ranked by the experience
-            you want, not simply by
-            distance.
-          </Text>
+
         </View>
 
         {candidateCount >
@@ -810,7 +777,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.loadingTitle
             }
           >
-            Finding your Elsewhere...
+            Finding alternatives…
           </Text>
 
           <Text
@@ -818,9 +785,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.loadingText
             }
           >
-            Comparing real places
-            against your current
-            preferences.
+            Searching for places that match your preferences.
           </Text>
         </View>
       ) : error.length > 0 && displayedFilters === null ? (
@@ -832,7 +797,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.errorTitle
             }
           >
-            Something went wrong
+            Couldn’t finish this search
           </Text>
 
           <Text
@@ -842,6 +807,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
           >
             {error}
           </Text>
+          <Pressable accessibilityRole="button" onPress={() => setRetryVersion(value => value + 1)}><Text style={styles.back}>Try again →</Text></Pressable>
         </View>
       ) : recommendations.length ===
         0 ? (
@@ -853,8 +819,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.emptyTitle
             }
           >
-            No alternatives found in
-            this search
+            {selectedKeywords.length ? "No verified matches yet" : "No matching places found"}
           </Text>
 
           <Text
@@ -862,10 +827,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
               styles.emptyText
             }
           >
-            Try widening the distance
-            or removing one of your
-            selected experience
-            preferences.
+            {selectedKeywords.length ? "We couldn’t confirm places that meet all your selected preferences. Try a wider distance or remove a preference." : "Try a wider distance or fewer filters."}
           </Text>
         </View>
       ) : (
@@ -895,7 +857,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                   }
                 >
                   {index ===
-                    0 && (
+                    0 && researchStatus !== 'metadata-only' && (
                     <Text
                       style={
                         styles.topPick
@@ -916,21 +878,6 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                   </Text>
                 </View>
 
-                <View
-                  style={
-                    styles.scoreBubble
-                  }
-                >
-                  <Text
-                    style={
-                      styles.scoreText
-                    }
-                  >
-                    {
-                      recommendation.elsewhereScore
-                    }
-                  </Text>
-                </View>
               </View>
 
               <Text
@@ -962,99 +909,15 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                 </Text>
               )}
 
-              <View
-                style={
-                  styles.scoreRow
-                }
-              >
-                <View
-                  style={
-                    styles.miniScore
-                  }
-                >
-                  <Text
-                    style={
-                      styles.miniScoreValue
-                    }
-                  >
-                    {
-                      recommendation.similarityScore
-                    }
-                  </Text>
-
-                  <Text
-                    style={
-                      styles.miniScoreLabel
-                    }
-                  >
-                    Similar
-                  </Text>
-                </View>
-
-                <View
-                  style={
-                    styles.miniScore
-                  }
-                >
-                  <Text
-                    style={
-                      styles.miniScoreValue
-                    }
-                  >
-                    {
-                      recommendation.focusMatchScore
-                    }
-                  </Text>
-
-                  <Text
-                    style={
-                      styles.miniScoreLabel
-                    }
-                  >
-                    Your focus
-                  </Text>
-                </View>
-
-                <View
-                  style={
-                    styles.miniScore
-                  }
-                >
-                  <Text
-                    style={
-                      styles.miniScoreValue
-                    }
-                  >
-                    {
-                      recommendation.localScore
-                    }
-                  </Text>
-
-                  <Text
-                    style={
-                      styles.miniScoreLabel
-                    }
-                  >
-                    Local feel
-                  </Text>
-                </View>
-              </View>
-
-              <View
-                style={
-                  styles.divider
-                }
-              />
-
-              <Text
+              {researchStatus !== 'metadata-only' && <Text
                 style={
                   styles.reasonLabel
                 }
               >
-                WHY IT MATCHES
-              </Text>
+                Match details
+              </Text>}
 
-              <Text
+              {researchStatus !== 'metadata-only' && <Text
                 style={
                   styles.reasonText
                 }
@@ -1062,7 +925,26 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                 {
                   recommendation.whySimilar
                 }
-              </Text>
+              </Text>}
+
+              {recommendation.personalizationReason ? <Text style={[styles.reasonText,{color:"#174D43",marginTop:8}]}>{recommendation.personalizationReason}</Text> : null}
+              <Pressable accessibilityRole="button" onPress={() => setSavedPlaces(toggleSavedPlace({id:recommendation.placeId ?? `${recommendation.name}:${recommendation.address}`,name:recommendation.name,address:recommendation.address,categoryFamily:classification?.categoryFamily,interests:Object.entries(recommendation.experienceEvidence ?? {}).filter(([,e])=>e.status==='SUPPORTED').map(([keyword])=>keyword)}))}>
+                <Text style={[styles.reasonLabel,{marginTop:14}]}>{savedPlaces.some(item=>item.id===(recommendation.placeId ?? `${recommendation.name}:${recommendation.address}`))?'♥ Saved':'♡ Save'}</Text>
+              </Pressable>
+              {(classification?.categoryFamily==='restaurant' || recommendation.categories.some(category=>category.startsWith('catering.restaurant'))) && <BookingPanel id={recommendation.placeId ?? recommendation.name} name={recommendation.name} address={recommendation.address} website={recommendation.metadata?.website} reservationUrl={recommendation.metadata?.reservationUrl} initialContext={initialContext} />}
+              <Pressable accessibilityRole="button" accessibilityState={{expanded:expandedCards.includes(recommendation.placeId ?? recommendation.name)}} onPress={()=>setExpandedCards(current=>current.includes(recommendation.placeId ?? recommendation.name)?current.filter(id=>id!==(recommendation.placeId ?? recommendation.name)):[...current,recommendation.placeId ?? recommendation.name])}><Text style={{color:'#625C53',paddingTop:16}}>{expandedCards.includes(recommendation.placeId ?? recommendation.name)?'Hide details':'View details'}</Text></Pressable>
+              {expandedCards.includes(recommendation.placeId ?? recommendation.name) && <View>
+              {Object.entries(recommendation.experienceEvidence ?? {}).filter(([keyword]) => selectedKeywords.length === 0 || selectedKeywords.includes(keyword)).map(([keyword, evidence]) => (
+                <View key={keyword}>
+                  <Text style={styles.reasonLabel}>{keyword} · {evidence.status === "SUPPORTED" ? "Verified" : evidence.status === "NOT_SUPPORTED" ? "Does not match" : "Not verified"}</Text>
+                  <Text style={styles.reasonText}>{evidence.summary}</Text>
+                  {evidence.sources.map(source => (
+                    <Pressable key={source.url} accessibilityRole="link" onPress={() => Linking.openURL(source.url)}>
+                      <Text style={styles.reasonText}>Source: {source.title} ↗</Text>
+                    </Pressable>
+                  ))}
+                </View>
+              ))}
 
               <Text
                 style={[
@@ -1070,7 +952,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                   styles.secondReason,
                 ]}
               >
-                WHY TRY IT
+                About this recommendation
               </Text>
 
               <Text
@@ -1082,77 +964,20 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
                   recommendation.whyTryInstead
                 }
               </Text>
+              </View>}
             </View>
           )
         )
       )}
 
+      <SearchSuggestions widgets={searchSuggestions} />
+
       {recommendations.length > 0 && (
         <Text style={styles.resultsCount}>
-          Showing {recommendations.length} best matches
+          {recommendations.length} results
         </Text>
       )}
 
-      {!loading &&
-        topAlternative !== null && (
-          <View
-            style={styles.verdict}
-          >
-            <Text
-              style={
-                styles.verdictLabel
-              }
-            >
-              ELSEWHERE PICK
-            </Text>
-
-            <Text
-              style={
-                styles.verdictTitle
-              }
-            >
-              Try{" "}
-              {
-                topAlternative.name
-              }
-            </Text>
-
-            <Text
-              style={
-                styles.verdictScore
-              }
-            >
-              {
-                topAlternative.elsewhereScore
-              }
-              /100 Elsewhere score
-            </Text>
-
-            <Text
-              style={
-                styles.verdictText
-              }
-            >
-              {
-                topAlternative.whyTryInstead
-              }
-            </Text>
-          </View>
-        )}
-
-      {!loading && (
-        <Text
-          style={styles.disclaimer}
-        >
-          Place names and locations
-          come from real place data.
-          Similarity, local character,
-          distinctiveness and
-          popularity signals are AI
-          estimates used for ranking,
-          not verified ratings.
-        </Text>
-      )}
     </ScrollView>
   );
 }
@@ -1160,7 +985,7 @@ function SearchResults({ searchedQuery }: { searchedQuery: string }) {
 const styles =
   StyleSheet.create({
     filterHint: {fontSize: 13, lineHeight: 19, color: "#666", marginTop: 16, marginBottom: 12},
-    updateButton: {backgroundColor: "#111", borderRadius: 16, paddingVertical: 17, alignItems: "center", marginBottom: 24},
+    updateButton: {backgroundColor: "#174D43", borderRadius: 16, paddingVertical: 17, alignItems: "center", marginBottom: 24},
     updateButtonDisabled: {opacity: 0.4},
     updateButtonText: {color: "white", fontSize: 16, fontWeight: "700"},
     appliedSummary: {fontSize: 14, lineHeight: 21, color: "#444", marginBottom: 20},
@@ -1168,12 +993,12 @@ const styles =
     page: {
       flex: 1,
       backgroundColor:
-        "#F7F4EF",
+        "#F8F5EB",
     },
 
     content: {
       width: "100%",
-      maxWidth: 620,
+      maxWidth: 1120,
       alignSelf: "center",
       paddingHorizontal: 22,
       paddingTop: 24,
@@ -1187,7 +1012,7 @@ const styles =
     back: {
       fontSize: 16,
       marginBottom: 24,
-      color: "#111",
+      color: "#174D43",
     },
 
     logo: {
@@ -1195,7 +1020,7 @@ const styles =
       fontWeight: "900",
       letterSpacing: 3,
       marginBottom: 42,
-      color: "#111",
+      color: "#174D43",
     },
 
     eyebrow: {
@@ -1203,14 +1028,14 @@ const styles =
       fontWeight: "700",
       letterSpacing: 1.5,
       marginBottom: 8,
-      color: "#111",
+      color: "#174D43",
     },
 
     title: {
       fontSize: 36,
       fontWeight: "900",
       lineHeight: 40,
-      color: "#111",
+      color: "#174D43",
     },
 
     location: {
@@ -1221,7 +1046,7 @@ const styles =
     },
 
     placeCard: {
-      backgroundColor: "#111",
+      backgroundColor: "#174D43",
       borderRadius: 22,
       padding: 22,
       marginBottom: 16,
@@ -1272,7 +1097,7 @@ const styles =
       padding: 22,
       marginBottom: 34,
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
     },
 
     lightLabel: {
@@ -1286,7 +1111,7 @@ const styles =
       fontSize: 22,
       fontWeight: "900",
       marginTop: 8,
-      color: "#111",
+      color: "#174D43",
     },
 
     analysisText: {
@@ -1310,12 +1135,12 @@ const styles =
       paddingHorizontal: 12,
       paddingVertical: 9,
       backgroundColor:
-        "#F7F4EF",
+        "#F8F5EB",
     },
 
     keywordBadgeSelected: {
-      backgroundColor: "#111",
-      borderColor: "#111",
+      backgroundColor: "#174D43",
+      borderColor: "#174D43",
     },
 
     keywordText: {
@@ -1338,7 +1163,7 @@ const styles =
     sectionTitle: {
       fontSize: 25,
       fontWeight: "900",
-      color: "#111",
+      color: "#174D43",
     },
 
     preferenceIntro: {
@@ -1358,20 +1183,20 @@ const styles =
       borderWidth: 1,
       borderColor: "#D8D3CB",
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
       borderRadius: 16,
       padding: 15,
     },
 
     preferenceCardSelected: {
-      backgroundColor: "#111",
-      borderColor: "#111",
+      backgroundColor: "#174D43",
+      borderColor: "#174D43",
     },
 
     preferenceLabel: {
       fontSize: 16,
       fontWeight: "800",
-      color: "#111",
+      color: "#174D43",
     },
 
     preferenceLabelSelected: {
@@ -1399,21 +1224,21 @@ const styles =
       borderWidth: 1,
       borderColor: "#D8D3CB",
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
       borderRadius: 999,
       paddingHorizontal: 16,
       paddingVertical: 10,
     },
 
     distanceButtonSelected: {
-      backgroundColor: "#111",
-      borderColor: "#111",
+      backgroundColor: "#174D43",
+      borderColor: "#174D43",
     },
 
     distanceButtonText: {
       fontSize: 13,
       fontWeight: "800",
-      color: "#111",
+      color: "#174D43",
     },
 
     distanceButtonTextSelected: {
@@ -1426,7 +1251,7 @@ const styles =
       borderRadius: 18,
       padding: 16,
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
       marginBottom: 34,
     },
 
@@ -1440,7 +1265,7 @@ const styles =
     activeSearchText: {
       fontSize: 16,
       fontWeight: "900",
-      color: "#111",
+      color: "#174D43",
       marginTop: 5,
     },
 
@@ -1488,7 +1313,7 @@ const styles =
       justifyContent:
         "center",
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
       padding: 28,
     },
 
@@ -1496,7 +1321,7 @@ const styles =
       marginTop: 15,
       fontSize: 20,
       fontWeight: "900",
-      color: "#111",
+      color: "#174D43",
       textAlign: "center",
     },
 
@@ -1515,7 +1340,7 @@ const styles =
       padding: 19,
       marginBottom: 13,
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
     },
 
     alternativeHeader: {
@@ -1541,7 +1366,7 @@ const styles =
     alternativeName: {
       fontSize: 20,
       fontWeight: "900",
-      color: "#111",
+      color: "#174D43",
     },
 
     alternativeAddress: {
@@ -1562,7 +1387,7 @@ const styles =
       minWidth: 60,
       height: 60,
       borderRadius: 30,
-      backgroundColor: "#111",
+      backgroundColor: "#174D43",
       alignItems: "center",
       justifyContent:
         "center",
@@ -1591,7 +1416,7 @@ const styles =
     miniScoreValue: {
       fontSize: 17,
       fontWeight: "900",
-      color: "#111",
+      color: "#174D43",
     },
 
     miniScoreLabel: {
@@ -1626,7 +1451,7 @@ const styles =
     },
 
     verdict: {
-      backgroundColor: "#111",
+      backgroundColor: "#174D43",
       borderRadius: 22,
       padding: 22,
       marginTop: 22,
@@ -1666,13 +1491,13 @@ const styles =
       borderRadius: 20,
       padding: 22,
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
     },
 
     errorTitle: {
       fontSize: 20,
       fontWeight: "900",
-      color: "#111",
+      color: "#174D43",
     },
 
     errorText: {
@@ -1687,13 +1512,13 @@ const styles =
       borderRadius: 20,
       padding: 22,
       backgroundColor:
-        "#FFFDF9",
+        "#FFFCF4",
     },
 
     emptyTitle: {
       fontSize: 19,
       fontWeight: "800",
-      color: "#111",
+      color: "#174D43",
     },
 
     emptyText: {

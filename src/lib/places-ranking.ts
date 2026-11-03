@@ -250,6 +250,9 @@ export function rankCandidates<
 
     keywordScores:
       Record<string, number>;
+    personalizationBoost?: number;
+    personalizationPenalty?: number;
+    personalizationTieBreak?: number;
   }
 >(
   candidates: T[],
@@ -332,7 +335,7 @@ export function rankCandidates<
             candidate.distance
           );
 
-        const elsewhereScore =
+        const baseScore =
           calculateElsewhereScore({
             preference,
 
@@ -372,6 +375,7 @@ export function rankCandidates<
               selected.length > 0,
           });
 
+        const elsewhereScore = Math.max(0, Math.min(100, baseScore + Math.max(0,Math.min(6,candidate.personalizationBoost ?? 0)) - Math.max(0,Math.min(6,candidate.personalizationPenalty ?? 0))));
         return {
           ...candidate,
           focusMatchScore:
@@ -384,6 +388,7 @@ export function rankCandidates<
     );
 
   ranked.sort((a, b) => {
+    if(selected.length>0&&b.focusMatchScore!==a.focusMatchScore)return b.focusMatchScore-a.focusMatchScore;
     /*
      * Closest should genuinely prioritize
      * proximity after maintaining relevance.
@@ -431,6 +436,8 @@ export function rankCandidates<
         a.focusMatchScore
       );
     }
+
+    if ((b.personalizationTieBreak ?? 0) !== (a.personalizationTieBreak ?? 0)) return (b.personalizationTieBreak ?? 0) - (a.personalizationTieBreak ?? 0);
 
     if (
       a.distance !==

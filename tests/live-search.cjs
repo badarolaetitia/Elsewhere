@@ -19,7 +19,7 @@ async function post(place, filters = {}) {
     const initial=await post(place);
     assert.ok(initial.recommendations.length,'Expected recommendations');
     assert.ok(initial.searchId,'Expected signed search snapshot');
-    console.log(JSON.stringify({place,seconds:Math.round((Date.now()-start)/1000),count:initial.candidateCount,top:initial.recommendations[0].name}));
+    console.log(JSON.stringify({place,seconds:Math.round((Date.now()-start)/1000),count:initial.candidateCount,researchStatus:initial.researchStatus,top:initial.recommendations[0].name}));
     const keyword=initial.classification.experienceKeywords[0];
     for(const filter of [{selectedKeywords:[keyword]},{preference:'local'},{preference:'hidden-gem'},{preference:'popular-worth-it'},{preference:'closest'},{distanceKm:'all'},{distanceKm:1},{distanceKm:2},{distanceKm:5}]) {
       const data=await post(place,{searchId:initial.searchId,...filter});

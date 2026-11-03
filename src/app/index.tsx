@@ -1,5 +1,11 @@
-import { router } from "expo-router";
-import { useState } from "react";
+import ScheduleInput from "../components/schedule-input";
+import {useAccount} from '../components/account-provider';
+import Brand from "../components/brand";
+import { learnedTaste, learnedAvoids, readVisits } from "../lib/visit-feedback";
+import { normalizeSearchContext } from "../lib/search-context";
+import { readSavedPlaces } from "../lib/taste-profile";
+import { router, useFocusEffect } from "expo-router";
+import { useState, useCallback, useEffect } from "react";
 import {
   Pressable,
   ScrollView,
@@ -7,11 +13,28 @@ import {
   Text,
   TextInput,
   View,
+  useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
+  const {dataVersion}=useAccount();
+  const desktop=useWindowDimensions().width>=1000;
   const [searchQuery, setSearchQuery] = useState("");
+  const [showPreferences, setShowPreferences] = useState(false);
+  const [priorities, setPriorities] = useState<string[]>([]);
+  const [intent, setIntent] = useState("");
+  const [city, setCity] = useState("");
+  const [mode, setMode] = useState<'discover' | 'tonight'>("discover");
+  const [date, setDate] = useState(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; });
+  const [time, setTime] = useState("19:00");
+  const [partySize, setPartySize] = useState("2");
+  const [useTaste, setUseTaste] = useState(true);
+  const [formError, setFormError] = useState("");
+  const [visits,setVisits] = useState(readVisits());
+  const [saved,setSaved] = useState(readSavedPlaces());
+  useEffect(()=>{setSaved(readSavedPlaces());setVisits(readVisits());},[dataVersion]);
+  useFocusEffect(useCallback(()=>{setSaved(readSavedPlaces());setVisits(readVisits());},[]));
 
   function handleSearch() {
     const cleanedQuery = searchQuery.trim();
@@ -20,10 +43,17 @@ export default function HomeScreen() {
       return;
     }
 
+    const context = normalizeSearchContext({intent: [...priorities.map((value,index)=>`Priority ${index+1}: ${value}`),intent].filter(Boolean).join("; "), city, mode, date, time, partySize, taste: useTaste ? learnedTaste(visits) : [], avoid: useTaste ? learnedAvoids(visits) : []});
+    if (mode === 'tonight' && (!city.trim() || !context.date || context.time !== time || String(context.partySize) !== partySize)) {
+      setFormError("Enter a city, a valid date and time, and a party size between 1 and 12.");
+      return;
+    }
+    setFormError("");
     router.navigate({
       pathname: "/results",
       params: {
         place: cleanedQuery,
+        context: JSON.stringify(context),
       },
     });
   }
@@ -34,33 +64,67 @@ export default function HomeScreen() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.content}>
-          <Text style={styles.logo}>ELSEWHERE</Text>
+        <View style={[styles.content,desktop&&styles.desktopContent]}>
+          <View style={[styles.hero,desktop&&styles.desktopHero]}>
+          <Brand/>
 
-          <Text style={styles.title}>
+          <Text style={[styles.title,desktop&&styles.desktopTitle]}>
             Everyone&apos;s going there.
           </Text>
 
-          <Text style={styles.subtitle}>
+          <Text style={[styles.subtitle,desktop&&styles.desktopTitle]}>
             Find somewhere better.
           </Text>
 
+          {desktop&&<Text style={styles.desktopDescription}>Keep what you love. Discover somewhere new.</Text>}
+          </View>
+          <View style={desktop?styles.desktopForm:undefined}>
           <View style={styles.searchSection}>
             <Text style={styles.question}>
-              Where are you thinking of going?
+              Search a place
             </Text>
 
             <TextInput
               value={searchQuery}
               onChangeText={setSearchQuery}
-              placeholder="Search any place..."
+              accessibilityLabel="Place to find alternatives for"
+              placeholder="e.g. Cédric Grolet, Paris"
               placeholderTextColor="#8A8A8A"
               style={styles.input}
               returnKeyType="search"
               onSubmitEditing={handleSearch}
             />
 
+            <Text style={{fontSize:15,fontWeight:'600',marginTop:8}}>Your priorities</Text>
+            <Text style={{color:"#686D60",fontSize:12}}>Select your preferences in order of importance.</Text>
+            <View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>
+              {['Food & products','Atmosphere','Experience'].map(label=><Pressable key={label} accessibilityRole="checkbox" accessibilityState={{checked:priorities.includes(label)}} onPress={()=>setPriorities(current=>current.includes(label)?current.filter(item=>item!==label):[...current,label])} style={{paddingHorizontal:13,paddingVertical:10,borderRadius:22,borderWidth:1,borderColor:'#D6CFC3',backgroundColor:priorities.includes(label)?'#174D43':'#FFFCF4'}}><Text style={{color:priorities.includes(label)?'white':'#174D43',fontSize:13}}>{priorities.includes(label)?`${priorities.indexOf(label)+1}. `:''}{label}</Text></Pressable>)}
+            </View>
+            <View style={{flexDirection:'row',justifyContent:'space-between',gap:12}}>
+              <Pressable accessibilityRole="button" accessibilityState={{expanded:showPreferences}} onPress={()=>setShowPreferences(!showPreferences)}><Text style={{color:'#625C53',paddingVertical:8}}>{showPreferences?'Hide details':'Add details'}</Text></Pressable>
+              <Pressable accessibilityRole="button" accessibilityState={{expanded:mode==='tonight'}} onPress={()=>setMode(mode==='tonight'?'discover':'tonight')}><Text style={{color:'#625C53',paddingVertical:8}}>{mode==='tonight'?'Hide dinner details':'Dinner options'}</Text></Pressable>
+            </View>
+            {(showPreferences || priorities.length>0) && <View style={{gap:12,paddingVertical:10}}>
+              <Text style={styles.question}>What are you looking for?</Text>
+              <TextInput accessibilityLabel="Preferences" value={intent} onChangeText={setIntent} maxLength={240} placeholder="e.g. handmade pasta or a relaxed atmosphere" style={styles.input} />
+
+            </View>}
+            {mode==='tonight' && <View style={{gap:10,padding:18,backgroundColor:'#E7EBD8',borderRadius:18}}>
+              <Text style={styles.question}>Dinner plans</Text>
+              <TextInput accessibilityLabel="Destination city" value={city} onChangeText={setCity} placeholder="City" style={styles.input} />
+              <Text>Date</Text>
+              <ScheduleInput kind="date" label="Dinner date" value={date} onChange={setDate} />
+              <View style={{flexDirection:'row',gap:12}}>
+                <View style={{flex:1,gap:8}}><Text>Time</Text><ScheduleInput kind="time" label="Dinner time" value={time} onChange={setTime} /></View>
+                <View style={{flex:1,gap:8}}><Text>Guests</Text><ScheduleInput kind="number" label="Party size" value={partySize} onChange={setPartySize} /></View>
+              </View>
+              <Text style={{color:'#625C53',fontSize:13}}>Reservations are completed on the booking site.</Text>
+            </View>}
+            {(learnedTaste(visits).length>0 || learnedAvoids(visits).length>0) && <Pressable accessibilityRole="checkbox" accessibilityState={{checked:useTaste}} onPress={()=>setUseTaste(!useTaste)}><Text style={{color:'#174D43'}}>{useTaste?'☑':'☐'} Personalize using my ratings</Text></Pressable>}
+            {formError.length > 0 && <Text accessibilityRole="alert" style={{color:'#A42D24',marginTop:12}}>{formError}</Text>}
+
             <Pressable
+              accessibilityRole="button"
               style={[
                 styles.searchButton,
                 !searchQuery.trim() &&
@@ -70,189 +134,16 @@ export default function HomeScreen() {
               disabled={!searchQuery.trim()}
             >
               <Text style={styles.searchButtonText}>
-                Find alternatives
+                {mode === "tonight" ? "Find restaurants" : "Find alternatives"}
               </Text>
             </Pressable>
 
-            <Pressable style={styles.locationButton}>
-              <Text style={styles.locationButtonText}>
-                📍 Use my current location
-              </Text>
-            </Pressable>
           </View>
 
-          <View style={styles.mapSection}>
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>
-                Explore nearby
-              </Text>
-
-              <Text style={styles.sectionLink}>
-                Map coming soon
-              </Text>
-            </View>
-
-            <View style={styles.mapPlaceholder}>
-              <Text style={styles.mapEmoji}>🗺️</Text>
-
-              <Text style={styles.mapTitle}>
-                Discover what&apos;s around you
-              </Text>
-
-              <Text style={styles.mapDescription}>
-                Elsewhere will show popular places and nearby
-                alternatives anywhere in the world.
-              </Text>
-
-              <View style={styles.fakeMapPins}>
-                <View style={styles.pinGroup}>
-                  <View style={styles.viralPin}>
-                    <Text style={styles.viralPinText}>
-                      🔥
-                    </Text>
-                  </View>
-
-                  <Text style={styles.pinLabel}>
-                    Popular
-                  </Text>
-                </View>
-
-                <View style={styles.pinGroup}>
-                  <View style={styles.matchPin}>
-                    <Text style={styles.matchPinText}>
-                      94%
-                    </Text>
-                  </View>
-
-                  <Text style={styles.pinLabel}>
-                    Alternative
-                  </Text>
-                </View>
-
-                <View style={styles.pinGroup}>
-                  <View style={styles.matchPin}>
-                    <Text style={styles.matchPinText}>
-                      89%
-                    </Text>
-                  </View>
-
-                  <Text style={styles.pinLabel}>
-                    Alternative
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-
-          <View style={styles.trendingSection}>
-            <Text style={styles.sectionTitle}>
-              Explore by category
-            </Text>
-
-            <Pressable
-              style={styles.card}
-              onPress={() => {
-                setSearchQuery("Popular bakeries nearby");
-              }}
-            >
-              <View style={styles.cardLeft}>
-                <Text style={styles.cardEmoji}>🥐</Text>
-
-                <View>
-                  <Text style={styles.cardTitle}>
-                    Bakeries
-                  </Text>
-
-                  <Text style={styles.cardSubtitle}>
-                    Find the ones worth the walk
-                  </Text>
-                </View>
-              </View>
-
-              <Text style={styles.arrow}>›</Text>
-            </Pressable>
-
-            <Pressable
-              style={styles.card}
-              onPress={() => {
-                setSearchQuery("Popular sandwich shops nearby");
-              }}
-            >
-              <View style={styles.cardLeft}>
-                <Text style={styles.cardEmoji}>🥪</Text>
-
-                <View>
-                  <Text style={styles.cardTitle}>
-                    Food
-                  </Text>
-
-                  <Text style={styles.cardSubtitle}>
-                    Skip the viral queue
-                  </Text>
-                </View>
-              </View>
-
-              <Text style={styles.arrow}>›</Text>
-            </Pressable>
-
-            <Pressable
-              style={styles.card}
-              onPress={() => {
-                setSearchQuery("Popular cafés nearby");
-              }}
-            >
-              <View style={styles.cardLeft}>
-                <Text style={styles.cardEmoji}>☕</Text>
-
-                <View>
-                  <Text style={styles.cardTitle}>
-                    Cafés
-                  </Text>
-
-                  <Text style={styles.cardSubtitle}>
-                    Same vibe, less hype
-                  </Text>
-                </View>
-              </View>
-
-              <Text style={styles.arrow}>›</Text>
-            </Pressable>
-
-            <Pressable
-              style={styles.card}
-              onPress={() => {
-                setSearchQuery("Popular shopping nearby");
-              }}
-            >
-              <View style={styles.cardLeft}>
-                <Text style={styles.cardEmoji}>🛍️</Text>
-
-                <View>
-                  <Text style={styles.cardTitle}>
-                    Shopping
-                  </Text>
-
-                  <Text style={styles.cardSubtitle}>
-                    Find more local options
-                  </Text>
-                </View>
-              </View>
-
-              <Text style={styles.arrow}>›</Text>
-            </Pressable>
-          </View>
-
-          <View style={styles.bottomMessage}>
-            <Text style={styles.bottomMessageTitle}>
-              Popular doesn&apos;t always mean better.
-            </Text>
-
-            <Text style={styles.bottomMessageText}>
-              Search any place you&apos;re considering.
-              Elsewhere will help you compare it with nearby
-              alternatives based on similarity, value,
-              convenience and what matters most to you.
-            </Text>
+          {saved.length > 0 && <View style={{marginTop:24,gap:10}}>
+            <Text style={styles.sectionTitle}>Saved places</Text>
+            {saved.slice(0,5).map(item=><Pressable key={item.id} onPress={()=>setSearchQuery(`${item.name}, ${item.address}`)} style={{padding:14,borderRadius:14,backgroundColor:'#E7EBD8'}}><Text>{item.name}</Text><Text style={{color:'#666',marginTop:4}}>{item.interests.join(' · ') || 'Saved for later'}</Text></Pressable>)}
+          </View>}
           </View>
         </View>
       </ScrollView>
@@ -263,7 +154,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F7F4EF",
+    backgroundColor: "#F8F5EB",
   },
 
   scrollContent: {
@@ -278,27 +169,33 @@ const styles = StyleSheet.create({
     paddingTop: 32,
   },
 
+  desktopContent: {maxWidth:1320,paddingHorizontal:64,paddingTop:64,flexDirection:'row',gap:80,alignItems:'flex-start'},
+  hero: {},
+  desktopHero: {flex:1,paddingTop:34},
+  desktopTitle: {fontSize:54,lineHeight:62},
+  desktopDescription: {fontSize:19,lineHeight:30,color:'#736D62',maxWidth:410},
+  desktopForm: {flex:1,backgroundColor:'#FFFCF4',borderRadius:28,borderWidth:1,borderColor:'#E0D9CE',padding:32},
   logo: {
     fontSize: 15,
     fontWeight: "800",
     letterSpacing: 4,
-    color: "#111111",
-    marginBottom: 50,
+    color: "#174D43",
+    marginBottom: 36,
   },
 
   title: {
-    fontSize: 44,
+    fontSize: 36,
     fontWeight: "700",
-    lineHeight: 48,
-    color: "#111111",
+    lineHeight: 40,
+    color: "#174D43",
   },
 
   subtitle: {
-    fontSize: 44,
+    fontSize: 36,
     fontWeight: "300",
-    lineHeight: 48,
-    color: "#111111",
-    marginBottom: 54,
+    lineHeight: 40,
+    color: "#174D43",
+    marginBottom: 34,
   },
 
   searchSection: {
@@ -308,7 +205,7 @@ const styles = StyleSheet.create({
   question: {
     fontSize: 21,
     fontWeight: "700",
-    color: "#111111",
+    color: "#174D43",
     marginBottom: 4,
   },
 
@@ -320,14 +217,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 18,
     fontSize: 17,
-    color: "#111111",
+    color: "#174D43",
   },
 
   searchButton: {
     borderRadius: 18,
     paddingVertical: 17,
     alignItems: "center",
-    backgroundColor: "#111111",
+    backgroundColor: "#174D43",
   },
 
   searchButtonDisabled: {
@@ -352,7 +249,7 @@ const styles = StyleSheet.create({
   locationButtonText: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#111111",
+    color: "#174D43",
   },
 
   mapSection: {
@@ -369,7 +266,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#111111",
+    color: "#174D43",
   },
 
   sectionLink: {
@@ -381,7 +278,7 @@ const styles = StyleSheet.create({
   mapPlaceholder: {
     minHeight: 280,
     borderRadius: 24,
-    backgroundColor: "#E8E3DB",
+    backgroundColor: "#E7EBD8",
     padding: 24,
     justifyContent: "center",
     alignItems: "center",
@@ -395,7 +292,7 @@ const styles = StyleSheet.create({
   mapTitle: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#111111",
+    color: "#174D43",
     marginBottom: 8,
   },
 
@@ -423,7 +320,7 @@ const styles = StyleSheet.create({
     width: 52,
     height: 52,
     borderRadius: 26,
-    backgroundColor: "#111111",
+    backgroundColor: "#174D43",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -445,7 +342,7 @@ const styles = StyleSheet.create({
   matchPinText: {
     fontSize: 15,
     fontWeight: "800",
-    color: "#111111",
+    color: "#174D43",
   },
 
   pinLabel: {
@@ -481,7 +378,7 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontSize: 17,
     fontWeight: "700",
-    color: "#111111",
+    color: "#174D43",
   },
 
   cardSubtitle: {
@@ -498,7 +395,7 @@ const styles = StyleSheet.create({
 
   bottomMessage: {
     marginTop: 55,
-    backgroundColor: "#111111",
+    backgroundColor: "#174D43",
     borderRadius: 24,
     padding: 24,
   },
