@@ -62,7 +62,7 @@ for (const [query, family, keyword] of [["Cédric Grolet Opéra",'bakery_pastry'
       if (contents.includes('experience-understanding')) return {text:JSON.stringify({category:family,categoryFamily:family,experienceKeywords:[keyword, ` ${keyword.toUpperCase()} `, 'atmosphere']})};
       return grounded(['candidate-0','candidate-1','candidate-2','invented'].map((candidateId,i) => ({candidateId,similarityScore:i===0?90:80,localScore:70,distinctivenessScore:60,chainLikelihood:0,popularityScore:40,keywordScores:[i===1?100:0,50]})), [keyword,'atmosphere']);
     }}}
-    const api = load('src/app/places+api.ts', {'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking}, {fetch:mockFetch});
+    const api = load('src/lib/live-place-search.ts', {'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking}, {fetch:mockFetch});
     async function post(body) { const response = await api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:query,...body})})); assert.equal(response.status,200);return response.json(); }
     const first = await post({});
     assert.equal(first.recommendations[0].name,'broad');
@@ -79,7 +79,7 @@ for (const [query, family, keyword] of [["Cédric Grolet Opéra",'bakery_pastry'
       assert.equal(result.candidateCount,count);
       assert.equal(result.recommendations.length,count);
     }
-    const otherWorker = load('src/app/places+api.ts', {'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking}, {fetch:mockFetch});
+    const otherWorker = load('src/lib/live-place-search.ts', {'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking}, {fetch:mockFetch});
     const replay = await otherWorker.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:query,searchId:first.searchId,preference:'closest'})}));
     assert.equal(replay.status,200);
     const tampered = await api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:query,searchId:'x'+first.searchId})}));
@@ -189,7 +189,7 @@ for (const failure of ['invalid JSON', 'truncated JSON', 'missing candidate', 'm
       assert.deepEqual(plain(config.tools), [{googleSearch:{}}]);
       return grounded([item], ['Rare editions','Reading room']);
     }}}
-    const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>Response.json({features:url.includes('/v2/places')?[feature('alternative',0.001)]:[feature(url.includes('type=city')?'city':'original')]})});
+    const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>Response.json({features:url.includes('/v2/places')?[feature('alternative',0.001)]:[feature(url.includes('type=city')?'city':'original')]})});
     const request = body=>new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:'Bookstore',...body})});
     const response=await api.POST(request({}));
     assert.equal(response.status,200);
@@ -249,7 +249,7 @@ test('API never promotes uncited experience guesses into focus scores', async ()
     assert.ok(config.tools[0].googleSearch);
     return {text:JSON.stringify({recommendations:[{candidateId:'candidate-0',similarityScore:80,localScore:60,distinctivenessScore:60,chainLikelihood:0,popularityScore:30,keywordScores:[100,100],experienceEvidence:[{status:'SUPPORTED',summary:'A confident but uncited claim about rare editions.'},{status:'UNKNOWN',summary:'No evidence.'}],whySimilar:'Bookshop.',whyTryInstead:'Explore its selection.'}]})};
   }} }
-  const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>Response.json({features:url.includes('/v2/places')?[feature('alternative')]:[feature(url.includes('type=city')?'city':'original')]})});
+  const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>Response.json({features:url.includes('/v2/places')?[feature('alternative')]:[feature(url.includes('type=city')?'city':'original')]})});
   const initial=await(await api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:'Original bookstore'})}))).json();
   const item=initial.recommendations[0];
   assert.equal(item.keywordScores['Rare editions'],0);
@@ -278,7 +278,7 @@ test('dinner matching uses intent, preserves plans across filters and rejects ch
     if(contents.includes('experience-understanding'))return {text:JSON.stringify({category:'Italian restaurant',categoryFamily:'restaurant',experienceKeywords:['Handmade pasta','Intimate dining'],intentSummary:'Handmade pasta for a relaxed dinner.'})};
     return grounded([{candidateId:'candidate-0',similarityScore:90,localScore:80,distinctivenessScore:70,chainLikelihood:0,popularityScore:50,keywordScores:[95,80]}],['Handmade pasta','Intimate dining']);
   }}}
-  const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>{calls.push(url);return Response.json({features:[feature(url.includes('/v2/places')?'alternative':url.includes('type=city')?'city':'original')]});}});
+  const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>{calls.push(url);return Response.json({features:[feature(url.includes('/v2/places')?'alternative':url.includes('type=city')?'city':'original')]});}});
   const context=contextLib.normalizeSearchContext({mode:'tonight',city:'New York',intent:'handmade pasta',date:'2026-11-02',time:'19:30',partySize:2});
   const post=body=>api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:'Famous restaurant',context,...body})}));
   const response=await post({});assert.equal(response.status,200);const initial=await response.json();
@@ -361,7 +361,7 @@ test('taste boosts require supported evidence and remain secondary to explicit i
 
 
 test('unnamed place records cannot turn an address into a recommended business',()=>{
- const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{append:'\nexport {featureToCandidate};'});
+ const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{append:'\nexport {featureToCandidate};'});
  const unknown=api.featureToCandidate({properties:{address_line1:'Example Street',formatted:'Example Street, City'},geometry:{coordinates:[0,0]}},0,0);
  assert.equal(unknown.name,'Unnamed place');
  const named=api.featureToCandidate({properties:{name:' Real Bakery ',address_line1:'Example Street'},geometry:{coordinates:[0,0]}},0,0);
@@ -384,12 +384,12 @@ test('absence of search evidence is never treated as proof that a venue lacks an
 
 test('place discovery recovers from a transient provider timeout',async()=>{
  let calls=0;
- const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{append:'\nexport {fetchJson};',fetch:async()=>{calls++;if(calls===1)throw Object.assign(new Error('temporary'),{name:'TimeoutError'});return Response.json({features:[]});}});
+ const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{append:'\nexport {fetchJson};',fetch:async()=>{calls++;if(calls===1)throw Object.assign(new Error('temporary'),{name:'TimeoutError'});return Response.json({features:[]});}});
  assert.deepEqual(plain(await api.fetchJson('https://example.com',new AbortController().signal)),{features:[]});assert.equal(calls,2);
 });
 test('place discovery returns a clear service error after bounded retries and honors cancellation',async()=>{
  let calls=0;
- const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{append:'\nexport {fetchJson};',fetch:async()=>{calls++;return Response.json({},{status:503});}});
+ const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{append:'\nexport {fetchJson};',fetch:async()=>{calls++;return Response.json({},{status:503});}});
  await assert.rejects(api.fetchJson('https://example.com',new AbortController().signal),/temporarily unavailable/);assert.equal(calls,2);
  const controller=new AbortController();controller.abort();await assert.rejects(api.fetchJson('https://example.com',controller.signal),error=>error.name==='AbortError');assert.equal(calls,2);
 });
@@ -404,7 +404,7 @@ test('negative experience claims require an explicit source denial, never a miss
 
 test('place cache avoids repeat calls, uses recent real data during outages, and expires it', async () => {
   let calls=0, now=0, unavailable=false;
-  const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{
+  const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{
     append:'\nexport {fetchJson};', Date:{now:()=>now},
     fetch:async()=>{calls++;return unavailable?Response.json({},{status:503}):Response.json({features:[{properties:{name:'Real venue'}}]});},
   });
@@ -426,7 +426,7 @@ test('category discovery starts together and retains real matches when one categ
   let release;
   const barrier=new Promise(resolve=>{release=resolve;});
   const started=[];
-  const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{
+  const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:class{}},'../lib/places-ranking':ranking},{
     append:'\nexport {discoverCityCandidates};',
     fetch:async url=>{const category=new URL(url).searchParams.get('categories');started.push(category);if(started.length===2)release();await barrier;
       if(category==='catering.cafe')return Response.json({},{status:503});
@@ -443,7 +443,7 @@ test('city-boundary failure falls back to a real nearby search and preserves its
   class AI {models={generateContent:async({contents})=>contents.includes('experience-understanding')
     ?{text:JSON.stringify({category:'Books',categoryFamily:'books',experienceKeywords:['Rare editions','Reading room']})}
     :grounded([{candidateId:'candidate-0',similarityScore:80,localScore:60,distinctivenessScore:60,chainLikelihood:0,popularityScore:30,keywordScores:[80,50]}],['Rare editions','Reading room'])};}
-  const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>{
+  const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>{
     if(url.includes('type=city'))return Response.json({},{status:503});
     if(url.includes('/v2/places')){assert.equal(new URL(url).searchParams.get('filter'),'circle:-74,40.7,15000');radiusQueries++;return Response.json({features:[feature('Alternative')]});}
     return Response.json({features:[feature('Original')]});
@@ -554,7 +554,7 @@ test('NYC scope accepts all five boroughs and rejects nearby cities, other count
 test('outside-NYC requests and resolved venues stop before AI research',async()=>{
  let providerCalls=0,generations=0;
  class AI {models={generateContent:async()=>{generations++;throw Error('Research must not run');}};}
- const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async()=>{providerCalls++;return Response.json({features:[{properties:{name:'Girafe',city:'Paris',country:'France'},geometry:{coordinates:[2.3,48.8]}}]});}});
+ const api=load('src/lib/live-place-search.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async()=>{providerCalls++;return Response.json({features:[{properties:{name:'Girafe',city:'Paris',country:'France'},geometry:{coordinates:[2.3,48.8]}}]});}});
  const post=context=>api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:'Girafe',context})}));
  assert.equal((await post({city:'Paris'})).status,400);assert.equal(providerCalls,0);
  assert.equal((await post({})).status,400);assert.equal(generations,0);

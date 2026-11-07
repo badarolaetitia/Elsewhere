@@ -1,0 +1,2482 @@
+{
+  "version": "nyc-west-village-v2",
+  "area": "West Village, Manhattan",
+  "checkedAt": "2026-11-07",
+  "boundary": {
+    "code": "MN0203",
+    "name": "West Village",
+    "sourceUrl": "https://data.cityofnewyork.us/resource/9nt8-h7nd.json?nta2020=MN0203",
+    "sha256": "d339251a7e64ff08c05c7bd6113ab554a02a146d1b9a7ab366c343811f9fdc44"
+  },
+  "venues": [
+    {
+      "id": "nyc-dohmh:41217083",
+      "camis": "41217083",
+      "name": "11 STREET CAFE",
+      "aliases": [],
+      "address": "327 WEST   11 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735630046012,
+      "longitude": -74.007476594239,
+      "cuisine": "Coffee/Tea",
+      "categoryFamily": "cafe",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Coffee/Tea",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41217083"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41217083"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40783353",
+      "camis": "40783353",
+      "name": "A SALT & BATTERY",
+      "aliases": [],
+      "address": "112 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.738473843406,
+      "longitude": -74.002226475044,
+      "cuisine": "English",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: English",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as English. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40783353"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40783353"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50006594",
+      "camis": "50006594",
+      "name": "APERITIVO DI PALMA",
+      "aliases": [],
+      "address": "30 CORNELIA STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731392352198,
+      "longitude": -74.002186547711,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50006594"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50006594"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41495911",
+      "camis": "41495911",
+      "name": "ARIA",
+      "aliases": [],
+      "address": "117 PERRY STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735053697447,
+      "longitude": -74.006632172242,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41495911"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41495911"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40976304",
+      "camis": "40976304",
+      "name": "ART BAR",
+      "aliases": [],
+      "address": "52 8 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.738578108589,
+      "longitude": -74.003630206504,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40976304"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40976304"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40385161",
+      "camis": "40385161",
+      "name": "AUTOMATIC SLIM'S",
+      "aliases": [],
+      "address": "733 WASHINGTON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.736299712402,
+      "longitude": -74.008292175149,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40385161"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40385161"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40554183",
+      "camis": "40554183",
+      "name": "BARROW'S PUB",
+      "aliases": [],
+      "address": "463 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731499225499,
+      "longitude": -74.00666068247,
+      "cuisine": "Irish",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Irish",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Irish. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40554183"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40554183"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41225392",
+      "camis": "41225392",
+      "name": "BAYARD'S ALEHOUSE",
+      "aliases": [],
+      "address": "533 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734329103281,
+      "longitude": -74.006209925913,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41225392"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41225392"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41395589",
+      "camis": "41395589",
+      "name": "BERIMBAU",
+      "aliases": [],
+      "address": "43 CARMINE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.729989743376,
+      "longitude": -74.003539534624,
+      "cuisine": "Brazilian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Brazilian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Brazilian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41395589"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41395589"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41185348",
+      "camis": "41185348",
+      "name": "BLIND TIGER",
+      "aliases": [],
+      "address": "281 BLEECKER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731779337195,
+      "longitude": -74.003308706172,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41185348"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41185348"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40965997",
+      "camis": "40965997",
+      "name": "BONSIGNOUR",
+      "aliases": [],
+      "address": "35 JANE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.738136171968,
+      "longitude": -74.00447097009,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40965997"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40965997"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41025084",
+      "camis": "41025084",
+      "name": "BRASS MONKEY",
+      "aliases": [],
+      "address": "55 LITTLE WEST   12 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.740551330431,
+      "longitude": -74.008574182006,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41025084"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41025084"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41530089",
+      "camis": "41530089",
+      "name": "BROOKLYNEER",
+      "aliases": [],
+      "address": "220 WEST HOUSTON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.728534980416,
+      "longitude": -74.004589387743,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41530089"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41530089"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40380660",
+      "camis": "40380660",
+      "name": "BURRITO LOCO",
+      "aliases": [],
+      "address": "166 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732012681351,
+      "longitude": -74.001403589122,
+      "cuisine": "Mexican",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mexican",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40380660"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40380660"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40400155",
+      "camis": "40400155",
+      "name": "BUS STOP CAFE",
+      "aliases": [],
+      "address": "597 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.736958606135,
+      "longitude": -74.005852933681,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40400155"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40400155"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41541889",
+      "camis": "41541889",
+      "name": "BUVETTE",
+      "aliases": [],
+      "address": "42 GROVE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732759180971,
+      "longitude": -74.004416484337,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41541889"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41541889"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41204508",
+      "camis": "41204508",
+      "name": "CAFE CLUNY",
+      "aliases": [],
+      "address": "284 WEST   12 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.737529596266,
+      "longitude": -74.004009041465,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41204508"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41204508"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41287338",
+      "camis": "41287338",
+      "name": "CAFE PANINO MUCHO GUSTO",
+      "aliases": [],
+      "address": "551 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735234883433,
+      "longitude": -74.006062067345,
+      "cuisine": "Coffee/Tea",
+      "categoryFamily": "cafe",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Coffee/Tea",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41287338"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41287338"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40544958",
+      "camis": "40544958",
+      "name": "CALIENTE CAB CO.",
+      "aliases": [],
+      "address": "61 7 AVENUE SOUTH, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731622866008,
+      "longitude": -74.00392930483,
+      "cuisine": "Mexican",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mexican",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544958"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544958"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40566335",
+      "camis": "40566335",
+      "name": "CARRY ON TEA & SYMPATHY",
+      "aliases": [],
+      "address": "110 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.738410714539,
+      "longitude": -74.002190387465,
+      "cuisine": "English",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: English",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as English. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40566335"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40566335"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41382007",
+      "camis": "41382007",
+      "name": "CASA LA FEMME",
+      "aliases": [],
+      "address": "140 CHARLES STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734156073531,
+      "longitude": -74.007981592284,
+      "cuisine": "Egyptian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Egyptian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Egyptian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41382007"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41382007"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40365166",
+      "camis": "40365166",
+      "name": "CORNER BISTRO",
+      "aliases": [],
+      "address": "331 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.737924847314,
+      "longitude": -74.003861116033,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40365166"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40365166"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50014197",
+      "camis": "50014197",
+      "name": "COTENNA",
+      "aliases": [],
+      "address": "21 BEDFORD STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.729116907942,
+      "longitude": -74.003539488084,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014197"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014197"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40514147",
+      "camis": "40514147",
+      "name": "CREATIVE EDGE CATERERS",
+      "aliases": [],
+      "address": "110 BARROW STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731847689049,
+      "longitude": -74.00850089398,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40514147"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40514147"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40393519",
+      "camis": "40393519",
+      "name": "DOWN THE HATCH",
+      "aliases": [],
+      "address": "175 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732394199298,
+      "longitude": -74.00172472868,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40393519"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40393519"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41567865",
+      "camis": "41567865",
+      "name": "EMPELLON",
+      "aliases": [],
+      "address": "230 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734112397275,
+      "longitude": -74.002940774604,
+      "cuisine": "Mexican",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mexican",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41567865"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41567865"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41100350",
+      "camis": "41100350",
+      "name": "EMPLOYEE'S ONLY",
+      "aliases": [],
+      "address": "510 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733390386695,
+      "longitude": -74.006339735926,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41100350"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41100350"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41398358",
+      "camis": "41398358",
+      "name": "ENTWINE",
+      "aliases": [],
+      "address": "765 WASHINGTON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.737389389895,
+      "longitude": -74.00820570751,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41398358"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41398358"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40575863",
+      "camis": "40575863",
+      "name": "Joe's Pizza",
+      "aliases": [
+        "FAMOUS JOE'S PIZZA",
+        "Famous Joe's Pizza"
+      ],
+      "address": "7 CARMINE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730464624216,
+      "longitude": -74.002042192588,
+      "cuisine": "Pizza",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Pizza",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Pizza. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40575863"
+        },
+        {
+          "label": "Pizza",
+          "summary": "Joe's Pizza's published website documents pizza.",
+          "sourceUrl": "https://www.joespizzanyc.com/locations"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40575863"
+      ],
+      "website": "https://www.joespizzanyc.com/locations"
+    },
+    {
+      "id": "nyc-dohmh:41646967",
+      "camis": "41646967",
+      "name": "FAY DA BAKERY",
+      "aliases": [],
+      "address": "321 6 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730988883252,
+      "longitude": -74.001461297756,
+      "cuisine": "Bakery Products/Desserts",
+      "categoryFamily": "bakery_pastry",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Bakery Products/Desserts",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41646967"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41646967"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40703670",
+      "camis": "40703670",
+      "name": "GHANDI CAFE",
+      "aliases": [],
+      "address": "283 BLEECKER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731878147161,
+      "longitude": -74.003362833962,
+      "cuisine": "Indian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Indian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Indian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40703670"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40703670"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41326196",
+      "camis": "41326196",
+      "name": "GOLDEN WOKS",
+      "aliases": [],
+      "address": "159 CHRISTOPHER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732704069451,
+      "longitude": -74.008313375389,
+      "cuisine": "Chinese",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Chinese",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Chinese. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41326196"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41326196"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41283835",
+      "camis": "41283835",
+      "name": "GOTTINO",
+      "aliases": [],
+      "address": "52 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.73571263107,
+      "longitude": -74.0005881691,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41283835"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41283835"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41218950",
+      "camis": "41218950",
+      "name": "GREENWICH TREEHOUSE",
+      "aliases": [],
+      "address": "46 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.735594606542,
+      "longitude": -74.000519608588,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41218950"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41218950"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41489751",
+      "camis": "41489751",
+      "name": "HUDSON CLEARWATER",
+      "aliases": [],
+      "address": "447 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731049080016,
+      "longitude": -74.006729192073,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41489751"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41489751"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50000479",
+      "camis": "50000479",
+      "name": "IFC CENTER",
+      "aliases": [],
+      "address": "323 6 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731159060021,
+      "longitude": -74.001353056947,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50000479"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50000479"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50014568",
+      "camis": "50014568",
+      "name": "INSOMNIA COOKIES",
+      "aliases": [],
+      "address": "304 WEST   14 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.739859935901,
+      "longitude": -74.002818336019,
+      "cuisine": "Bakery Products/Desserts",
+      "categoryFamily": "bakery_pastry",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Bakery Products/Desserts",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014568"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014568"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50017903",
+      "camis": "50017903",
+      "name": "JACK'S WIFE FREDA",
+      "aliases": [],
+      "address": "50 CARMINE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.729970529906,
+      "longitude": -74.003543141686,
+      "cuisine": "Mediterranean",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mediterranean",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mediterranean. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50017903"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50017903"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40674475",
+      "camis": "40674475",
+      "name": "John’s of Bleecker Street",
+      "aliases": [
+        "JOHN'S PIZZERIA"
+      ],
+      "address": "278 BLEECKER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731691505439,
+      "longitude": -74.003283444529,
+      "cuisine": "Pizza",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Pizza",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Pizza. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40674475"
+        },
+        {
+          "label": "Pizza",
+          "summary": "John’s of Bleecker Street lists pizza on its published website or linked menu.",
+          "sourceUrl": "https://johnsofbleecker.com/"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40674475"
+      ],
+      "website": "https://johnsofbleecker.com/"
+    },
+    {
+      "id": "nyc-dohmh:40401895",
+      "camis": "40401895",
+      "name": "JOHNNY'S BAR",
+      "aliases": [],
+      "address": "90 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.737738254285,
+      "longitude": -74.001797037737,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40401895"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40401895"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41431046",
+      "camis": "41431046",
+      "name": "JOSEPH LEONARD",
+      "aliases": [],
+      "address": "170 WAVERLY PLACE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733651303685,
+      "longitude": -74.001576821564,
+      "cuisine": "New American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: New American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as New American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41431046"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41431046"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40729164",
+      "camis": "40729164",
+      "name": "JULIUS'",
+      "aliases": [],
+      "address": "159 WEST   10 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734439049353,
+      "longitude": -74.001699523502,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40729164"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40729164"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41451912",
+      "camis": "41451912",
+      "name": "KARAOKE BOHO",
+      "aliases": [],
+      "address": "186 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732591819214,
+      "longitude": -74.001923186451,
+      "cuisine": "Korean",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Korean",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Korean. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41451912"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41451912"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41033313",
+      "camis": "41033313",
+      "name": "KETTLE OF FISH",
+      "aliases": [],
+      "address": "59 CHRISTOPHER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733697952566,
+      "longitude": -74.002294872356,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41033313"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41033313"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41378319",
+      "camis": "41378319",
+      "name": "L'ARTUSI",
+      "aliases": [],
+      "address": "228 WEST   10 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733900971404,
+      "longitude": -74.005174303498,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41378319"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41378319"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40574293",
+      "camis": "40574293",
+      "name": "LA BONBONNIERE",
+      "aliases": [],
+      "address": "28 8 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.737760135509,
+      "longitude": -74.004568374549,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40574293"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40574293"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50001073",
+      "camis": "50001073",
+      "name": "LE BARATIN",
+      "aliases": [],
+      "address": "26 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.735018207101,
+      "longitude": -74.000169592997,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50001073"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50001073"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40544528",
+      "camis": "40544528",
+      "name": "LE GIGOT",
+      "aliases": [],
+      "address": "18 CORNELIA STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731510382828,
+      "longitude": -74.001861816213,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544528"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544528"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41601611",
+      "camis": "41601611",
+      "name": "LEFT BANK",
+      "aliases": [],
+      "address": "117 PERRY STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735053697447,
+      "longitude": -74.006632172242,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41601611"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41601611"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41279957",
+      "camis": "41279957",
+      "name": "LELABAR",
+      "aliases": [],
+      "address": "422 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730478164589,
+      "longitude": -74.006801296496,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41279957"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41279957"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41266621",
+      "camis": "41266621",
+      "name": "Magnolia Bakery",
+      "aliases": [
+        "MAGNOLIA BAKERY"
+      ],
+      "address": "401 BLEECKER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735860737015,
+      "longitude": -74.005087854493,
+      "cuisine": "Bakery Products/Desserts",
+      "categoryFamily": "bakery_pastry",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Bakery Products/Desserts",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41266621"
+        },
+        {
+          "label": "Cupcakes",
+          "summary": "Magnolia Bakery lists cupcakes on its published website or linked menu.",
+          "sourceUrl": "https://magnoliabakery.order.online/en-US/store/magnolia-bakery-west-village-22785"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41266621"
+      ],
+      "website": "https://www.magnoliabakery.com/pages/store-list"
+    },
+    {
+      "id": "nyc-dohmh:41491940",
+      "camis": "41491940",
+      "name": "MALAPARTE",
+      "aliases": [],
+      "address": "753 WASHINGTON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.736834944495,
+      "longitude": -74.008248940491,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41491940"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41491940"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41277451",
+      "camis": "41277451",
+      "name": "MARKET TABLE",
+      "aliases": [],
+      "address": "54 CARMINE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.729932099336,
+      "longitude": -74.003665814531,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41277451"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41277451"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41471053",
+      "camis": "41471053",
+      "name": "MEME MEDITERRANEAN",
+      "aliases": [],
+      "address": "581 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.73635750191,
+      "longitude": -74.005870922848,
+      "cuisine": "Mediterranean",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mediterranean",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mediterranean. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41471053"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41471053"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41465581",
+      "camis": "41465581",
+      "name": "MOLE",
+      "aliases": [],
+      "address": "57 JANE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.738141622621,
+      "longitude": -74.00537671185,
+      "cuisine": "Mexican",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mexican",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41465581"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41465581"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41604438",
+      "camis": "41604438",
+      "name": "Molly’s Cupcakes",
+      "aliases": [
+        "MOLLY'S CUPCAKES"
+      ],
+      "address": "228 BLEECKER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730143480354,
+      "longitude": -74.002370519504,
+      "cuisine": "Bakery Products/Desserts",
+      "categoryFamily": "bakery_pastry",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Bakery Products/Desserts",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41604438"
+        },
+        {
+          "label": "Cupcakes",
+          "summary": "Molly’s Cupcakes lists cupcakes on its published website or linked menu.",
+          "sourceUrl": "https://mollyscupcakes.com/cupcakes/"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41604438"
+      ],
+      "website": "https://mollyscupcakes.com/locations/"
+    },
+    {
+      "id": "nyc-dohmh:41452375",
+      "camis": "41452375",
+      "name": "OFRENDA",
+      "aliases": [],
+      "address": "113 7 AVENUE SOUTH, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733879099742,
+      "longitude": -74.002634058792,
+      "cuisine": "Mexican",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Mexican",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41452375"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41452375"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41466316",
+      "camis": "41466316",
+      "name": "OLIO E PIU",
+      "aliases": [],
+      "address": "3 GREENWICH AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733931279931,
+      "longitude": -73.999635561442,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41466316"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41466316"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41493787",
+      "camis": "41493787",
+      "name": "ORIENT EXPRESS",
+      "aliases": [],
+      "address": "325 WEST   11 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735641029749,
+      "longitude": -74.007404427566,
+      "cuisine": "Tapas",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Tapas",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Tapas. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41493787"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41493787"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50011097",
+      "camis": "50011097",
+      "name": "OSCAR'S PLACE",
+      "aliases": [],
+      "address": "466 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731825856707,
+      "longitude": -74.006588551482,
+      "cuisine": "English",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: English",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as English. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50011097"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50011097"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40803254",
+      "camis": "40803254",
+      "name": "Palma",
+      "aliases": [
+        "PALMA"
+      ],
+      "address": "28 CORNELIA STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731411566573,
+      "longitude": -74.00213242586,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40803254"
+        },
+        {
+          "label": "Italian dining",
+          "summary": "Palma's published website documents italian dining.",
+          "sourceUrl": "https://www.palmanyc.com/"
+        },
+        {
+          "label": "Courtyard dining",
+          "summary": "Palma's published website documents courtyard dining.",
+          "sourceUrl": "https://www.palmanyc.com/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Palma’s October 2026 dinner menu lists handmade pasta.",
+          "sourceUrl": "https://media-cdn.getbento.com/accounts/9491cb63002068da37dcce19f78b0de5/media/hN2naf9SCyT7biIeItFj_Dinner%20Digital%20October%202026.pdf"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40803254"
+      ],
+      "website": "https://www.palmanyc.com/"
+    },
+    {
+      "id": "nyc-dohmh:41473120",
+      "camis": "41473120",
+      "name": "PASTICCERIA ROCCO",
+      "aliases": [],
+      "address": "243 BLEECKER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730703405564,
+      "longitude": -74.002684446556,
+      "cuisine": "Bakery Products/Desserts",
+      "categoryFamily": "bakery_pastry",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Bakery Products/Desserts",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41473120"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41473120"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41644212",
+      "camis": "41644212",
+      "name": "RAFELE",
+      "aliases": [],
+      "address": "29 7 AVENUE SOUTH, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730804909105,
+      "longitude": -74.004394705519,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41644212"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41644212"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41721444",
+      "camis": "41721444",
+      "name": "READY TO EAT",
+      "aliases": [],
+      "address": "525 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734051879716,
+      "longitude": -74.006253199687,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41721444"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41721444"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41576935",
+      "camis": "41576935",
+      "name": "RED FARM / DECOY",
+      "aliases": [],
+      "address": "529 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734191863884,
+      "longitude": -74.006231562974,
+      "cuisine": "Chinese",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Chinese",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Chinese. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41576935"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41576935"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40752437",
+      "camis": "40752437",
+      "name": "SANPANINO",
+      "aliases": [],
+      "address": "494 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732731637327,
+      "longitude": -74.006444311893,
+      "cuisine": "Sandwiches",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Sandwiches",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Sandwiches. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40752437"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40752437"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40993101",
+      "camis": "40993101",
+      "name": "SANT AMBROEUS",
+      "aliases": [],
+      "address": "259 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735287147851,
+      "longitude": -74.003258363761,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40993101"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40993101"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41639470",
+      "camis": "41639470",
+      "name": "SERAFINA",
+      "aliases": [],
+      "address": "7 9 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.739596297046,
+      "longitude": -74.006358371758,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41639470"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41639470"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41074207",
+      "camis": "41074207",
+      "name": "SMALLS JAZZ CLUB",
+      "aliases": [],
+      "address": "183 WEST   10 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734279831343,
+      "longitude": -74.002803665805,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41074207"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41074207"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41629922",
+      "camis": "41629922",
+      "name": "SOTTO 13",
+      "aliases": [],
+      "address": "140 WEST   13 STREET, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.737175583067,
+      "longitude": -73.998585476263,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41629922"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41629922"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41381168",
+      "camis": "41381168",
+      "name": "SPUNTO",
+      "aliases": [],
+      "address": "65 CARMINE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.72971249263,
+      "longitude": -74.004391025124,
+      "cuisine": "Pizza",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Pizza",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Pizza. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381168"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381168"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41600154",
+      "camis": "41600154",
+      "name": "STARBUCKS COFFEE",
+      "aliases": [],
+      "address": "122 GREENWICH AVENUE, Manhattan, NY 10011",
+      "borough": "Manhattan",
+      "zip": "10011",
+      "latitude": 40.738954171049,
+      "longitude": -74.002515177206,
+      "cuisine": "Coffee/Tea",
+      "categoryFamily": "cafe",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Coffee/Tea",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41600154"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41600154"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50002265",
+      "camis": "50002265",
+      "name": "SUSHI NAKAZAWA",
+      "aliases": [],
+      "address": "23 COMMERCE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.731650288851,
+      "longitude": -74.004596819487,
+      "cuisine": "Japanese",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Japanese",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Japanese. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50002265"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50002265"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40392496",
+      "camis": "40392496",
+      "name": "TARTINE",
+      "aliases": [],
+      "address": "253 WEST   11 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.736214877103,
+      "longitude": -74.003294493571,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40392496"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40392496"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40573138",
+      "camis": "40573138",
+      "name": "TAVERN ON JANE",
+      "aliases": [],
+      "address": "31 8 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.738171866483,
+      "longitude": -74.004135378917,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40573138"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40573138"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50004681",
+      "camis": "50004681",
+      "name": "THE CLAM",
+      "aliases": [],
+      "address": "420 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730428758385,
+      "longitude": -74.006808507658,
+      "cuisine": "Seafood",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Seafood",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Seafood. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50004681"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50004681"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41029356",
+      "camis": "41029356",
+      "name": "THE DUPLEX",
+      "aliases": [],
+      "address": "61 CHRISTOPHER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733689717103,
+      "longitude": -74.002352604702,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41029356"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41029356"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50008995",
+      "camis": "50008995",
+      "name": "THE ELK",
+      "aliases": [],
+      "address": "128 CHARLES STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734249437026,
+      "longitude": -74.007360972495,
+      "cuisine": "Coffee/Tea",
+      "categoryFamily": "cafe",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Coffee/Tea",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008995"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008995"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40996223",
+      "camis": "40996223",
+      "name": "THE FOUR FACED LIAR",
+      "aliases": [],
+      "address": "165 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732045618531,
+      "longitude": -74.001403589819,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40996223"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40996223"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50008347",
+      "camis": "50008347",
+      "name": "THE GREY DOG",
+      "aliases": [],
+      "address": "49 CARMINE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.729926607476,
+      "longitude": -74.003737975925,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008347"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008347"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41186217",
+      "camis": "41186217",
+      "name": "THE LITTLE OWL",
+      "aliases": [],
+      "address": "90 BEDFORD STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732210189888,
+      "longitude": -74.005314891852,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41186217"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41186217"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40592117",
+      "camis": "40592117",
+      "name": "THE OTHEROOM",
+      "aliases": [],
+      "address": "143 PERRY STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734872456791,
+      "longitude": -74.007985286781,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40592117"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40592117"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41244008",
+      "camis": "41244008",
+      "name": "THE STONEWALL INN",
+      "aliases": [],
+      "address": "53 CHRISTOPHER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.73371991395,
+      "longitude": -74.002125283435,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41244008"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41244008"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40864264",
+      "camis": "40864264",
+      "name": "THE VILLAGE TAVERN",
+      "aliases": [],
+      "address": "46 BEDFORD STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.730483774445,
+      "longitude": -74.00431891384,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40864264"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40864264"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41219088",
+      "camis": "41219088",
+      "name": "THE WAVERLY INN",
+      "aliases": [],
+      "address": "16 BANK STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.737019115751,
+      "longitude": -74.002370765062,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41219088"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41219088"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41620128",
+      "camis": "41620128",
+      "name": "THINK COFFEE",
+      "aliases": [],
+      "address": "73 8 AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.739453712514,
+      "longitude": -74.002753363919,
+      "cuisine": "Coffee/Tea",
+      "categoryFamily": "cafe",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Coffee/Tea",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41620128"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41620128"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40366473",
+      "camis": "40366473",
+      "name": "TIO PEPE",
+      "aliases": [],
+      "address": "168 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732056597098,
+      "longitude": -74.001443280258,
+      "cuisine": "Spanish",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Spanish",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Spanish. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40366473"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40366473"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41634218",
+      "camis": "41634218",
+      "name": "TUE THAI FOOD",
+      "aliases": [],
+      "address": "3 GREENWICH AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733931279931,
+      "longitude": -73.999635561442,
+      "cuisine": "Thai",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Thai",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Thai. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41634218"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41634218"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41053093",
+      "camis": "41053093",
+      "name": "TURKS & FROGS",
+      "aliases": [],
+      "address": "323 WEST   11 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735649268908,
+      "longitude": -74.00732865217,
+      "cuisine": "French",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: French",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41053093"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41053093"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:40371805",
+      "camis": "40371805",
+      "name": "TY'S",
+      "aliases": [],
+      "address": "114 CHRISTOPHER STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.733192808056,
+      "longitude": -74.005477342338,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40371805"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40371805"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:50008323",
+      "camis": "50008323",
+      "name": "Via Carota",
+      "aliases": [
+        "VIA CAROTA"
+      ],
+      "address": "51 GROVE STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.732995255206,
+      "longitude": -74.003727323975,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008323"
+        },
+        {
+          "label": "Italian dining",
+          "summary": "Via Carota's published website documents italian dining.",
+          "sourceUrl": "https://www.viacarota.com/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Via Carota's published website documents pasta.",
+          "sourceUrl": "https://www.viacarota.com/text"
+        },
+        {
+          "label": "Terrace dining",
+          "summary": "Via Carota's published website documents terrace dining.",
+          "sourceUrl": "https://www.viacarota.com/"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008323"
+      ],
+      "website": "https://www.viacarota.com/"
+    },
+    {
+      "id": "nyc-dohmh:41021523",
+      "camis": "41021523",
+      "name": "VILLAGE VANGUARD",
+      "aliases": [],
+      "address": "178 7 AVENUE SOUTH, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735998079012,
+      "longitude": -74.001439757548,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41021523"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41021523"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41447856",
+      "camis": "41447856",
+      "name": "WILD",
+      "aliases": [],
+      "address": "535 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734537707326,
+      "longitude": -74.006173862074,
+      "cuisine": "Italian",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Italian",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41447856"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41447856"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41372275",
+      "camis": "41372275",
+      "name": "WILFIE & NELL",
+      "aliases": [],
+      "address": "228 WEST    4 STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.734071226085,
+      "longitude": -74.002929947849,
+      "cuisine": "Irish",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: Irish",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as Irish. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41372275"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41372275"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41011581",
+      "camis": "41011581",
+      "name": "WOGIES",
+      "aliases": [],
+      "address": "39 GREENWICH AVENUE, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.73539149439,
+      "longitude": -74.000422180686,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41011581"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41011581"
+      ]
+    },
+    {
+      "id": "nyc-dohmh:41381373",
+      "camis": "41381373",
+      "name": "WXOU RADIO",
+      "aliases": [],
+      "address": "558 HUDSON STREET, Manhattan, NY 10014",
+      "borough": "Manhattan",
+      "zip": "10014",
+      "latitude": 40.735369378972,
+      "longitude": -74.00602238744,
+      "cuisine": "American",
+      "categoryFamily": "restaurant",
+      "checkedAt": "2026-11-07",
+      "features": [
+        {
+          "label": "NYC category: American",
+          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
+          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381373"
+        }
+      ],
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381373"
+      ]
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import pilotCatalog from '../data/nyc-pilot-venues.json';
 import {DISCOVERY_CITY} from '../lib/discovery-scope';
 import ScheduleInput from "../components/schedule-input";
 import {useAccount} from '../components/account-provider';
@@ -77,25 +78,27 @@ export default function HomeScreen() {
             Find somewhere better.
           </Text>
 
-          {desktop&&<Text style={styles.desktopDescription}>Discover alternatives across New York City.</Text>}
+          {desktop&&<Text style={styles.desktopDescription}>Discover food and drink across West Village.</Text>}
           </View>
           <View style={desktop?styles.desktopForm:undefined}>
           <View style={styles.searchSection}>
             <Text style={styles.question}>
-              Search a place in New York City
+              Search our West Village pilot
             </Text>
 
             <TextInput
               value={searchQuery}
               onChangeText={setSearchQuery}
               accessibilityLabel="Place to find alternatives for"
-              placeholder="e.g. Lilia or Levain Bakery"
+              placeholder="e.g. Via Carota or Magnolia Bakery"
               placeholderTextColor="#8A8A8A"
               style={styles.input}
               returnKeyType="search"
               onSubmitEditing={handleSearch}
             />
 
+            <Text style={{color:'#686D60',fontSize:12}}>{pilotCatalog.venues.length} identity-matched places · West Village. Search by name or select a suggestion.</Text>
+            <View style={{flexDirection:'row',flexWrap:'wrap',gap:6}}>{pilotCatalog.venues.filter(venue=>!searchQuery.trim() || [venue.name,...venue.aliases].some(name=>name.toLowerCase().includes(searchQuery.trim().toLowerCase()))).slice(0,8).map(venue=><Pressable accessibilityRole="button" key={venue.id} onPress={()=>setSearchQuery(venue.name)} style={{padding:8,borderRadius:16,borderWidth:1,borderColor:'#D6CFC3'}}><Text style={{color:'#174D43',fontSize:12}}>{venue.name}</Text></Pressable>)}</View>
             <Text style={{fontSize:15,fontWeight:'600',marginTop:8}}>Your priorities</Text>
             <Text style={{color:"#686D60",fontSize:12}}>Select your preferences in order of importance.</Text>
             <View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>
@@ -107,7 +110,7 @@ export default function HomeScreen() {
             </View>
             {(showPreferences || priorities.length>0) && <View style={{gap:12,paddingVertical:10}}>
               <Text style={styles.question}>What are you looking for?</Text>
-              <TextInput accessibilityLabel="Preferences" value={intent} onChangeText={setIntent} maxLength={240} placeholder="e.g. handmade pasta or a relaxed atmosphere" style={styles.input} />
+              <TextInput accessibilityLabel="Preferences" value={intent} onChangeText={setIntent} maxLength={240} placeholder="Choose a documented detail on the results page" style={styles.input} />
 
             </View>}
             {mode==='tonight' && <View style={{gap:10,padding:18,backgroundColor:'#E7EBD8',borderRadius:18}}>

@@ -439,6 +439,9 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
 
   const selectedKeywords = displayedFilters?.selectedKeywords ?? [];
 
+  const activePreferenceOptions = researchStatus==='dataset'
+    ? preferenceOptions.filter(option=>option.value==='local'||option.value==='closest').map(option=>option.value==='local'?{...option,label:'Best match',description:'Shared documented features'}:option)
+    : preferenceOptions;
   const topAlternative =
     recommendations[0] ??
     null;
@@ -591,7 +594,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
           styles.preferenceGrid
         }
       >
-        {preferenceOptions.map(
+        {activePreferenceOptions.map(
           (option) => {
             const selected =
               draftFilters.preference ===
@@ -671,7 +674,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
                   )
                 }
                 accessibilityRole="radio"
-                accessibilityLabel={option.value === "all" && searchArea === "nearby" ? "Within 15 km" : option.label}
+                accessibilityLabel={option.value === "all" ? (searchArea === "pilot" ? "Pilot area" : searchArea === "nearby" ? "Within 15 km" : option.label) : option.label}
                 aria-checked={selected}
                 accessibilityState={{checked: selected}}
                 disabled={!classification}
@@ -694,7 +697,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
                       styles.distanceButtonTextSelected,
                   ]}
                 >
-                  {option.value === "all" && searchArea === "nearby" ? "Within 15 km" : option.label}
+                  {option.value === "all" ? (searchArea === "pilot" ? "Pilot area" : searchArea === "nearby" ? "Within 15 km" : option.label) : option.label}
                 </Text>
               </Pressable>
             );
@@ -725,7 +728,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
 
       {displayedFilters !== null && (
         <Text testID="applied-filter-summary" style={styles.appliedSummary} accessibilityLiveRegion="polite">
-          {filterSummary(displayedFilters, searchArea === "nearby")}
+          {researchStatus==='dataset'?filterSummary(displayedFilters,false).replace(/^Local/,'Best match').replace('Citywide','Pilot area'):filterSummary(displayedFilters, searchArea === "nearby")}
         </Text>
       )}
       {loading && displayedFilters !== null && (
@@ -739,6 +742,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
       )}
 
       {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
+      {researchStatus==='dataset'&&<Text style={[styles.helperText,{marginBottom:18}]}>West Village pilot · Sources checked November 7, 2026. Match scores compare documented features.</Text>}
       {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Showing general alternatives. Product and atmosphere matches couldn’t be checked right now.</Text>}
 
       <View
@@ -939,7 +943,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
               {(classification?.categoryFamily==='restaurant' || recommendation.categories.some(category=>category.startsWith('catering.restaurant'))) && <BookingPanel id={recommendation.placeId ?? recommendation.name} name={recommendation.name} address={recommendation.address} website={recommendation.metadata?.website} reservationUrl={recommendation.metadata?.reservationUrl} initialContext={initialContext} />}
               <Pressable accessibilityRole="button" accessibilityState={{expanded:expandedCards.includes(recommendation.placeId ?? recommendation.name)}} onPress={()=>setExpandedCards(current=>current.includes(recommendation.placeId ?? recommendation.name)?current.filter(id=>id!==(recommendation.placeId ?? recommendation.name)):[...current,recommendation.placeId ?? recommendation.name])}><Text style={{color:'#625C53',paddingTop:16}}>{expandedCards.includes(recommendation.placeId ?? recommendation.name)?'Hide details':'View details'}</Text></Pressable>
               {expandedCards.includes(recommendation.placeId ?? recommendation.name) && <View>
-              {Object.entries(recommendation.experienceEvidence ?? {}).filter(([keyword]) => selectedKeywords.length === 0 || selectedKeywords.includes(keyword)).map(([keyword, evidence]) => (
+              {Object.entries(recommendation.experienceEvidence ?? {}).filter(([keyword, evidence]) => evidence.status === "SUPPORTED" && evidence.sources.length > 0 && (selectedKeywords.length === 0 || selectedKeywords.includes(keyword))).map(([keyword, evidence]) => (
                 <View key={keyword}>
                   <Text style={styles.reasonLabel}>{keyword} · {evidence.status === "SUPPORTED" ? "Verified" : evidence.status === "NOT_SUPPORTED" ? "Does not match" : "Not verified"}</Text>
                   <Text style={styles.reasonText}>{evidence.summary}</Text>

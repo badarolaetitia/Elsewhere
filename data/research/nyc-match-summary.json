@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-07",
+  "hfRecords": 25361,
+  "officialDistinctCamis": 31463,
+  "idMatches": 6901,
+  "exactNameAddressMatchesWithValidCoordinates": 4375,
+  "idMatchesNeedingNameOrAddressReview": 2504,
+  "exactIdentityInvalidCoordinates": 22,
+  "noIdMatch": 18460,
+  "downtownIdentityMatches": 187,
+  "pilotVenues": 96,
+  "note": "Identity matching is not menu verification or proof of current operating status. HF menu, rating, price, atmosphere and crowd fields were not imported.",
+  "inputs": {
+    "hf": "0b8e5e1bbc51fc651fce51553cdff83c3c5c14038ca021ce42ae30dd61e4b48e",
+    "official": "4475a0ceb9f4e13c5b12f317c7f755d8b28286a43db8f495b2c215115a3deea5"
+  },
+  "pilotArea": "West Village, Manhattan",
+  "westVillageIdentityMatches": 96,
+  "pilotBoundary": "NYC 2020 NTA MN0203"
+}

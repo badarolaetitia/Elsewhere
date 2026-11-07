@@ -1,13 +1,13 @@
 # Elsewhere
 
-The current prototype supports **New York City only**, including all five boroughs. Searches outside NYC are rejected before AI research.
+The current prototype is limited to **96 identity-matched venues in West Village, Manhattan (NYC boundary MN0203)**. Choose a listed venue on Discover. Search uses the bundled dataset without live Geoapify or Gemini requests. Identity, address and coordinates agree across the two datasets. NYC registry cuisine categories support broad comparisons; specific offerings require separate venue sources. Unsupported fields are omitted.
 
 **Everyone’s going there. Find somewhere better.**
 
 Find alternatives to places you want to visit, based on the food, style,
 atmosphere or experience that caught your eye.
 
-For dinner, enter a restaurant, city, date, time and party size to explore
+For dinner, choose a supported restaurant, date, time and party size to explore
 similar options and look for reservations. Live table availability and queue
 times are not connected yet.
 
@@ -78,3 +78,8 @@ Supabase project or making the repository public.
 ## Hosted prototype and guide
 
 The invite-only prototype is available at https://elsewhere-discover.readylime71.chatgpt.site. Search and local saves work without signing in; invited accounts add private ratings and cloud sync. Public self-registration is disabled. The owner is initially the only approved tester. See [the app guide and roadmap](docs/ELSEWHERE_GUIDE.md) for creating tester accounts, current limitations, Google Places, reservations, and sponsorship plans. See [hosting notes](hosting/README.md) for deployment and usage controls.
+
+
+## Matched dataset pilot
+
+See [the matching report](docs/NYC_MATCHING_REPORT.md) and [the checked pilot JSON](src/data/nyc-pilot-venues.json). The previous provider-based search is retained in `src/lib/live-place-search.ts` for comparison and its regression tests, but the public `/places` route calls only the dataset search. Request interpretation currently accepts the listed feature labels rather than using a live language model.
