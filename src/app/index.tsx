@@ -1,4 +1,4 @@
-import pilotCatalog from '../data/nyc-pilot-venues.json';
+import {checkedVenues} from '../lib/pilot-catalog';
 import {DISCOVERY_CITY} from '../lib/discovery-scope';
 import ScheduleInput from "../components/schedule-input";
 import {useAccount} from '../components/account-provider';
@@ -97,8 +97,8 @@ export default function HomeScreen() {
               onSubmitEditing={handleSearch}
             />
 
-            <Text style={{color:'#686D60',fontSize:12}}>{pilotCatalog.venues.length} identity-matched places · West Village. Search by name or select a suggestion.</Text>
-            <View style={{flexDirection:'row',flexWrap:'wrap',gap:6}}>{pilotCatalog.venues.filter(venue=>!searchQuery.trim() || [venue.name,...venue.aliases].some(name=>name.toLowerCase().includes(searchQuery.trim().toLowerCase()))).slice(0,8).map(venue=><Pressable accessibilityRole="button" key={venue.id} onPress={()=>setSearchQuery(venue.name)} style={{padding:8,borderRadius:16,borderWidth:1,borderColor:'#D6CFC3'}}><Text style={{color:'#174D43',fontSize:12}}>{venue.name}</Text></Pressable>)}</View>
+            <Text style={{color:'#686D60',fontSize:12}}>{checkedVenues.length} places with checked offerings · West Village. Search by name or select a suggestion.</Text>
+            <View style={{flexDirection:'row',flexWrap:'wrap',gap:6}}>{checkedVenues.filter(venue=>!searchQuery.trim() || [venue.name,...venue.aliases].some(name=>name.toLowerCase().includes(searchQuery.trim().toLowerCase()))).slice(0,8).map(venue=><Pressable accessibilityRole="button" key={venue.id} onPress={()=>setSearchQuery(venue.name)} style={{padding:8,borderRadius:16,borderWidth:1,borderColor:'#D6CFC3'}}><Text style={{color:'#174D43',fontSize:12}}>{venue.name}</Text></Pressable>)}</View>
             <Text style={{fontSize:15,fontWeight:'600',marginTop:8}}>Your priorities</Text>
             <Text style={{color:"#686D60",fontSize:12}}>Select your preferences in order of importance.</Text>
             <View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>

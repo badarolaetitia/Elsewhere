@@ -16,5 +16,12 @@
   },
   "pilotArea": "West Village, Manhattan",
   "westVillageIdentityMatches": 96,
-  "pilotBoundary": "NYC 2020 NTA MN0203"
+  "pilotBoundary": "NYC 2020 NTA MN0203",
+  "offeringReview": {
+    "checked_offerings": 66,
+    "venue_only": 11,
+    "identity_conflict": 3,
+    "source_unavailable": 15,
+    "closed_or_moved": 1
+  }
 }

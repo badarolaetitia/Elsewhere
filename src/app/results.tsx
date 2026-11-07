@@ -742,7 +742,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
       )}
 
       {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
-      {researchStatus==='dataset'&&<Text style={[styles.helperText,{marginBottom:18}]}>West Village pilot · Sources checked November 7, 2026. Match scores compare documented features.</Text>}
+      {researchStatus==='dataset'&&<Text style={[styles.helperText,{marginBottom:18}]}>West Village · Published offerings and experiences checked November 7, 2026. Match scores compare documented details.</Text>}
       {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Showing general alternatives. Product and atmosphere matches couldn’t be checked right now.</Text>}
 
       <View
@@ -945,7 +945,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
               {expandedCards.includes(recommendation.placeId ?? recommendation.name) && <View>
               {Object.entries(recommendation.experienceEvidence ?? {}).filter(([keyword, evidence]) => evidence.status === "SUPPORTED" && evidence.sources.length > 0 && (selectedKeywords.length === 0 || selectedKeywords.includes(keyword))).map(([keyword, evidence]) => (
                 <View key={keyword}>
-                  <Text style={styles.reasonLabel}>{keyword} · {evidence.status === "SUPPORTED" ? "Verified" : evidence.status === "NOT_SUPPORTED" ? "Does not match" : "Not verified"}</Text>
+                  <Text style={styles.reasonLabel}>{keyword} · {evidence.status === "SUPPORTED" ? "Source checked" : evidence.status === "NOT_SUPPORTED" ? "Does not match" : "Not verified"}</Text>
                   <Text style={styles.reasonText}>{evidence.summary}</Text>
                   {evidence.sources.map(source => (
                     <Pressable key={source.url} accessibilityRole="link" onPress={() => Linking.openURL(source.url)}>

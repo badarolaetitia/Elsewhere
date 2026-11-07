@@ -1,5 +1,5 @@
 {
-  "version": "nyc-west-village-v2",
+  "version": "west-village-reviewed-770844e3e666",
   "area": "West Village, Manhattan",
   "checkedAt": "2026-11-07",
   "boundary": {
@@ -22,16 +22,37 @@
       "cuisine": "Coffee/Tea",
       "categoryFamily": "cafe",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Coffee/Tea",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41217083"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41217083"
+      ],
+      "website": "https://www.11thstcafe.com/",
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official cafe page lists brewed coffee and espresso drinks.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official cafe page lists brewed and iced tea.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official cafe page lists breakfast and lunch sandwiches.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Pastries",
+          "summary": "Official cafe page lists croissants, muffins and pastries.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official cafe page describes breakfast, lunch and brunch.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        }
       ]
     },
     {
@@ -47,16 +68,17 @@
       "cuisine": "English",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: English",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as English. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40783353"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40783353"
+      ],
+      "website": "https://asaltandbattery.com/",
+      "features": [
+        {
+          "label": "Fish and chips",
+          "summary": "The venue describes lightly battered deep-fried fish and thick-cut chips.",
+          "sourceUrl": "https://asaltandbattery.com/"
+        }
       ]
     },
     {
@@ -72,17 +94,11 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50006594"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50006594"
-      ]
+      ],
+      "website": "https://www.palmanyc.com/private-events-venue/aperitivo/"
     },
     {
       "id": "nyc-dohmh:41495911",
@@ -97,13 +113,6 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41495911"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41495911"
@@ -122,16 +131,37 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40976304"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40976304"
+      ],
+      "website": "https://www.artbar.com/location/art-bar/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Food menu lists sirloin and Impossible burgers.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Food menu includes a grilled chicken sandwich.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official page offers seasonal specialty cocktails.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Official page explicitly lists draft beer.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official page lists house and sparkling wine.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        }
       ]
     },
     {
@@ -147,17 +177,11 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40385161"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40385161"
-      ]
+      ],
+      "website": "https://www.automaticslimsnyc.com/"
     },
     {
       "id": "nyc-dohmh:40554183",
@@ -172,13 +196,6 @@
       "cuisine": "Irish",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Irish",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Irish. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40554183"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40554183"
@@ -197,16 +214,37 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41225392"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41225392"
+      ],
+      "website": "https://bayardsalehouse.com/",
+      "features": [
+        {
+          "label": "Pub",
+          "summary": "The venue describes itself as an Irish pub.",
+          "sourceUrl": "https://bayardsalehouse.com/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "The venue describes a selection of draft beers.",
+          "sourceUrl": "https://bayardsalehouse.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Menu includes charcoal-grilled burgers and smash burgers.",
+          "sourceUrl": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Menu includes chicken sandwiches and wraps.",
+          "sourceUrl": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu"
+        },
+        {
+          "label": "Fish and chips",
+          "summary": "Menu lists beer-battered Atlantic cod with fries.",
+          "sourceUrl": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu"
+        }
       ]
     },
     {
@@ -222,16 +260,22 @@
       "cuisine": "Brazilian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Brazilian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Brazilian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41395589"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41395589"
+      ],
+      "website": "https://www.berimbaunyc.com/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "West Village location description explicitly offers cocktails.",
+          "sourceUrl": "https://www.berimbaunyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "West Village location description explicitly offers brunch.",
+          "sourceUrl": "https://www.berimbaunyc.com/"
+        }
       ]
     },
     {
@@ -247,16 +291,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41185348"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41185348"
+      ],
+      "website": "https://www.blindtigeralehouse.com/",
+      "features": [
+        {
+          "label": "Draft beer",
+          "summary": "Official venue page describes rotating draught and cask selections.",
+          "sourceUrl": "https://www.blindtigeralehouse.com/"
+        }
       ]
     },
     {
@@ -272,13 +317,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40965997"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40965997"
@@ -297,16 +335,32 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41025084"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41025084"
+      ],
+      "website": "https://brassmonkeynyc.com/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "All-day menu lists cheeseburger sliders and a double-patty cheeseburger.",
+          "sourceUrl": "https://brassmonkeynyc.com/lunch-dinner-menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "All-day menu lists grilled cheese and a fried chicken sandwich.",
+          "sourceUrl": "https://brassmonkeynyc.com/lunch-dinner-menu/"
+        },
+        {
+          "label": "Tacos",
+          "summary": "All-day menu lists shrimp tacos and crispy fish tacos.",
+          "sourceUrl": "https://brassmonkeynyc.com/lunch-dinner-menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official homepage links a weekend brunch menu.",
+          "sourceUrl": "https://brassmonkeynyc.com/"
+        }
       ]
     },
     {
@@ -322,13 +376,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41530089"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41530089"
@@ -347,13 +394,6 @@
       "cuisine": "Mexican",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mexican",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40380660"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40380660"
@@ -372,17 +412,11 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40400155"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40400155"
-      ]
+      ],
+      "website": "https://www.busstopcafe-nyc.com/"
     },
     {
       "id": "nyc-dohmh:41541889",
@@ -397,16 +431,27 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41541889"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41541889"
+      ],
+      "website": "https://ilovebuvette.com/menus-newyork-location",
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "New York menu page explicitly provides a brunch menu.",
+          "sourceUrl": "https://ilovebuvette.com/menus-newyork-location"
+        },
+        {
+          "label": "Wine",
+          "summary": "New York menu page explicitly provides a wines menu.",
+          "sourceUrl": "https://ilovebuvette.com/menus-newyork-location"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "New York menu page explicitly provides a cocktails menu.",
+          "sourceUrl": "https://ilovebuvette.com/menus-newyork-location"
+        }
       ]
     },
     {
@@ -422,16 +467,57 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41204508"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41204508"
+      ],
+      "website": "https://www.cafecluny.com/menus/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Published menu lists the Cluny burger and a vegetarian burger.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Published menu lists linguine with clams and macaroni and cheese.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Published menu lists shrimp cocktail, oysters, salmon and branzino.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official menus include brunch.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Breakfast menu includes a breakfast club sandwich.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "Menu includes coffee, espresso and cappuccino.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Menu lists hot tea selections.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Pastries",
+          "summary": "Breakfast menu includes croissant and cinnamon-sugar doughnut holes.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Menu includes espresso martini, Bloody Mary and other cocktails.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        }
       ]
     },
     {
@@ -447,16 +533,37 @@
       "cuisine": "Coffee/Tea",
       "categoryFamily": "cafe",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Coffee/Tea",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41287338"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41287338"
+      ],
+      "website": "https://www.cafepaninonyc.com/",
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official page lists coffee and espresso.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official page lists tea lattes.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official page describes panini.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Pastries",
+          "summary": "Official page lists pastries.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official page lists wines.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        }
       ]
     },
     {
@@ -472,16 +579,32 @@
       "cuisine": "Mexican",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mexican",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544958"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544958"
+      ],
+      "website": "https://calientecabco.com/menus/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "Menu includes margaritas and mezcalitas.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Bar menu explicitly lists draft cerveza.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Bar menu lists mini Wagyu beef burgers.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Menu includes Mexican brunch and a brunch burrito.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        }
       ]
     },
     {
@@ -497,16 +620,17 @@
       "cuisine": "English",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: English",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as English. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40566335"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40566335"
+      ],
+      "website": "https://teaandsympathynyc.myshopify.com/",
+      "features": [
+        {
+          "label": "Tea",
+          "summary": "Official Carry on Tea & Sympathy store lists loose-leaf and bagged tea.",
+          "sourceUrl": "https://teaandsympathynyc.myshopify.com/"
+        }
       ]
     },
     {
@@ -522,16 +646,27 @@
       "cuisine": "Egyptian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Egyptian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Egyptian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41382007"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41382007"
+      ],
+      "website": "https://www.casalafemmeny.com/",
+      "features": [
+        {
+          "label": "Sandwiches",
+          "summary": "Menu lists pressed chicken, beef and fava-bean flatbread sandwiches.",
+          "sourceUrl": "https://www.casalafemmeny.com/menus.html"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Menu includes shrimp kebab and grilled salmon.",
+          "sourceUrl": "https://www.casalafemmeny.com/menus.html"
+        },
+        {
+          "label": "Belly dancing",
+          "summary": "Official homepage advertises belly-dancing shows.",
+          "sourceUrl": "https://www.casalafemmeny.com/"
+        }
       ]
     },
     {
@@ -547,16 +682,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40365166"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40365166"
+      ],
+      "website": "https://cornerbistronyc.com/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Official homepage identifies its Bistro Burger.",
+          "sourceUrl": "https://cornerbistronyc.com/"
+        }
       ]
     },
     {
@@ -572,16 +708,22 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014197"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014197"
+      ],
+      "website": "https://cotenna.com/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists fettuccine, tagliatelle, linguine and other pasta.",
+          "sourceUrl": "https://cotenna.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu includes shrimp scampi, mussels and stewed calamari.",
+          "sourceUrl": "https://cotenna.com/menu/"
+        }
       ]
     },
     {
@@ -597,17 +739,11 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40514147"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40514147"
-      ]
+      ],
+      "website": "https://www.creativeedgeparties.com/home"
     },
     {
       "id": "nyc-dohmh:40393519",
@@ -622,13 +758,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40393519"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40393519"
@@ -647,16 +776,37 @@
       "cuisine": "Mexican",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mexican",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41567865"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41567865"
+      ],
+      "website": "https://www.empellon.com/contact-us/",
+      "features": [
+        {
+          "label": "Tacos",
+          "summary": "Currently linked official menu lists chicken, fish tempura and beef short-rib tacos.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Currently linked official menu lists Cheeseburger V2 in a flour tortilla.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Currently linked official menu lists fish tempura tacos.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Currently linked official menu lists margaritas and house cocktails.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Wine",
+          "summary": "Currently linked official menu lists sparkling, white, rosé and red wine.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        }
       ]
     },
     {
@@ -672,16 +822,22 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41100350"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41100350"
+      ],
+      "website": "https://employeesonlynyc.com/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "Cocktail menu lists Manhattan and Billionaire cocktails.",
+          "sourceUrl": "https://employeesonlynyc.com/menus/cocktails"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official wine menu lists sparkling, white and red wines.",
+          "sourceUrl": "https://employeesonlynyc.com/menus/wine"
+        }
       ]
     },
     {
@@ -697,16 +853,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41398358"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41398358"
+      ],
+      "website": "https://entwinenyc.com/contact",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "Official site describes Entwine as a cocktail bar.",
+          "sourceUrl": "https://entwinenyc.com/contact"
+        }
       ]
     },
     {
@@ -714,8 +871,7 @@
       "camis": "40575863",
       "name": "Joe's Pizza",
       "aliases": [
-        "FAMOUS JOE'S PIZZA",
-        "Famous Joe's Pizza"
+        "FAMOUS JOE'S PIZZA"
       ],
       "address": "7 CARMINE STREET, Manhattan, NY 10014",
       "borough": "Manhattan",
@@ -725,23 +881,18 @@
       "cuisine": "Pizza",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40575863"
+      ],
+      "website": "https://www.joespizzanyc.com/locations",
       "features": [
-        {
-          "label": "NYC category: Pizza",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Pizza. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40575863"
-        },
         {
           "label": "Pizza",
           "summary": "Joe's Pizza's published website documents pizza.",
           "sourceUrl": "https://www.joespizzanyc.com/locations"
         }
-      ],
-      "identitySources": [
-        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
-        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40575863"
-      ],
-      "website": "https://www.joespizzanyc.com/locations"
+      ]
     },
     {
       "id": "nyc-dohmh:41646967",
@@ -756,16 +907,27 @@
       "cuisine": "Bakery Products/Desserts",
       "categoryFamily": "bakery_pastry",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Bakery Products/Desserts",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41646967"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41646967"
+      ],
+      "website": "https://fayda.com/",
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official site lists coffee in its in-store menu.",
+          "sourceUrl": "https://fayda.com/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official site lists teas in its in-store menu.",
+          "sourceUrl": "https://fayda.com/"
+        },
+        {
+          "label": "Steamed buns",
+          "summary": "Official homepage lists steamed buns on the in-store menu.",
+          "sourceUrl": "https://fayda.com/"
+        }
       ]
     },
     {
@@ -781,17 +943,11 @@
       "cuisine": "Indian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Indian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Indian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40703670"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40703670"
-      ]
+      ],
+      "website": "https://ghandicafenewyork.com/"
     },
     {
       "id": "nyc-dohmh:41326196",
@@ -806,13 +962,6 @@
       "cuisine": "Chinese",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Chinese",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Chinese. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41326196"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41326196"
@@ -831,13 +980,6 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41283835"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41283835"
@@ -856,16 +998,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41218950"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41218950"
+      ],
+      "website": "https://www.greenwichtreehouse.com/",
+      "features": [
+        {
+          "label": "Wine",
+          "summary": "Official site explicitly lists wine among its drinks.",
+          "sourceUrl": "https://www.greenwichtreehouse.com/"
+        }
       ]
     },
     {
@@ -881,16 +1024,37 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41489751"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41489751"
+      ],
+      "website": "https://hudsonclearwater.com/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official dinner menu lists tagliatelle and baked lasagna.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official dinner menu lists oysters, scallops and Atlantic bass.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official dinner menu contains a cocktail list.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official dinner menu contains red, white and sparkling wine.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official home page links a brunch menu.",
+          "sourceUrl": "https://hudsonclearwater.com/"
+        }
       ]
     },
     {
@@ -906,16 +1070,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50000479"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50000479"
+      ],
+      "website": "https://www.ifccenter.com/faq/",
+      "features": [
+        {
+          "label": "Popcorn",
+          "summary": "Official concessions description lists popcorn with butter.",
+          "sourceUrl": "https://www.ifccenter.com/about/"
+        }
       ]
     },
     {
@@ -931,17 +1096,11 @@
       "cuisine": "Bakery Products/Desserts",
       "categoryFamily": "bakery_pastry",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Bakery Products/Desserts",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014568"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50014568"
-      ]
+      ],
+      "website": "https://api.insomniacookies.com/news/cookies-to-the-rescue"
     },
     {
       "id": "nyc-dohmh:50017903",
@@ -956,16 +1115,57 @@
       "cuisine": "Mediterranean",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mediterranean",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mediterranean. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50017903"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50017903"
+      ],
+      "website": "https://jackswifefreda.com/locations/",
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "Official brand site explicitly offers brunch at its all-day restaurants.",
+          "sourceUrl": "https://jackswifefreda.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official brand site explicitly offers cocktails.",
+          "sourceUrl": "https://jackswifefreda.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official menu lists Jack’s Burger and a salmon burger.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official menu lists steak, chicken and eggplant sandwiches.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists spaghetti with chicken meatballs.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists salmon, branzino and mussels.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Fish and chips",
+          "summary": "Official menu lists fish and chips as a Friday special.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Shakshuka",
+          "summary": "Official menu lists green shakshuka.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Waffles",
+          "summary": "Official menu lists a rosewater waffle.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        }
       ]
     },
     {
@@ -983,23 +1183,18 @@
       "cuisine": "Pizza",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40674475"
+      ],
+      "website": "https://johnsofbleecker.com/",
       "features": [
-        {
-          "label": "NYC category: Pizza",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Pizza. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40674475"
-        },
         {
           "label": "Pizza",
           "summary": "John’s of Bleecker Street lists pizza on its published website or linked menu.",
           "sourceUrl": "https://johnsofbleecker.com/"
         }
-      ],
-      "identitySources": [
-        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
-        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40674475"
-      ],
-      "website": "https://johnsofbleecker.com/"
+      ]
     },
     {
       "id": "nyc-dohmh:40401895",
@@ -1014,13 +1209,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40401895"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40401895"
@@ -1039,16 +1227,52 @@
       "cuisine": "New American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: New American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as New American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41431046"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41431046"
+      ],
+      "website": "https://www.josephleonard.com/info/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Official menu includes the JL Burger.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official breakfast menu includes an egg sandwich.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "Official menu lists espresso, cold brew and other coffee drinks.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official menu lists black, green and herbal teas.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu lists house cocktails.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official menu lists red, white and sparkling wines.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Official menu specifies draft lager, IPA and saison.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official info page lists brunch service.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        }
       ]
     },
     {
@@ -1064,13 +1288,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40729164"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40729164"
@@ -1089,13 +1306,6 @@
       "cuisine": "Korean",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Korean",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Korean. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41451912"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41451912"
@@ -1114,16 +1324,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41033313"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41033313"
+      ],
+      "website": "https://www.kettleoffishnyc.com/",
+      "features": [
+        {
+          "label": "Draft beer",
+          "summary": "Official venue description explicitly offers beer on tap.",
+          "sourceUrl": "https://www.kettleoffishnyc.com/"
+        }
       ]
     },
     {
@@ -1139,16 +1350,37 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41378319"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41378319"
+      ],
+      "website": "https://www.lartusi.com/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists spaghetti, bucatini and tagliatelle.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists crudo and fish dishes.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official menu contains a bottled wine list.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu contains a cocktails and wine section.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official site lists weekend brunch service.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        }
       ]
     },
     {
@@ -1164,13 +1396,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40574293"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40574293"
@@ -1189,16 +1414,32 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50001073"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50001073"
+      ],
+      "website": "https://lebaratinnyc.com/",
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "Official site states brunch is served on weekends.",
+          "sourceUrl": "https://lebaratinnyc.com/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official about page identifies mussels as a signature dish.",
+          "sourceUrl": "https://lebaratinnyc.com/about"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official about page lists cocktails.",
+          "sourceUrl": "https://lebaratinnyc.com/about"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official about page lists wine by glass or bottle.",
+          "sourceUrl": "https://lebaratinnyc.com/about"
+        }
       ]
     },
     {
@@ -1214,16 +1455,27 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544528"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40544528"
+      ],
+      "website": "https://legigotrestaurant.com/locat.html",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official dinner menu lists fettuccine with mushrooms.",
+          "sourceUrl": "https://legigotrestaurant.com/menu-dinner.html"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official dinner menu lists Le Gigot Hamburger.",
+          "sourceUrl": "https://legigotrestaurant.com/menu-dinner.html"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official dinner menu lists oysters, crab cake and bouillabaisse.",
+          "sourceUrl": "https://legigotrestaurant.com/menu-dinner.html"
+        }
       ]
     },
     {
@@ -1239,16 +1491,52 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41601611"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41601611"
+      ],
+      "website": "https://www.leftbanknewyork.com/menu/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists pappardelle, gnocchi and cacio e pepe.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official menu lists a cheeseburger.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official menu lists chicken baguette and grilled cheese.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists scallops, oysters, mussels and salmon.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official menu includes a weekend brunch section.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official menu lists wine by the glass.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Official menu explicitly lists draught beer.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu lists margaritas and martinis.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        }
       ]
     },
     {
@@ -1264,16 +1552,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41279957"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41279957"
+      ],
+      "website": "https://www.lelabar.com/menu/wine/",
+      "features": [
+        {
+          "label": "Wine",
+          "summary": "Official bottle list includes champagne, white and red wines.",
+          "sourceUrl": "https://www.lelabar.com/menu/wine/"
+        }
       ]
     },
     {
@@ -1291,23 +1580,18 @@
       "cuisine": "Bakery Products/Desserts",
       "categoryFamily": "bakery_pastry",
       "checkedAt": "2026-11-07",
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41266621"
+      ],
+      "website": "https://www.magnoliabakery.com/pages/store-list",
       "features": [
-        {
-          "label": "NYC category: Bakery Products/Desserts",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41266621"
-        },
         {
           "label": "Cupcakes",
           "summary": "Magnolia Bakery lists cupcakes on its published website or linked menu.",
           "sourceUrl": "https://magnoliabakery.order.online/en-US/store/magnolia-bakery-west-village-22785"
         }
-      ],
-      "identitySources": [
-        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
-        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41266621"
-      ],
-      "website": "https://www.magnoliabakery.com/pages/store-list"
+      ]
     },
     {
       "id": "nyc-dohmh:41491940",
@@ -1322,16 +1606,32 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41491940"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41491940"
+      ],
+      "website": "https://www.malapartenyc.com/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Published dishes include rigatoni all’Amatriciana, fusilli al pesto, lasagna, and spaghetti alle vongole.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        },
+        {
+          "label": "Wine",
+          "summary": "The restaurant describes its Italian wine selection.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The official site lists cocktails and describes classic cocktails at the bar.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The official site lists weekend brunch.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        }
       ]
     },
     {
@@ -1347,16 +1647,42 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41277451"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41277451"
+      ],
+      "website": "https://www.markettablenyc.com/menus/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "The published menu includes a Gold Label cheeseburger.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "The lunch menu includes turkey club and flounder sandwiches.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Published mains include salmon, sea bream, and flounder.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes a weekend brunch menu.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The beverage menu includes named cocktails.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Wine",
+          "summary": "The menu lists wines by the glass.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        }
       ]
     },
     {
@@ -1372,16 +1698,17 @@
       "cuisine": "Mediterranean",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mediterranean",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mediterranean. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41471053"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41471053"
+      ],
+      "website": "https://memeonhudson.com/west-village.html",
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "The official West Village page publishes a brunch menu link.",
+          "sourceUrl": "https://memeonhudson.com/west-village.html"
+        }
       ]
     },
     {
@@ -1397,16 +1724,32 @@
       "cuisine": "Mexican",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mexican",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41465581"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41465581"
+      ],
+      "website": "https://molenyc.com/",
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes brunch service and a brunch menu link.",
+          "sourceUrl": "https://molenyc.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The official site describes margaritas and other tequila cocktails.",
+          "sourceUrl": "https://molenyc.com/"
+        },
+        {
+          "label": "Burritos",
+          "summary": "The official restaurant description lists burritos among its dishes.",
+          "sourceUrl": "https://molenyc.com/"
+        },
+        {
+          "label": "Enchiladas",
+          "summary": "The official restaurant description lists enchiladas among its dishes.",
+          "sourceUrl": "https://molenyc.com/"
+        }
       ]
     },
     {
@@ -1424,23 +1767,18 @@
       "cuisine": "Bakery Products/Desserts",
       "categoryFamily": "bakery_pastry",
       "checkedAt": "2026-11-07",
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41604438"
+      ],
+      "website": "https://mollyscupcakes.com/locations/",
       "features": [
-        {
-          "label": "NYC category: Bakery Products/Desserts",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41604438"
-        },
         {
           "label": "Cupcakes",
           "summary": "Molly’s Cupcakes lists cupcakes on its published website or linked menu.",
           "sourceUrl": "https://mollyscupcakes.com/cupcakes/"
         }
-      ],
-      "identitySources": [
-        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
-        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41604438"
-      ],
-      "website": "https://mollyscupcakes.com/locations/"
+      ]
     },
     {
       "id": "nyc-dohmh:41452375",
@@ -1455,16 +1793,22 @@
       "cuisine": "Mexican",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Mexican",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Mexican. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41452375"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41452375"
+      ],
+      "website": "https://www.ofrendanyc.com/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The restaurant describes an innovative menu of tequila-based cocktails.",
+          "sourceUrl": "https://www.ofrendanyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The official site lists weekend brunch service.",
+          "sourceUrl": "https://www.ofrendanyc.com/"
+        }
       ]
     },
     {
@@ -1480,16 +1824,42 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41466316"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41466316"
+      ],
+      "website": "https://www.olioepiu.com/nyc-menu/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Published dishes include spaghetti carbonara, gnocchi, and ravioli.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Pizza",
+          "summary": "The published menu includes pizzas from a wood brick oven.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "The menu lists the Olio Burger.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "The lunch menu lists panini and an Olio club sandwich.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "The menu lists octopus, salmon, and branzino.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes a brunch menu.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        }
       ]
     },
     {
@@ -1505,16 +1875,17 @@
       "cuisine": "Tapas",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Tapas",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Tapas. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41493787"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41493787"
+      ],
+      "website": "https://orientexpressnyc.com/spirits/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The spirits menu offers martinis, Old Fashioneds, and Manhattans.",
+          "sourceUrl": "https://orientexpressnyc.com/spirits/"
+        }
       ]
     },
     {
@@ -1530,13 +1901,6 @@
       "cuisine": "English",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: English",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as English. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50011097"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50011097"
@@ -1557,12 +1921,12 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40803254"
+      ],
+      "website": "https://www.palmanyc.com/",
       "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40803254"
-        },
         {
           "label": "Italian dining",
           "summary": "Palma's published website documents italian dining.",
@@ -1578,12 +1942,7 @@
           "summary": "Palma’s October 2026 dinner menu lists handmade pasta.",
           "sourceUrl": "https://media-cdn.getbento.com/accounts/9491cb63002068da37dcce19f78b0de5/media/hN2naf9SCyT7biIeItFj_Dinner%20Digital%20October%202026.pdf"
         }
-      ],
-      "identitySources": [
-        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
-        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40803254"
-      ],
-      "website": "https://www.palmanyc.com/"
+      ]
     },
     {
       "id": "nyc-dohmh:41473120",
@@ -1598,16 +1957,22 @@
       "cuisine": "Bakery Products/Desserts",
       "categoryFamily": "bakery_pastry",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Bakery Products/Desserts",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Bakery Products/Desserts. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41473120"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41473120"
+      ],
+      "website": "https://roccos.nyc/",
+      "features": [
+        {
+          "label": "Pastries",
+          "summary": "The official site describes cannoli, Italian pastries, cookies, and cakes.",
+          "sourceUrl": "https://roccos.nyc/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "The official site describes espresso, cappuccino, and latte service.",
+          "sourceUrl": "https://roccos.nyc/"
+        }
       ]
     },
     {
@@ -1623,17 +1988,11 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41644212"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41644212"
-      ]
+      ],
+      "website": "https://www.rafele.com/aboutus"
     },
     {
       "id": "nyc-dohmh:41721444",
@@ -1648,16 +2007,27 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41721444"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41721444"
+      ],
+      "website": "https://readytoeatnyc.com/",
+      "features": [
+        {
+          "label": "Seafood",
+          "summary": "The storefront description names poached salmon, grilled tuna steak, and Spanish paella among its changing offerings.",
+          "sourceUrl": "https://readytoeatnyc.com/"
+        },
+        {
+          "label": "Lamb tagine",
+          "summary": "The official storefront description lists lamb tagine among changing daily offerings.",
+          "sourceUrl": "https://readytoeatnyc.com/"
+        },
+        {
+          "label": "Paella",
+          "summary": "The official storefront description lists Spanish paella among changing daily offerings.",
+          "sourceUrl": "https://readytoeatnyc.com/"
+        }
       ]
     },
     {
@@ -1673,16 +2043,27 @@
       "cuisine": "Chinese",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Chinese",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Chinese. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41576935"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41576935"
+      ],
+      "website": "https://www.redfarmnyc.com/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The official site describes craft cocktails at RedFarm.",
+          "sourceUrl": "https://www.redfarmnyc.com/"
+        },
+        {
+          "label": "Dim sum",
+          "summary": "The official RedFarm site describes creative dim sum.",
+          "sourceUrl": "https://www.redfarmnyc.com/"
+        },
+        {
+          "label": "Peking duck",
+          "summary": "The official RedFarm site lists Peking duck among its offerings.",
+          "sourceUrl": "https://www.redfarmnyc.com/"
+        }
       ]
     },
     {
@@ -1698,16 +2079,27 @@
       "cuisine": "Sandwiches",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Sandwiches",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Sandwiches. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40752437"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40752437"
+      ],
+      "website": "https://www.sanpanino.com/menus/",
+      "features": [
+        {
+          "label": "Sandwiches",
+          "summary": "The menu lists Italian sandwiches and breakfast sandwiches.",
+          "sourceUrl": "https://www.sanpanino.com/menus/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "The drinks menu includes espresso, cappuccino, latte, and iced coffee.",
+          "sourceUrl": "https://www.sanpanino.com/menus/"
+        },
+        {
+          "label": "Tea",
+          "summary": "The drinks menu includes specialty teas and fresh iced tea.",
+          "sourceUrl": "https://www.sanpanino.com/menus/"
+        }
       ]
     },
     {
@@ -1723,16 +2115,22 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40993101"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40993101"
+      ],
+      "website": "https://www.santambroeus.com/pages/location-west-village",
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "The West Village page describes espresso service.",
+          "sourceUrl": "https://www.santambroeus.com/pages/location-west-village"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant describes brunch on Saturdays and Sundays.",
+          "sourceUrl": "https://www.santambroeus.com/pages/location-west-village"
+        }
       ]
     },
     {
@@ -1748,16 +2146,52 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41639470"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41639470"
+      ],
+      "website": "https://serafinarestaurant.com/meatpacking",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "The menu includes spaghetti, lasagna, ravioli, and gnocchi.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Pizza",
+          "summary": "The menu includes a pizza section.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Burgers",
+          "summary": "The menu lists the Serafina Burger.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Seafood",
+          "summary": "The menu includes lobster, calamari, salmon, swordfish, and branzino.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The location publishes a brunch menu.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The drinks menu lists margaritas, Negroni, and other cocktails.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Wine",
+          "summary": "The menu lists wines by glass and bottle.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "The menu lists beer alla spina, including Peroni, Heineken, Blue Moon, and Brooklyn Lager.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        }
       ]
     },
     {
@@ -1773,23 +2207,26 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41074207"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41074207"
+      ],
+      "website": "https://www.smallslive.com/",
+      "features": [
+        {
+          "label": "Live jazz",
+          "summary": "The official schedule lists live jazz performances and jam sessions at Smalls.",
+          "sourceUrl": "https://www.smallslive.com/"
+        }
       ]
     },
     {
       "id": "nyc-dohmh:41629922",
       "camis": "41629922",
-      "name": "SOTTO 13",
-      "aliases": [],
+      "name": "Via 13 (formerly Sotto 13)",
+      "aliases": [
+        "SOTTO 13"
+      ],
       "address": "140 WEST   13 STREET, Manhattan, NY 10011",
       "borough": "Manhattan",
       "zip": "10011",
@@ -1798,16 +2235,27 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41629922"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41629922"
+      ],
+      "website": "https://www.via13nyc.com/menu/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Via 13’s current menu lists mafaldina, gnocchi, spaghettoni, and cavatelli.",
+          "sourceUrl": "https://www.via13nyc.com/menu/"
+        },
+        {
+          "label": "Pizza",
+          "summary": "Via 13’s current menu lists pizzas.",
+          "sourceUrl": "https://www.via13nyc.com/menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Via 13 publishes a weekend brunch menu.",
+          "sourceUrl": "https://www.via13nyc.com/menu/"
+        }
       ]
     },
     {
@@ -1823,13 +2271,6 @@
       "cuisine": "Pizza",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Pizza",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Pizza. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381168"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381168"
@@ -1848,13 +2289,6 @@
       "cuisine": "Coffee/Tea",
       "categoryFamily": "cafe",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Coffee/Tea",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41600154"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41600154"
@@ -1873,17 +2307,11 @@
       "cuisine": "Japanese",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Japanese",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Japanese. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50002265"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50002265"
-      ]
+      ],
+      "website": "https://www.sushinakazawa.com/new-york"
     },
     {
       "id": "nyc-dohmh:40392496",
@@ -1898,16 +2326,42 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40392496"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40392496"
+      ],
+      "website": "https://www.tartine.nyc/lunch",
+      "features": [
+        {
+          "label": "Sandwiches",
+          "summary": "The menu includes BLT, croque monsieur, grilled chicken, and steak sandwiches.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Burgers",
+          "summary": "The menu lists the Tartine Burger.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Seafood",
+          "summary": "The menu lists salmon and PEI mussels.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Coffee",
+          "summary": "The menu lists drip coffee and espresso drinks.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Tea",
+          "summary": "The menu lists hot teas and iced tea.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes a weekend brunch menu.",
+          "sourceUrl": "https://www.tartine.nyc/menus"
+        }
       ]
     },
     {
@@ -1923,16 +2377,22 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40573138"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40573138"
+      ],
+      "website": "https://tavernonjane.com/about/",
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The restaurant describes its classic cocktails.",
+          "sourceUrl": "https://tavernonjane.com/about/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant describes weekend brunch.",
+          "sourceUrl": "https://tavernonjane.com/about/"
+        }
       ]
     },
     {
@@ -1948,16 +2408,27 @@
       "cuisine": "Seafood",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Seafood",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Seafood. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50004681"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50004681"
+      ],
+      "website": "https://www.theclamnyc.com/",
+      "features": [
+        {
+          "label": "Seafood",
+          "summary": "The restaurant describes seasonal seafood, fresh fish, and a raw bar.",
+          "sourceUrl": "https://www.theclamnyc.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The restaurant describes its craft cocktail program.",
+          "sourceUrl": "https://www.theclamnyc.com/"
+        },
+        {
+          "label": "Wine",
+          "summary": "The restaurant describes a curated wine list.",
+          "sourceUrl": "https://www.theclamnyc.com/"
+        }
       ]
     },
     {
@@ -1973,17 +2444,11 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41029356"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41029356"
-      ]
+      ],
+      "website": "https://www.theduplex.com/"
     },
     {
       "id": "nyc-dohmh:50008995",
@@ -1998,16 +2463,27 @@
       "cuisine": "Coffee/Tea",
       "categoryFamily": "cafe",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Coffee/Tea",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008995"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008995"
+      ],
+      "website": "https://www.theelknyc.com/about",
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official cafe description lists coffee from Parlor.",
+          "sourceUrl": "https://www.theelknyc.com/about"
+        },
+        {
+          "label": "Matcha",
+          "summary": "Official cafe description lists matcha from Kettl.",
+          "sourceUrl": "https://www.theelknyc.com/about"
+        },
+        {
+          "label": "Breakfast",
+          "summary": "Official cafe description offers breakfast and lunch.",
+          "sourceUrl": "https://www.theelknyc.com/about"
+        }
       ]
     },
     {
@@ -2023,13 +2499,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40996223"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40996223"
@@ -2048,16 +2517,32 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008347"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008347"
+      ],
+      "website": "https://www.thegreydog.com/menu/dinner-new/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official dinner menu lists mushroom linguine, penne with vodka sauce and pork-ragu rigatoni.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        },
+        {
+          "label": "Chicken wings",
+          "summary": "Official dinner menu lists chicken wings.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        },
+        {
+          "label": "Tacos",
+          "summary": "Official dinner menu lists seared tuna tacos.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official dinner menu lists garlic shrimp and tuna tacos.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        }
       ]
     },
     {
@@ -2073,16 +2558,37 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41186217"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41186217"
+      ],
+      "website": "https://www.thelittleowlnyc.com/",
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Published dinner menu lists ziti and tortelli.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Published dinner menu lists halibut, salmon, tuna and branzino.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Published lunch menu lists a bacon cheeseburger.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official site provides brunch service and a brunch menu.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Breakfast",
+          "summary": "Official site provides a breakfast menu.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        }
       ]
     },
     {
@@ -2098,13 +2604,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40592117"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40592117"
@@ -2123,16 +2622,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41244008"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41244008"
+      ],
+      "website": "https://thestonewallinnnyc.com/",
+      "features": [
+        {
+          "label": "Live entertainment",
+          "summary": "Official venue calendar advertises hosted shows, comedy and dance events.",
+          "sourceUrl": "https://thestonewallinnnyc.com/"
+        }
       ]
     },
     {
@@ -2148,16 +2648,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40864264"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40864264"
+      ],
+      "website": "https://thevillagetavern.nyc/",
+      "features": [
+        {
+          "label": "Draft beer",
+          "summary": "Official homepage advertises beers on tap and pints in its specials.",
+          "sourceUrl": "https://thevillagetavern.nyc/"
+        }
       ]
     },
     {
@@ -2173,17 +2674,11 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41219088"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41219088"
-      ]
+      ],
+      "website": "https://waverlynyc.com/"
     },
     {
       "id": "nyc-dohmh:41620128",
@@ -2198,16 +2693,27 @@
       "cuisine": "Coffee/Tea",
       "categoryFamily": "cafe",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Coffee/Tea",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Coffee/Tea. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41620128"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41620128"
+      ],
+      "website": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th",
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Location-specific ordering page lists espresso and several lattes.",
+          "sourceUrl": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+        },
+        {
+          "label": "Cookies",
+          "summary": "Location-specific ordering page lists a salted chocolate-chip cookie.",
+          "sourceUrl": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+        },
+        {
+          "label": "Muffins",
+          "summary": "Location-specific ordering page lists a chai muffin.",
+          "sourceUrl": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+        }
       ]
     },
     {
@@ -2223,17 +2729,11 @@
       "cuisine": "Spanish",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Spanish",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Spanish. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40366473"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40366473"
-      ]
+      ],
+      "website": "https://tiopepenyc.com/"
     },
     {
       "id": "nyc-dohmh:41634218",
@@ -2248,16 +2748,32 @@
       "cuisine": "Thai",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Thai",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Thai. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41634218"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41634218"
+      ],
+      "website": "https://tuethainyc.com/menu.pdf",
+      "features": [
+        {
+          "label": "Pad Thai",
+          "summary": "Official 2026 menu lists Pad Thai.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        },
+        {
+          "label": "Noodles",
+          "summary": "Official menu lists Pad Thai, pad see ew and drunken spicy noodles.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        },
+        {
+          "label": "Curry",
+          "summary": "Official menu lists green, red, panang and massaman curries.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists red snapper and steamed fish dishes.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        }
       ]
     },
     {
@@ -2273,16 +2789,37 @@
       "cuisine": "French",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: French",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as French. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41053093"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41053093"
+      ],
+      "website": "https://www.turksandfrogs.com/our-menu",
+      "features": [
+        {
+          "label": "Wine",
+          "summary": "Official menu provides a wine list.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu lists Negronis and martinis.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Hummus",
+          "summary": "Official food menu lists hummus with pita.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Cheese boards",
+          "summary": "Official food menu lists a cheese board.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official food menu lists tuna tartare and baked salmon.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        }
       ]
     },
     {
@@ -2298,13 +2835,6 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40371805"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=40371805"
@@ -2325,12 +2855,12 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
+      "identitySources": [
+        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
+        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008323"
+      ],
+      "website": "https://www.viacarota.com/",
       "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008323"
-        },
         {
           "label": "Italian dining",
           "summary": "Via Carota's published website documents italian dining.",
@@ -2346,12 +2876,7 @@
           "summary": "Via Carota's published website documents terrace dining.",
           "sourceUrl": "https://www.viacarota.com/"
         }
-      ],
-      "identitySources": [
-        "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
-        "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=50008323"
-      ],
-      "website": "https://www.viacarota.com/"
+      ]
     },
     {
       "id": "nyc-dohmh:41021523",
@@ -2366,16 +2891,17 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41021523"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41021523"
+      ],
+      "website": "https://villagevanguard.com/",
+      "features": [
+        {
+          "label": "Live jazz",
+          "summary": "Official calendar lists jazz performances and the Vanguard Jazz Orchestra.",
+          "sourceUrl": "https://villagevanguard.com/"
+        }
       ]
     },
     {
@@ -2391,16 +2917,37 @@
       "cuisine": "Italian",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Italian",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Italian. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41447856"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41447856"
+      ],
+      "website": "https://wildrestaurantnyc.com/",
+      "features": [
+        {
+          "label": "Pizza",
+          "summary": "Official food listing includes pepperoni and burrata-prosciutto pizzas.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Official food listing includes garganelli, rigatoni and ravioli.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official food listing includes a classic burger.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official food listing includes pan-seared salmon.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Pancakes",
+          "summary": "Official food listing includes pancakes or waffles.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        }
       ]
     },
     {
@@ -2416,16 +2963,37 @@
       "cuisine": "Irish",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: Irish",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as Irish. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41372275"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41372275"
+      ],
+      "website": "https://www.wilfieandnell.com/menu/",
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Official dinner menu lists veggie and dry-aged burgers.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official menu lists grilled cheese and chicken and steak sandwiches.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Chicken wings",
+          "summary": "Official menu lists hot wings.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Fish and chips",
+          "summary": "Official dinner menu lists beer-battered hake with fries.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu provides a cocktail section.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        }
       ]
     },
     {
@@ -2441,16 +3009,32 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41011581"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41011581"
+      ],
+      "website": "https://www.wogies.com/west-village-menu",
+      "features": [
+        {
+          "label": "Cheesesteaks",
+          "summary": "Official West Village menu lists steak and chicken cheesesteaks.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official West Village menu lists cheesesteaks and chicken sandwiches.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official West Village menu lists a smashburger.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        },
+        {
+          "label": "Chicken wings",
+          "summary": "Official West Village menu lists wings.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        }
       ]
     },
     {
@@ -2466,17 +3050,18 @@
       "cuisine": "American",
       "categoryFamily": "restaurant",
       "checkedAt": "2026-11-07",
-      "features": [
-        {
-          "label": "NYC category: American",
-          "summary": "NYC’s restaurant inspection record classifies this establishment as American. This is a broad registry category, not a verified menu.",
-          "sourceUrl": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381373"
-        }
-      ],
       "identitySources": [
         "https://huggingface.co/datasets/MongoDB/whatscooking.restaurants",
         "https://data.cityofnewyork.us/resource/43nn-pn8j.json?camis=41381373"
       ]
     }
-  ]
+  ],
+  "reviewCoverage": {
+    "identityRecords": 96,
+    "checked_offerings": 66,
+    "venue_only": 11,
+    "identity_conflict": 3,
+    "source_unavailable": 15,
+    "closed_or_moved": 1
+  }
 }

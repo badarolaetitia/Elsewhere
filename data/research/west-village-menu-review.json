@@ -1,0 +1,2692 @@
+{
+  "checkedAt": "2026-11-07",
+  "identityRecords": 96,
+  "method": "Manual review of exact-location primary venue pages, menus and merchant-linked ordering pages. Indexed primary text is disclosed in individual source notes. Search failures are not proof of closure.",
+  "venues": [
+    {
+      "camis": "41217083",
+      "name": "11 STREET CAFE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.11thstcafe.com/",
+          "note": "Official site search index identifies 327 W 11th St and lists offerings; direct opening returned 403. Evidence is the indexed official page, not a fresh rendered menu."
+        }
+      ],
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official cafe page lists brewed coffee and espresso drinks.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official cafe page lists brewed and iced tea.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official cafe page lists breakfast and lunch sandwiches.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Pastries",
+          "summary": "Official cafe page lists croissants, muffins and pastries.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official cafe page describes breakfast, lunch and brunch.",
+          "sourceUrl": "https://www.11thstcafe.com/"
+        }
+      ],
+      "website": "https://www.11thstcafe.com/"
+    },
+    {
+      "camis": "40783353",
+      "name": "A SALT & BATTERY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://asaltandbattery.com/",
+          "note": "Official page confirms 112 Greenwich Ave and describes battered fish and thick-cut chips."
+        }
+      ],
+      "features": [
+        {
+          "label": "Fish and chips",
+          "summary": "The venue describes lightly battered deep-fried fish and thick-cut chips.",
+          "sourceUrl": "https://asaltandbattery.com/"
+        }
+      ],
+      "website": "https://asaltandbattery.com/"
+    },
+    {
+      "camis": "50006594",
+      "name": "APERITIVO DI PALMA",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.palmanyc.com/private-events-venue/aperitivo/",
+          "note": "Official Palma page explicitly places Aperitivo at 30 Cornelia St, describing semi-private dinners. No separate Aperitivo menu was established; Palma main restaurant at 28 Cornelia was not substituted."
+        }
+      ],
+      "features": [],
+      "website": "https://www.palmanyc.com/private-events-venue/aperitivo/"
+    },
+    {
+      "camis": "41495911",
+      "name": "ARIA",
+      "checkedAt": "2026-11-07",
+      "status": "identity_conflict",
+      "sources": [
+        {
+          "url": "https://ariawinebar.com/",
+          "note": "Official site lists 16 Bedford Street and 369 W 51 Street; no 117 Perry location."
+        }
+      ],
+      "features": [],
+      "note": "Official Aria site now lists West Village at 16 Bedford Street, not the registry address 117 Perry Street. Offerings from Bedford were not applied to Perry."
+    },
+    {
+      "camis": "40976304",
+      "name": "ART BAR",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.artbar.com/location/art-bar/",
+          "note": "Official page confirms 52 8th Ave and includes the food and drink menus."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Food menu lists sirloin and Impossible burgers.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Food menu includes a grilled chicken sandwich.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official page offers seasonal specialty cocktails.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Official page explicitly lists draft beer.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official page lists house and sparkling wine.",
+          "sourceUrl": "https://www.artbar.com/location/art-bar/"
+        }
+      ],
+      "website": "https://www.artbar.com/location/art-bar/"
+    },
+    {
+      "camis": "40385161",
+      "name": "AUTOMATIC SLIM'S",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.automaticslimsnyc.com/",
+          "note": "Official site confirms Automatic Slim’s Bar & Restaurant at 733 Washington St. No readable food or drinks menu was present."
+        }
+      ],
+      "features": [],
+      "website": "https://www.automaticslimsnyc.com/"
+    },
+    {
+      "camis": "40554183",
+      "name": "BARROW'S PUB",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [],
+      "features": [],
+      "note": "Search did not establish a venue-owned website or menu for Barrow’s Pub at 463 Hudson. Barrow Street Ale House is a different business and was not substituted. No closure inference."
+    },
+    {
+      "camis": "41225392",
+      "name": "BAYARD'S ALEHOUSE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://bayardsalehouse.com/",
+          "note": "Official homepage confirms 533 Hudson St, draft beers and Irish pub identity. Food menu directly checked."
+        },
+        {
+          "url": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu",
+          "note": "Official food menu checked: burgers, sandwiches and Fish n’ Chips."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pub",
+          "summary": "The venue describes itself as an Irish pub.",
+          "sourceUrl": "https://bayardsalehouse.com/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "The venue describes a selection of draft beers.",
+          "sourceUrl": "https://bayardsalehouse.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Menu includes charcoal-grilled burgers and smash burgers.",
+          "sourceUrl": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Menu includes chicken sandwiches and wraps.",
+          "sourceUrl": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu"
+        },
+        {
+          "label": "Fish and chips",
+          "summary": "Menu lists beer-battered Atlantic cod with fries.",
+          "sourceUrl": "https://bayardsalehouse.com/new-york-west-village-bayard-s-ale-house-food-menu"
+        }
+      ],
+      "website": "https://bayardsalehouse.com/"
+    },
+    {
+      "camis": "41395589",
+      "name": "BERIMBAU",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.berimbaunyc.com/",
+          "note": "Official West Village section explicitly identifies 43 Carmine St and mentions cocktails, dinner and brunch. Menus page returned little readable content; Midtown dishes were not used."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "West Village location description explicitly offers cocktails.",
+          "sourceUrl": "https://www.berimbaunyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "West Village location description explicitly offers brunch.",
+          "sourceUrl": "https://www.berimbaunyc.com/"
+        }
+      ],
+      "website": "https://www.berimbaunyc.com/"
+    },
+    {
+      "camis": "41185348",
+      "name": "BLIND TIGER",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.blindtigeralehouse.com/",
+          "note": "Official homepage confirms 281 Bleecker St and rotating draught and cask beers. Food menu opens but its dishes are not readable in extraction."
+        }
+      ],
+      "features": [
+        {
+          "label": "Draft beer",
+          "summary": "Official venue page describes rotating draught and cask selections.",
+          "sourceUrl": "https://www.blindtigeralehouse.com/"
+        }
+      ],
+      "website": "https://www.blindtigeralehouse.com/"
+    },
+    {
+      "camis": "40965997",
+      "name": "BONSIGNOUR",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [],
+      "features": [],
+      "note": "Search found delivery and directory pages for 35 Jane Street but did not establish an accessible venue-owned menu. No offerings inferred from those third-party menus."
+    },
+    {
+      "camis": "41025084",
+      "name": "BRASS MONKEY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://brassmonkeynyc.com/",
+          "note": "Official Find Us page confirms 55 Little West 12th Street. Official all-day food menu directly checked."
+        },
+        {
+          "url": "https://brassmonkeynyc.com/find-us/",
+          "note": "Confirms exact street address."
+        },
+        {
+          "url": "https://brassmonkeynyc.com/lunch-dinner-menu/",
+          "note": "Official all-day menu checked."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "All-day menu lists cheeseburger sliders and a double-patty cheeseburger.",
+          "sourceUrl": "https://brassmonkeynyc.com/lunch-dinner-menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "All-day menu lists grilled cheese and a fried chicken sandwich.",
+          "sourceUrl": "https://brassmonkeynyc.com/lunch-dinner-menu/"
+        },
+        {
+          "label": "Tacos",
+          "summary": "All-day menu lists shrimp tacos and crispy fish tacos.",
+          "sourceUrl": "https://brassmonkeynyc.com/lunch-dinner-menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official homepage links a weekend brunch menu.",
+          "sourceUrl": "https://brassmonkeynyc.com/"
+        }
+      ],
+      "website": "https://brassmonkeynyc.com/"
+    },
+    {
+      "camis": "41530089",
+      "name": "BROOKLYNEER",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [],
+      "features": [],
+      "note": "Historical directories point to brooklyneer.com, but opening that site returned 404. No current official offerings established; fetch failure does not establish closure."
+    },
+    {
+      "camis": "40380660",
+      "name": "BURRITO LOCO",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [],
+      "features": [],
+      "note": "Directories identify burritoloco.com for 166 W 4th Street, but both HTTP/HTTPS official-site attempts were inaccessible. No third-party menu used and no closure inferred."
+    },
+    {
+      "camis": "40400155",
+      "name": "BUS STOP CAFE",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.busstopcafe-nyc.com/",
+          "note": "Official homepage confirms 597 Hudson Street; its accessible content is a food photo gallery. Order page links third-party delivery services; no readable first-party menu was verified."
+        }
+      ],
+      "features": [],
+      "website": "https://www.busstopcafe-nyc.com/"
+    },
+    {
+      "camis": "41541889",
+      "name": "BUVETTE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://ilovebuvette.com/menus-newyork-location",
+          "note": "Official New York menu landing page identifies 42 Grove Street and links breakfast, brunch, lunch, dinner, wines and cocktails. Individual food details were not inferred."
+        }
+      ],
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "New York menu page explicitly provides a brunch menu.",
+          "sourceUrl": "https://ilovebuvette.com/menus-newyork-location"
+        },
+        {
+          "label": "Wine",
+          "summary": "New York menu page explicitly provides a wines menu.",
+          "sourceUrl": "https://ilovebuvette.com/menus-newyork-location"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "New York menu page explicitly provides a cocktails menu.",
+          "sourceUrl": "https://ilovebuvette.com/menus-newyork-location"
+        }
+      ],
+      "website": "https://ilovebuvette.com/menus-newyork-location"
+    },
+    {
+      "camis": "41204508",
+      "name": "CAFE CLUNY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.cafecluny.com/menus/",
+          "note": "Official menu checked; official Hours & Location page confirms 284 W 12th St."
+        },
+        {
+          "url": "https://www.cafecluny.com/location/cafe-cluny/",
+          "note": "Exact location confirmed."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Published menu lists the Cluny burger and a vegetarian burger.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Published menu lists linguine with clams and macaroni and cheese.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Published menu lists shrimp cocktail, oysters, salmon and branzino.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official menus include brunch.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Breakfast menu includes a breakfast club sandwich.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "Menu includes coffee, espresso and cappuccino.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Menu lists hot tea selections.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Pastries",
+          "summary": "Breakfast menu includes croissant and cinnamon-sugar doughnut holes.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Menu includes espresso martini, Bloody Mary and other cocktails.",
+          "sourceUrl": "https://www.cafecluny.com/menus/"
+        }
+      ],
+      "website": "https://www.cafecluny.com/menus/"
+    },
+    {
+      "camis": "41287338",
+      "name": "CAFE PANINO MUCHO GUSTO",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.cafepaninonyc.com/",
+          "note": "Official page lists offerings; official Logistics page confirms 551 Hudson Street. Official spelling is Cafe Panino Mucho Giusto."
+        },
+        {
+          "url": "https://www.cafepaninonyc.com/location",
+          "note": "Confirms 551 Hudson Street at Perry."
+        }
+      ],
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official page lists coffee and espresso.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official page lists tea lattes.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official page describes panini.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Pastries",
+          "summary": "Official page lists pastries.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official page lists wines.",
+          "sourceUrl": "https://www.cafepaninonyc.com/"
+        }
+      ],
+      "website": "https://www.cafepaninonyc.com/"
+    },
+    {
+      "camis": "40544958",
+      "name": "CALIENTE CAB CO.",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://calientecabco.com/menus/",
+          "note": "Official menu checked; official reservations page confirms 61 Seventh Ave South."
+        },
+        {
+          "url": "https://calientecabco.com/reservations/",
+          "note": "Confirms 61 Seventh Ave South."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "Menu includes margaritas and mezcalitas.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Bar menu explicitly lists draft cerveza.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Bar menu lists mini Wagyu beef burgers.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Menu includes Mexican brunch and a brunch burrito.",
+          "sourceUrl": "https://calientecabco.com/menus/"
+        }
+      ],
+      "website": "https://calientecabco.com/menus/"
+    },
+    {
+      "camis": "40566335",
+      "name": "CARRY ON TEA & SYMPATHY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://teaandsympathynyc.myshopify.com/",
+          "note": "Official Tea & Sympathy website links this store branded Carry on Tea & Sympathy. Retail catalog offers loose-leaf tea, bagged tea, biscuits and groceries. Exact shop location corroborated by its merchant ordering page, kept separate from the restaurant at 108 Greenwich."
+        },
+        {
+          "url": "https://teaandsympathy.com/",
+          "note": "Official restaurant website links Carry on Tea & Sympathy Shopify store; restaurant itself is at 108, not 110."
+        },
+        {
+          "url": "https://order.toasttab.com/online/carry-on-tea-and-sympathy-110-greenwich-street/item-yorkshire-green-80-bags_7bdea3d0-7a2e-41d2-9209-d93cd406e267",
+          "note": "Merchant-operated ordering listing identifies Carry On Tea and Sympathy at 110 Greenwich Avenue; used for exact shop identity, not food-menu extraction."
+        }
+      ],
+      "features": [
+        {
+          "label": "Tea",
+          "summary": "Official Carry on Tea & Sympathy store lists loose-leaf and bagged tea.",
+          "sourceUrl": "https://teaandsympathynyc.myshopify.com/"
+        }
+      ],
+      "website": "https://teaandsympathynyc.myshopify.com/"
+    },
+    {
+      "camis": "41382007",
+      "name": "CASA LA FEMME",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.casalafemmeny.com/",
+          "note": "Official homepage confirms 140 Charles Street and belly-dance shows; official food menu directly checked."
+        },
+        {
+          "url": "https://www.casalafemmeny.com/menus.html",
+          "note": "Official menu directly lists mezza, kebab platters, flatbread sandwiches and grilled fish."
+        }
+      ],
+      "features": [
+        {
+          "label": "Sandwiches",
+          "summary": "Menu lists pressed chicken, beef and fava-bean flatbread sandwiches.",
+          "sourceUrl": "https://www.casalafemmeny.com/menus.html"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Menu includes shrimp kebab and grilled salmon.",
+          "sourceUrl": "https://www.casalafemmeny.com/menus.html"
+        },
+        {
+          "label": "Belly dancing",
+          "summary": "Official homepage advertises belly-dancing shows.",
+          "sourceUrl": "https://www.casalafemmeny.com/"
+        }
+      ],
+      "website": "https://www.casalafemmeny.com/"
+    },
+    {
+      "camis": "40365166",
+      "name": "CORNER BISTRO",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://cornerbistronyc.com/",
+          "note": "Official homepage confirms West Village at 331 W 4th St and describes Bistro Burger. West Village menu page remained at Loading menu; no further dishes inferred."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Official homepage identifies its Bistro Burger.",
+          "sourceUrl": "https://cornerbistronyc.com/"
+        }
+      ],
+      "website": "https://cornerbistronyc.com/"
+    },
+    {
+      "camis": "50014197",
+      "name": "COTENNA",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://cotenna.com/",
+          "note": "Official homepage confirms 21 Bedford Street; official menu directly checked."
+        },
+        {
+          "url": "https://cotenna.com/menu/",
+          "note": "Official menu checked; no pizza inferred from third-party ordering listings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists fettuccine, tagliatelle, linguine and other pasta.",
+          "sourceUrl": "https://cotenna.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu includes shrimp scampi, mussels and stewed calamari.",
+          "sourceUrl": "https://cotenna.com/menu/"
+        }
+      ],
+      "website": "https://cotenna.com/"
+    },
+    {
+      "camis": "40514147",
+      "name": "CREATIVE EDGE CATERERS",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.creativeedgeparties.com/home",
+          "note": "Official site confirms Creative Edge Parties / Creative Edge House and 110 Barrow Street. This is an event caterer; no public walk-in restaurant menu was established."
+        }
+      ],
+      "features": [],
+      "website": "https://www.creativeedgeparties.com/home"
+    },
+    {
+      "camis": "40393519",
+      "name": "DOWN THE HATCH",
+      "checkedAt": "2026-11-07",
+      "status": "identity_conflict",
+      "sources": [
+        {
+          "url": "https://www.downthehatchnyc.com/contact/",
+          "note": "Official site lists179 W4th Street; registry record lists175 W4th Street. No menu transferred pending address reconciliation."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "41567865",
+      "name": "EMPELLON",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.empellon.com/contact-us/",
+          "note": "Official contact page confirms230 West4th Street."
+        },
+        {
+          "url": "https://www.empellon.com/restaurants/taqueria/",
+          "note": "Current official West Village page confirms230 West4th Street and links the March2026 menu PDF."
+        },
+        {
+          "url": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-menu-11-20-23-2.pdf",
+          "note": "Previously checked historical2023 PDF; superseded for feature claims by currently linked March2026 menu."
+        },
+        {
+          "url": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Tacos",
+          "summary": "Currently linked official menu lists chicken, fish tempura and beef short-rib tacos.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Currently linked official menu lists Cheeseburger V2 in a flour tortilla.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Currently linked official menu lists fish tempura tacos.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Currently linked official menu lists margaritas and house cocktails.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        },
+        {
+          "label": "Wine",
+          "summary": "Currently linked official menu lists sparkling, white, rosé and red wine.",
+          "sourceUrl": "https://www.empellon.com/app/uploads/2020/09/empellon-taqueria-and-bar-3-16-26.pdf"
+        }
+      ],
+      "website": "https://www.empellon.com/contact-us/"
+    },
+    {
+      "camis": "41100350",
+      "name": "EMPLOYEE'S ONLY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://employeesonlynyc.com/",
+          "note": "Official site confirms510 Hudson Street."
+        },
+        {
+          "url": "https://employeesonlynyc.com/menus/cocktails",
+          "note": "Official source checked for listed offerings."
+        },
+        {
+          "url": "https://employeesonlynyc.com/menus/wine",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "Cocktail menu lists Manhattan and Billionaire cocktails.",
+          "sourceUrl": "https://employeesonlynyc.com/menus/cocktails"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official wine menu lists sparkling, white and red wines.",
+          "sourceUrl": "https://employeesonlynyc.com/menus/wine"
+        }
+      ],
+      "website": "https://employeesonlynyc.com/"
+    },
+    {
+      "camis": "41398358",
+      "name": "ENTWINE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://entwinenyc.com/contact",
+          "note": "Official contact page confirms765 Washington Street and describes a cocktail bar."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "Official site describes Entwine as a cocktail bar.",
+          "sourceUrl": "https://entwinenyc.com/contact"
+        }
+      ],
+      "website": "https://entwinenyc.com/contact"
+    },
+    {
+      "camis": "41646967",
+      "name": "FAY DA BAKERY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://fayda.com/",
+          "note": "Official site lists coffee, teas and steamed buns in stores; locations page confirms321 Sixth Avenue."
+        },
+        {
+          "url": "https://fayda.com/pages/locations",
+          "note": "Official locations page confirms321 Sixth Avenue."
+        }
+      ],
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official site lists coffee in its in-store menu.",
+          "sourceUrl": "https://fayda.com/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official site lists teas in its in-store menu.",
+          "sourceUrl": "https://fayda.com/"
+        },
+        {
+          "label": "Steamed buns",
+          "summary": "Official homepage lists steamed buns on the in-store menu.",
+          "sourceUrl": "https://fayda.com/"
+        }
+      ],
+      "website": "https://fayda.com/"
+    },
+    {
+      "camis": "40703670",
+      "name": "GHANDI CAFE",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://ghandicafenewyork.com/",
+          "note": "Official restaurant site confirms283 Bleecker Street. No standard feature label independently established from an official menu."
+        }
+      ],
+      "features": [],
+      "website": "https://ghandicafenewyork.com/"
+    },
+    {
+      "camis": "41326196",
+      "name": "GOLDEN WOKS",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.goldenwoksnewyork.com/",
+          "note": "Official-looking venue domain returned403; goldenwoksny.com also inaccessible. Third-party menus excluded."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "41283835",
+      "name": "GOTTINO",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://gottino.nyc/",
+          "note": "Candidate venue domain inaccessible; gottinony.com also inaccessible. No official address/menu confirmation obtained."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "41218950",
+      "name": "GREENWICH TREEHOUSE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.greenwichtreehouse.com/",
+          "note": "Official site confirms46 Greenwich Avenue."
+        }
+      ],
+      "features": [
+        {
+          "label": "Wine",
+          "summary": "Official site explicitly lists wine among its drinks.",
+          "sourceUrl": "https://www.greenwichtreehouse.com/"
+        }
+      ],
+      "website": "https://www.greenwichtreehouse.com/"
+    },
+    {
+      "camis": "41489751",
+      "name": "HUDSON CLEARWATER",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://hudsonclearwater.com/",
+          "note": "Official site confirms447 Hudson Street."
+        },
+        {
+          "url": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official dinner menu lists tagliatelle and baked lasagna.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official dinner menu lists oysters, scallops and Atlantic bass.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official dinner menu contains a cocktail list.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official dinner menu contains red, white and sparkling wine.",
+          "sourceUrl": "https://hudsonclearwater.com/menus/dinner%20takeout.pdf"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official home page links a brunch menu.",
+          "sourceUrl": "https://hudsonclearwater.com/"
+        }
+      ],
+      "website": "https://hudsonclearwater.com/"
+    },
+    {
+      "camis": "50000479",
+      "name": "IFC CENTER",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.ifccenter.com/faq/",
+          "note": "Official FAQ confirms323 Sixth Avenue."
+        },
+        {
+          "url": "https://www.ifccenter.com/about/",
+          "note": "Official concessions description lists popcorn and snacks."
+        }
+      ],
+      "features": [
+        {
+          "label": "Popcorn",
+          "summary": "Official concessions description lists popcorn with butter.",
+          "sourceUrl": "https://www.ifccenter.com/about/"
+        }
+      ],
+      "website": "https://www.ifccenter.com/faq/"
+    },
+    {
+      "camis": "50014568",
+      "name": "INSOMNIA COOKIES",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://api.insomniacookies.com/news/cookies-to-the-rescue",
+          "note": "Official brand article identifies Chelsea store at304 W14th Street; article is historical and current store endpoint inaccessible. No current menu claim."
+        }
+      ],
+      "features": [],
+      "website": "https://api.insomniacookies.com/news/cookies-to-the-rescue"
+    },
+    {
+      "camis": "50017903",
+      "name": "JACK'S WIFE FREDA",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://jackswifefreda.com/locations/",
+          "note": "Official locations page confirms50 Carmine Street."
+        },
+        {
+          "url": "https://jackswifefreda.com/",
+          "note": "Official source checked for listed offerings."
+        },
+        {
+          "url": "https://jackswifefreda.com/menu/",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "Official brand site explicitly offers brunch at its all-day restaurants.",
+          "sourceUrl": "https://jackswifefreda.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official brand site explicitly offers cocktails.",
+          "sourceUrl": "https://jackswifefreda.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official menu lists Jack’s Burger and a salmon burger.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official menu lists steak, chicken and eggplant sandwiches.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists spaghetti with chicken meatballs.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists salmon, branzino and mussels.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Fish and chips",
+          "summary": "Official menu lists fish and chips as a Friday special.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Shakshuka",
+          "summary": "Official menu lists green shakshuka.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        },
+        {
+          "label": "Waffles",
+          "summary": "Official menu lists a rosewater waffle.",
+          "sourceUrl": "https://jackswifefreda.com/menu/"
+        }
+      ],
+      "website": "https://jackswifefreda.com/locations/"
+    },
+    {
+      "camis": "40575863",
+      "name": "Joe's Pizza",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "website": "https://www.joespizzanyc.com/locations",
+      "features": [
+        {
+          "label": "Pizza",
+          "summary": "Joe's Pizza's published website documents pizza.",
+          "sourceUrl": "https://www.joespizzanyc.com/locations"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.joespizzanyc.com/locations",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        }
+      ]
+    },
+    {
+      "camis": "40401895",
+      "name": "JOHNNY'S BAR",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.google.com/search?q=Johnny%27s+Bar+90+Greenwich+official",
+          "note": "Searched for an official site for90 Greenwich Avenue; only third-party listings located. No features imported."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "40674475",
+      "name": "John’s of Bleecker Street",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "website": "https://johnsofbleecker.com/",
+      "features": [
+        {
+          "label": "Pizza",
+          "summary": "John’s of Bleecker Street lists pizza on its published website or linked menu.",
+          "sourceUrl": "https://johnsofbleecker.com/"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://johnsofbleecker.com/",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        }
+      ]
+    },
+    {
+      "camis": "41431046",
+      "name": "JOSEPH LEONARD",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.josephleonard.com/info/",
+          "note": "Official info confirms170 Waverly Place."
+        },
+        {
+          "url": "https://www.josephleonard.com/menus/",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Official menu includes the JL Burger.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official breakfast menu includes an egg sandwich.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "Official menu lists espresso, cold brew and other coffee drinks.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Tea",
+          "summary": "Official menu lists black, green and herbal teas.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu lists house cocktails.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official menu lists red, white and sparkling wines.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Official menu specifies draft lager, IPA and saison.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official info page lists brunch service.",
+          "sourceUrl": "https://www.josephleonard.com/menus/"
+        }
+      ],
+      "website": "https://www.josephleonard.com/info/"
+    },
+    {
+      "camis": "40729164",
+      "name": "JULIUS'",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.juliusbarny.com/",
+          "note": "Venue domain inaccessible; no official menu content obtained. Fetch failure is not evidence of closure."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "41451912",
+      "name": "KARAOKE BOHO",
+      "checkedAt": "2026-11-07",
+      "status": "identity_conflict",
+      "sources": [
+        {
+          "url": "https://www.karaokeboho.com/",
+          "note": "Official site identifies only BOHO Orchard at152 Orchard Street, not listed186 West4th Street. No offerings transferred."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "41033313",
+      "name": "KETTLE OF FISH",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.kettleoffishnyc.com/",
+          "note": "Official site confirms59 Christopher Street and beer on tap."
+        }
+      ],
+      "features": [
+        {
+          "label": "Draft beer",
+          "summary": "Official venue description explicitly offers beer on tap.",
+          "sourceUrl": "https://www.kettleoffishnyc.com/"
+        }
+      ],
+      "website": "https://www.kettleoffishnyc.com/"
+    },
+    {
+      "camis": "41378319",
+      "name": "L'ARTUSI",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.lartusi.com/",
+          "note": "Official site confirms228 West10th Street."
+        },
+        {
+          "url": "https://www.lartusi.com/menu/",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists spaghetti, bucatini and tagliatelle.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists crudo and fish dishes.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official menu contains a bottled wine list.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu contains a cocktails and wine section.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official site lists weekend brunch service.",
+          "sourceUrl": "https://www.lartusi.com/menu/"
+        }
+      ],
+      "website": "https://www.lartusi.com/"
+    },
+    {
+      "camis": "40574293",
+      "name": "LA BONBONNIERE",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.instagram.com/labonbonnierenyc/",
+          "note": "Candidate official social account identified through venue listings; official account content not accessible/verified. Similarly named Bomboniera sites are different businesses."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "50001073",
+      "name": "LE BARATIN",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://lebaratinnyc.com/",
+          "note": "Official site confirms26 Greenwich Avenue and weekend brunch."
+        },
+        {
+          "url": "https://lebaratinnyc.com/about",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "Official site states brunch is served on weekends.",
+          "sourceUrl": "https://lebaratinnyc.com/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official about page identifies mussels as a signature dish.",
+          "sourceUrl": "https://lebaratinnyc.com/about"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official about page lists cocktails.",
+          "sourceUrl": "https://lebaratinnyc.com/about"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official about page lists wine by glass or bottle.",
+          "sourceUrl": "https://lebaratinnyc.com/about"
+        }
+      ],
+      "website": "https://lebaratinnyc.com/"
+    },
+    {
+      "camis": "40544528",
+      "name": "LE GIGOT",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://legigotrestaurant.com/locat.html",
+          "note": "Official location page confirms18 Cornelia Street."
+        },
+        {
+          "url": "https://legigotrestaurant.com/menu-dinner.html",
+          "note": "Official source checked for listed offerings."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official dinner menu lists fettuccine with mushrooms.",
+          "sourceUrl": "https://legigotrestaurant.com/menu-dinner.html"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official dinner menu lists Le Gigot Hamburger.",
+          "sourceUrl": "https://legigotrestaurant.com/menu-dinner.html"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official dinner menu lists oysters, crab cake and bouillabaisse.",
+          "sourceUrl": "https://legigotrestaurant.com/menu-dinner.html"
+        }
+      ],
+      "website": "https://legigotrestaurant.com/locat.html"
+    },
+    {
+      "camis": "41601611",
+      "name": "LEFT BANK",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.leftbanknewyork.com/menu/",
+          "note": "Official menu page confirms117 Perry Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official menu lists pappardelle, gnocchi and cacio e pepe.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official menu lists a cheeseburger.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official menu lists chicken baguette and grilled cheese.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists scallops, oysters, mussels and salmon.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official menu includes a weekend brunch section.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Wine",
+          "summary": "Official menu lists wine by the glass.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "Official menu explicitly lists draught beer.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu lists margaritas and martinis.",
+          "sourceUrl": "https://www.leftbanknewyork.com/menu/"
+        }
+      ],
+      "website": "https://www.leftbanknewyork.com/menu/"
+    },
+    {
+      "camis": "41279957",
+      "name": "LELABAR",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.lelabar.com/menu/wine/",
+          "note": "Official wine menu confirms422 Hudson Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Wine",
+          "summary": "Official bottle list includes champagne, white and red wines.",
+          "sourceUrl": "https://www.lelabar.com/menu/wine/"
+        }
+      ],
+      "website": "https://www.lelabar.com/menu/wine/"
+    },
+    {
+      "camis": "41266621",
+      "name": "Magnolia Bakery",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "website": "https://www.magnoliabakery.com/pages/store-list",
+      "features": [
+        {
+          "label": "Cupcakes",
+          "summary": "Magnolia Bakery lists cupcakes on its published website or linked menu.",
+          "sourceUrl": "https://magnoliabakery.order.online/en-US/store/magnolia-bakery-west-village-22785"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://magnoliabakery.order.online/en-US/store/magnolia-bakery-west-village-22785",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        },
+        {
+          "url": "https://www.magnoliabakery.com/pages/store-list",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        }
+      ]
+    },
+    {
+      "camis": "41491940",
+      "name": "MALAPARTE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.malapartenyc.com/",
+          "note": "Official site confirms 753 Washington Street and lists selected dishes, wines, cocktails, and brunch."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Published dishes include rigatoni all’Amatriciana, fusilli al pesto, lasagna, and spaghetti alle vongole.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        },
+        {
+          "label": "Wine",
+          "summary": "The restaurant describes its Italian wine selection.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The official site lists cocktails and describes classic cocktails at the bar.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The official site lists weekend brunch.",
+          "sourceUrl": "https://www.malapartenyc.com/"
+        }
+      ],
+      "website": "https://www.malapartenyc.com/"
+    },
+    {
+      "camis": "41277451",
+      "name": "MARKET TABLE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.markettablenyc.com/menus/",
+          "note": "Official seasonal menu includes lunch, dinner, brunch and beverages."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "The published menu includes a Gold Label cheeseburger.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "The lunch menu includes turkey club and flounder sandwiches.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Published mains include salmon, sea bream, and flounder.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes a weekend brunch menu.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The beverage menu includes named cocktails.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        },
+        {
+          "label": "Wine",
+          "summary": "The menu lists wines by the glass.",
+          "sourceUrl": "https://www.markettablenyc.com/menus/"
+        }
+      ],
+      "website": "https://www.markettablenyc.com/menus/"
+    },
+    {
+      "camis": "41471053",
+      "name": "MEME MEDITERRANEAN",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://memeonhudson.com/west-village.html",
+          "note": "Official indexed West Village page confirms 581 Hudson Street and links lunch, dinner and brunch menus; direct fetch returned 502."
+        }
+      ],
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "The official West Village page publishes a brunch menu link.",
+          "sourceUrl": "https://memeonhudson.com/west-village.html"
+        }
+      ],
+      "website": "https://memeonhudson.com/west-village.html"
+    },
+    {
+      "camis": "41465581",
+      "name": "MOLE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://molenyc.com/",
+          "note": "Official site describes brunch and tequila cocktails."
+        },
+        {
+          "url": "https://molenyc.com/contact.html",
+          "note": "Official location page confirms 57 Jane Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes brunch service and a brunch menu link.",
+          "sourceUrl": "https://molenyc.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The official site describes margaritas and other tequila cocktails.",
+          "sourceUrl": "https://molenyc.com/"
+        },
+        {
+          "label": "Burritos",
+          "summary": "The official restaurant description lists burritos among its dishes.",
+          "sourceUrl": "https://molenyc.com/"
+        },
+        {
+          "label": "Enchiladas",
+          "summary": "The official restaurant description lists enchiladas among its dishes.",
+          "sourceUrl": "https://molenyc.com/"
+        }
+      ],
+      "website": "https://molenyc.com/"
+    },
+    {
+      "camis": "41604438",
+      "name": "Molly’s Cupcakes",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "website": "https://mollyscupcakes.com/locations/",
+      "features": [
+        {
+          "label": "Cupcakes",
+          "summary": "Molly’s Cupcakes lists cupcakes on its published website or linked menu.",
+          "sourceUrl": "https://mollyscupcakes.com/cupcakes/"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://mollyscupcakes.com/cupcakes/",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        },
+        {
+          "url": "https://mollyscupcakes.com/locations/",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        }
+      ]
+    },
+    {
+      "camis": "41452375",
+      "name": "OFRENDA",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.ofrendanyc.com/",
+          "note": "Official site confirms 113 7th Avenue South, tequila cocktail menu and brunch."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The restaurant describes an innovative menu of tequila-based cocktails.",
+          "sourceUrl": "https://www.ofrendanyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The official site lists weekend brunch service.",
+          "sourceUrl": "https://www.ofrendanyc.com/"
+        }
+      ],
+      "website": "https://www.ofrendanyc.com/"
+    },
+    {
+      "camis": "41466316",
+      "name": "OLIO E PIU",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.olioepiu.com/nyc-menu/",
+          "note": "Official Greenwich Village menu contains pasta, pizza, panini, burger, seafood and brunch sections."
+        },
+        {
+          "url": "https://www.olioepiu.com/location-nyc-greenwich-village/",
+          "note": "Official location page confirms 3 Greenwich Avenue."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Published dishes include spaghetti carbonara, gnocchi, and ravioli.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Pizza",
+          "summary": "The published menu includes pizzas from a wood brick oven.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "The menu lists the Olio Burger.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "The lunch menu lists panini and an Olio club sandwich.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "The menu lists octopus, salmon, and branzino.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes a brunch menu.",
+          "sourceUrl": "https://www.olioepiu.com/nyc-menu/"
+        }
+      ],
+      "website": "https://www.olioepiu.com/nyc-menu/"
+    },
+    {
+      "camis": "41493787",
+      "name": "ORIENT EXPRESS",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://orientexpressnyc.com/spirits/",
+          "note": "Official spirits menu confirms 325 W 11th Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The spirits menu offers martinis, Old Fashioneds, and Manhattans.",
+          "sourceUrl": "https://orientexpressnyc.com/spirits/"
+        }
+      ],
+      "website": "https://orientexpressnyc.com/spirits/"
+    },
+    {
+      "camis": "50011097",
+      "name": "OSCAR'S PLACE",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.oscarsplacenyc.com/",
+          "note": "Candidate official website was inaccessible. Exact-location official menu could not be checked."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "40803254",
+      "name": "Palma",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "website": "https://www.palmanyc.com/",
+      "features": [
+        {
+          "label": "Italian dining",
+          "summary": "Palma's published website documents italian dining.",
+          "sourceUrl": "https://www.palmanyc.com/"
+        },
+        {
+          "label": "Courtyard dining",
+          "summary": "Palma's published website documents courtyard dining.",
+          "sourceUrl": "https://www.palmanyc.com/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Palma’s October 2026 dinner menu lists handmade pasta.",
+          "sourceUrl": "https://media-cdn.getbento.com/accounts/9491cb63002068da37dcce19f78b0de5/media/hN2naf9SCyT7biIeItFj_Dinner%20Digital%20October%202026.pdf"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://media-cdn.getbento.com/accounts/9491cb63002068da37dcce19f78b0de5/media/hN2naf9SCyT7biIeItFj_Dinner%20Digital%20October%202026.pdf",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        },
+        {
+          "url": "https://www.palmanyc.com/",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        }
+      ]
+    },
+    {
+      "camis": "41473120",
+      "name": "PASTICCERIA ROCCO",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://roccos.nyc/",
+          "note": "Official site, redirected from pasticceriarocco.com, confirms 243 Bleecker Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pastries",
+          "summary": "The official site describes cannoli, Italian pastries, cookies, and cakes.",
+          "sourceUrl": "https://roccos.nyc/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "The official site describes espresso, cappuccino, and latte service.",
+          "sourceUrl": "https://roccos.nyc/"
+        }
+      ],
+      "website": "https://roccos.nyc/"
+    },
+    {
+      "camis": "41644212",
+      "name": "RAFELE",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.rafele.com/aboutus",
+          "note": "Official site describes its West Village restaurant, fresh daily pasta, seafood, and wine."
+        },
+        {
+          "url": "https://www.rafele.com/dinner",
+          "note": "Official dinner page links menu PDF; direct PDF source was subsequently readable, but contains no numbered address."
+        },
+        {
+          "url": "https://static1.squarespace.com/static/5ac79dd1f79392ec0d1e38e6/t/69208e0bb8615832d10da53b/1763741195571/Rafele%2BDinner%2Bmenu_REV11-11-25.pdf",
+          "note": "Current official linked dinner PDF read: pasta, pizzas and seafood documented, but no street address. Offerings withheld pending exact-location identity confirmation."
+        },
+        {
+          "url": "https://www.rafele.com/s/brunch255.pdf",
+          "note": "Official linked brunch PDF read, but no street address."
+        }
+      ],
+      "features": [],
+      "website": "https://www.rafele.com/aboutus",
+      "note": "Official West Village about page and linked dinner/brunch PDFs were read. First-party extracted pages and PDFs do not expose 29 Seventh Avenue South, so exact-location menu assignment remains unverified and no offerings are attached."
+    },
+    {
+      "camis": "41721444",
+      "name": "READY TO EAT",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://readytoeatnyc.com/",
+          "note": "Official site confirms its 525 Hudson Street storefront."
+        }
+      ],
+      "features": [
+        {
+          "label": "Seafood",
+          "summary": "The storefront description names poached salmon, grilled tuna steak, and Spanish paella among its changing offerings.",
+          "sourceUrl": "https://readytoeatnyc.com/"
+        },
+        {
+          "label": "Lamb tagine",
+          "summary": "The official storefront description lists lamb tagine among changing daily offerings.",
+          "sourceUrl": "https://readytoeatnyc.com/"
+        },
+        {
+          "label": "Paella",
+          "summary": "The official storefront description lists Spanish paella among changing daily offerings.",
+          "sourceUrl": "https://readytoeatnyc.com/"
+        }
+      ],
+      "website": "https://readytoeatnyc.com/"
+    },
+    {
+      "camis": "41576935",
+      "name": "RED FARM / DECOY",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.redfarmnyc.com/",
+          "note": "Official site confirms RedFarm West Village at 529 Hudson and links Decoy."
+        },
+        {
+          "url": "https://www.redfarmnyc.com/location/west-village/",
+          "note": "Official West Village location page checked."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The official site describes craft cocktails at RedFarm.",
+          "sourceUrl": "https://www.redfarmnyc.com/"
+        },
+        {
+          "label": "Dim sum",
+          "summary": "The official RedFarm site describes creative dim sum.",
+          "sourceUrl": "https://www.redfarmnyc.com/"
+        },
+        {
+          "label": "Peking duck",
+          "summary": "The official RedFarm site lists Peking duck among its offerings.",
+          "sourceUrl": "https://www.redfarmnyc.com/"
+        }
+      ],
+      "website": "https://www.redfarmnyc.com/"
+    },
+    {
+      "camis": "40752437",
+      "name": "SANPANINO",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.sanpanino.com/menus/",
+          "note": "Official menu includes sandwiches, coffee, and teas."
+        },
+        {
+          "url": "https://www.sanpanino.com/location/sanpanino-west-village/",
+          "note": "Official West Village page confirms 494 Hudson Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Sandwiches",
+          "summary": "The menu lists Italian sandwiches and breakfast sandwiches.",
+          "sourceUrl": "https://www.sanpanino.com/menus/"
+        },
+        {
+          "label": "Coffee",
+          "summary": "The drinks menu includes espresso, cappuccino, latte, and iced coffee.",
+          "sourceUrl": "https://www.sanpanino.com/menus/"
+        },
+        {
+          "label": "Tea",
+          "summary": "The drinks menu includes specialty teas and fresh iced tea.",
+          "sourceUrl": "https://www.sanpanino.com/menus/"
+        }
+      ],
+      "website": "https://www.sanpanino.com/menus/"
+    },
+    {
+      "camis": "40993101",
+      "name": "SANT AMBROEUS",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.santambroeus.com/pages/location-west-village",
+          "note": "Official West Village page describes espresso and weekend brunch."
+        },
+        {
+          "url": "https://www.santambroeus.com/pages/locations",
+          "note": "Official locations list confirms West Village at 259 West 4th Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "The West Village page describes espresso service.",
+          "sourceUrl": "https://www.santambroeus.com/pages/location-west-village"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant describes brunch on Saturdays and Sundays.",
+          "sourceUrl": "https://www.santambroeus.com/pages/location-west-village"
+        }
+      ],
+      "website": "https://www.santambroeus.com/pages/location-west-village"
+    },
+    {
+      "camis": "41639470",
+      "name": "SERAFINA",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://serafinarestaurant.com/meatpacking",
+          "note": "Official Meatpacking location/menu confirms 7 Ninth Avenue."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "The menu includes spaghetti, lasagna, ravioli, and gnocchi.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Pizza",
+          "summary": "The menu includes a pizza section.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Burgers",
+          "summary": "The menu lists the Serafina Burger.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Seafood",
+          "summary": "The menu includes lobster, calamari, salmon, swordfish, and branzino.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The location publishes a brunch menu.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The drinks menu lists margaritas, Negroni, and other cocktails.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Wine",
+          "summary": "The menu lists wines by glass and bottle.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        },
+        {
+          "label": "Draft beer",
+          "summary": "The menu lists beer alla spina, including Peroni, Heineken, Blue Moon, and Brooklyn Lager.",
+          "sourceUrl": "https://serafinarestaurant.com/meatpacking"
+        }
+      ],
+      "website": "https://serafinarestaurant.com/meatpacking"
+    },
+    {
+      "camis": "41074207",
+      "name": "SMALLS JAZZ CLUB",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.smallslive.com/",
+          "note": "Official club site lists 183 West 10th Street and current live jazz events."
+        }
+      ],
+      "features": [
+        {
+          "label": "Live jazz",
+          "summary": "The official schedule lists live jazz performances and jam sessions at Smalls.",
+          "sourceUrl": "https://www.smallslive.com/"
+        }
+      ],
+      "website": "https://www.smallslive.com/"
+    },
+    {
+      "camis": "41629922",
+      "name": "SOTTO 13",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.via13nyc.com/menu/",
+          "note": "Official current Via 13 menu lists pasta, pizza, and brunch. This is a verified rebrand."
+        },
+        {
+          "url": "https://www.via13nyc.com/",
+          "note": "sotto13.com redirects here. Official homepage explicitly states formerly Sotto 13 and confirms 140 West 13th Street. Display name should disclose Via 13 rebrand."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Via 13’s current menu lists mafaldina, gnocchi, spaghettoni, and cavatelli.",
+          "sourceUrl": "https://www.via13nyc.com/menu/"
+        },
+        {
+          "label": "Pizza",
+          "summary": "Via 13’s current menu lists pizzas.",
+          "sourceUrl": "https://www.via13nyc.com/menu/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Via 13 publishes a weekend brunch menu.",
+          "sourceUrl": "https://www.via13nyc.com/menu/"
+        }
+      ],
+      "website": "https://www.via13nyc.com/menu/",
+      "displayName": "Via 13 (formerly Sotto 13)"
+    },
+    {
+      "camis": "41381168",
+      "name": "SPUNTO",
+      "checkedAt": "2026-11-07",
+      "status": "closed_or_moved",
+      "sources": [
+        {
+          "url": "https://www.nycthincrust.com/location/spunto-thin-crust/",
+          "note": "Official operator page explicitly says WE MOVED; Spunto and Gruppo now share 261 Bowery. No current offerings assigned to former 65 Carmine Street location."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "41600154",
+      "name": "STARBUCKS COFFEE",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.starbucks.com/store-locator/store/35545/8th-ave-just-south-of-14th-st-122-greenwich-avenue-space-a-new-york-ny-100117710",
+          "note": "Exact-location official locator URL returned no readable content; no location-specific offerings verified."
+        }
+      ],
+      "features": []
+    },
+    {
+      "camis": "50002265",
+      "name": "SUSHI NAKAZAWA",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.sushinakazawa.com/new-york/location",
+          "note": "Official New York location page checked; text exposes phone but no numbered street address."
+        },
+        {
+          "url": "https://www.sushinakazawa.com/new-york/omakase-and-menu/omakase",
+          "note": "Official page documents chef and classic nigiri menus; no numbered address in extracted page. Offerings withheld until exact Commerce Street match is confirmed first-party."
+        },
+        {
+          "url": "https://www.sushinakazawa.com/new-york/omakase-and-menu",
+          "note": "Official New York omakase page read: sample daily menu explicitly includes salmon, scallop, squid, prawn, crab, tuna and sea urchin. Street address absent from extracted official location pages; exact Commerce Street match not independently confirmed first-party."
+        }
+      ],
+      "features": [],
+      "website": "https://www.sushinakazawa.com/new-york"
+    },
+    {
+      "camis": "40392496",
+      "name": "TARTINE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.tartine.nyc/lunch",
+          "note": "Official lunch menu confirms 253 W 11th Street and lists dishes and beverages."
+        },
+        {
+          "url": "https://www.tartine.nyc/menus",
+          "note": "Official menu overview confirms weekend brunch service."
+        }
+      ],
+      "features": [
+        {
+          "label": "Sandwiches",
+          "summary": "The menu includes BLT, croque monsieur, grilled chicken, and steak sandwiches.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Burgers",
+          "summary": "The menu lists the Tartine Burger.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Seafood",
+          "summary": "The menu lists salmon and PEI mussels.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Coffee",
+          "summary": "The menu lists drip coffee and espresso drinks.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Tea",
+          "summary": "The menu lists hot teas and iced tea.",
+          "sourceUrl": "https://www.tartine.nyc/lunch"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant publishes a weekend brunch menu.",
+          "sourceUrl": "https://www.tartine.nyc/menus"
+        }
+      ],
+      "website": "https://www.tartine.nyc/lunch"
+    },
+    {
+      "camis": "40573138",
+      "name": "TAVERN ON JANE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://tavernonjane.com/about/",
+          "note": "Official restaurant description documents classic cocktails and weekend brunch."
+        },
+        {
+          "url": "https://tavernonjane.com/",
+          "note": "Official homepage confirms 31 8th Avenue; dinner page had no extractable menu items."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cocktails",
+          "summary": "The restaurant describes its classic cocktails.",
+          "sourceUrl": "https://tavernonjane.com/about/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "The restaurant describes weekend brunch.",
+          "sourceUrl": "https://tavernonjane.com/about/"
+        }
+      ],
+      "website": "https://tavernonjane.com/about/"
+    },
+    {
+      "camis": "50004681",
+      "name": "THE CLAM",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.theclamnyc.com/",
+          "note": "Official site describes seafood, cocktails, and wine."
+        },
+        {
+          "url": "https://www.theclamnyc.com/location/the-clam/",
+          "note": "Official location page confirms 420 Hudson Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Seafood",
+          "summary": "The restaurant describes seasonal seafood, fresh fish, and a raw bar.",
+          "sourceUrl": "https://www.theclamnyc.com/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "The restaurant describes its craft cocktail program.",
+          "sourceUrl": "https://www.theclamnyc.com/"
+        },
+        {
+          "label": "Wine",
+          "summary": "The restaurant describes a curated wine list.",
+          "sourceUrl": "https://www.theclamnyc.com/"
+        }
+      ],
+      "website": "https://www.theclamnyc.com/"
+    },
+    {
+      "camis": "41029356",
+      "name": "THE DUPLEX",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://www.theduplex.com/hours-and-location",
+          "note": "Official page confirms 61 Christopher Street and piano bar/cabaret identity. No itemized beverage or food menu verified."
+        },
+        {
+          "url": "https://www.theduplex.com/history",
+          "note": "Official history confirms the current 61 Christopher location."
+        }
+      ],
+      "features": [],
+      "website": "https://www.theduplex.com/"
+    },
+    {
+      "camis": "50008995",
+      "name": "THE ELK",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.theelknyc.com/about",
+          "note": "Indexed official About page identifies the West Village at 128 Charles Street and lists coffee, matcha, breakfast and lunch. Live page is JavaScript rendered; indexed primary text was used."
+        }
+      ],
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Official cafe description lists coffee from Parlor.",
+          "sourceUrl": "https://www.theelknyc.com/about"
+        },
+        {
+          "label": "Matcha",
+          "summary": "Official cafe description lists matcha from Kettl.",
+          "sourceUrl": "https://www.theelknyc.com/about"
+        },
+        {
+          "label": "Breakfast",
+          "summary": "Official cafe description offers breakfast and lunch.",
+          "sourceUrl": "https://www.theelknyc.com/about"
+        }
+      ],
+      "note": "Indexed official About page identifies the West Village at 128 Charles Street and lists coffee, matcha, breakfast and lunch. Live page is JavaScript rendered; indexed primary text was used.",
+      "website": "https://www.theelknyc.com/about"
+    },
+    {
+      "camis": "40996223",
+      "name": "THE FOUR FACED LIAR",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://www.thefour-facedliar.com/drinks/drinks.html",
+          "note": "Official-domain search result at 165 W4 describes draft beer, but crawl is over 16 years old and direct opening failed. No current offering imported from that stale index."
+        }
+      ],
+      "features": [],
+      "note": "Official-domain search result at 165 W4 describes draft beer, but crawl is over 16 years old and direct opening failed. No current offering imported from that stale index."
+    },
+    {
+      "camis": "50008347",
+      "name": "THE GREY DOG",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.thegreydog.com/menu/dinner-new/",
+          "note": "Official dinner menu read; official West Village location page confirms 49 Carmine Street."
+        },
+        {
+          "url": "https://www.thegreydog.com/location/the-grey-dog-west-village/",
+          "note": "Exact location confirmed at 49 Carmine Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Official dinner menu lists mushroom linguine, penne with vodka sauce and pork-ragu rigatoni.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        },
+        {
+          "label": "Chicken wings",
+          "summary": "Official dinner menu lists chicken wings.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        },
+        {
+          "label": "Tacos",
+          "summary": "Official dinner menu lists seared tuna tacos.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official dinner menu lists garlic shrimp and tuna tacos.",
+          "sourceUrl": "https://www.thegreydog.com/menu/dinner-new/"
+        }
+      ],
+      "note": "Official dinner menu read; official West Village location page confirms 49 Carmine Street.",
+      "website": "https://www.thegreydog.com/menu/dinner-new/"
+    },
+    {
+      "camis": "41186217",
+      "name": "THE LITTLE OWL",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.thelittleowlnyc.com/",
+          "note": "Official single-venue site and menus checked for Little Owl at 90 Bedford Street; seasonal event menus were not substituted for regular menus."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pasta",
+          "summary": "Published dinner menu lists ziti and tortelli.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Published dinner menu lists halibut, salmon, tuna and branzino.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Published lunch menu lists a bacon cheeseburger.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Brunch",
+          "summary": "Official site provides brunch service and a brunch menu.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        },
+        {
+          "label": "Breakfast",
+          "summary": "Official site provides a breakfast menu.",
+          "sourceUrl": "https://www.thelittleowlnyc.com/"
+        }
+      ],
+      "note": "Official single-venue site and menus checked for Little Owl at 90 Bedford Street; seasonal event menus were not substituted for regular menus.",
+      "website": "https://www.thelittleowlnyc.com/"
+    },
+    {
+      "camis": "40592117",
+      "name": "THE OTHEROOM",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [],
+      "features": [],
+      "note": "Exact-name/address search for 143 Perry Street found directories but no confirmed accessible venue-owned menu. otheroom.com and theotherroom.com are unrelated businesses and were not used."
+    },
+    {
+      "camis": "41244008",
+      "name": "THE STONEWALL INN",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://thestonewallinnnyc.com/",
+          "note": "Official venue calendar checked; official contact/location pages confirm 53 Christopher Street. No food menu inferred."
+        },
+        {
+          "url": "https://thestonewallinnnyc.com/locations",
+          "note": "Official location is 53 Christopher Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Live entertainment",
+          "summary": "Official venue calendar advertises hosted shows, comedy and dance events.",
+          "sourceUrl": "https://thestonewallinnnyc.com/"
+        }
+      ],
+      "note": "Official venue calendar checked; official contact/location pages confirm 53 Christopher Street. No food menu inferred.",
+      "website": "https://thestonewallinnnyc.com/"
+    },
+    {
+      "camis": "40864264",
+      "name": "THE VILLAGE TAVERN",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://thevillagetavern.nyc/",
+          "note": "Official homepage confirms 46 Bedford Street. Beer-on-tap offering is first-party text; embedded customer reviews were not used to infer food."
+        }
+      ],
+      "features": [
+        {
+          "label": "Draft beer",
+          "summary": "Official homepage advertises beers on tap and pints in its specials.",
+          "sourceUrl": "https://thevillagetavern.nyc/"
+        }
+      ],
+      "note": "Official homepage confirms 46 Bedford Street. Beer-on-tap offering is first-party text; embedded customer reviews were not used to infer food.",
+      "website": "https://thevillagetavern.nyc/"
+    },
+    {
+      "camis": "41219088",
+      "name": "THE WAVERLY INN",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://waverlynyc.com/",
+          "note": "Official site confirms 16 Bank Street and dinner/weekend brunch service, but provides no readable dish menu. No food-specific features imported."
+        }
+      ],
+      "features": [],
+      "note": "Official site confirms 16 Bank Street and dinner/weekend brunch service, but provides no readable dish menu. No food-specific features imported.",
+      "website": "https://waverlynyc.com/"
+    },
+    {
+      "camis": "41620128",
+      "name": "THINK COFFEE",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th",
+          "note": "Merchant ordering page identifies Think Meatpacking at 73 Eighth Avenue. Brand locations page confirms the same address."
+        },
+        {
+          "url": "https://thinkcoffee.com/pages/locations-catering",
+          "note": "Official brand page lists 73 Eighth Avenue."
+        }
+      ],
+      "features": [
+        {
+          "label": "Coffee",
+          "summary": "Location-specific ordering page lists espresso and several lattes.",
+          "sourceUrl": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+        },
+        {
+          "label": "Cookies",
+          "summary": "Location-specific ordering page lists a salted chocolate-chip cookie.",
+          "sourceUrl": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+        },
+        {
+          "label": "Muffins",
+          "summary": "Location-specific ordering page lists a chai muffin.",
+          "sourceUrl": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+        }
+      ],
+      "note": "Merchant ordering page identifies Think Meatpacking at 73 Eighth Avenue. Brand locations page confirms the same address.",
+      "website": "https://thinkcoffee.order.tryperdiem.com/locations/new-york-think-coffee-8th"
+    },
+    {
+      "camis": "40366473",
+      "name": "TIO PEPE",
+      "checkedAt": "2026-11-07",
+      "status": "venue_only",
+      "sources": [
+        {
+          "url": "https://tiopepenyc.com/",
+          "note": "Official homepage identifies 168 W4 and Spanish cuisine, but its menu endpoint says non-live location/online ordering temporarily closed. No dish claims or closure inference."
+        },
+        {
+          "url": "https://tiopepenyc.com/menu",
+          "note": "Menu endpoint has no dish list and says ordering temporarily closed."
+        }
+      ],
+      "features": [],
+      "note": "Official homepage identifies 168 W4 and Spanish cuisine, but its menu endpoint says non-live location/online ordering temporarily closed. No dish claims or closure inference.",
+      "website": "https://tiopepenyc.com/"
+    },
+    {
+      "camis": "41634218",
+      "name": "TUE THAI FOOD",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://tuethainyc.com/menu.pdf",
+          "note": "Official 2026 takeout PDF is linked from the venue homepage and identifies 3 Greenwich Avenue."
+        },
+        {
+          "url": "https://tuethainyc.com/",
+          "note": "Official homepage confirms address and links menu PDF."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pad Thai",
+          "summary": "Official 2026 menu lists Pad Thai.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        },
+        {
+          "label": "Noodles",
+          "summary": "Official menu lists Pad Thai, pad see ew and drunken spicy noodles.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        },
+        {
+          "label": "Curry",
+          "summary": "Official menu lists green, red, panang and massaman curries.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official menu lists red snapper and steamed fish dishes.",
+          "sourceUrl": "https://tuethainyc.com/menu.pdf"
+        }
+      ],
+      "note": "Official 2026 takeout PDF is linked from the venue homepage and identifies 3 Greenwich Avenue.",
+      "website": "https://tuethainyc.com/menu.pdf"
+    },
+    {
+      "camis": "41053093",
+      "name": "TURKS & FROGS",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.turksandfrogs.com/our-menu",
+          "note": "Official menu checked. Homepage confirms 323 W11th Street."
+        },
+        {
+          "url": "https://www.turksandfrogs.com/",
+          "note": "Official address is 323 W11th Street."
+        }
+      ],
+      "features": [
+        {
+          "label": "Wine",
+          "summary": "Official menu provides a wine list.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu lists Negronis and martinis.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Hummus",
+          "summary": "Official food menu lists hummus with pita.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Cheese boards",
+          "summary": "Official food menu lists a cheese board.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official food menu lists tuna tartare and baked salmon.",
+          "sourceUrl": "https://www.turksandfrogs.com/our-menu"
+        }
+      ],
+      "note": "Official menu checked. Homepage confirms 323 W11th Street.",
+      "website": "https://www.turksandfrogs.com/our-menu"
+    },
+    {
+      "camis": "40371805",
+      "name": "TY'S",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [
+        {
+          "url": "https://tys.nyc/",
+          "note": "Indexed official site confirms 114 Christopher Street, but direct page is an account-suspended notice. No menu or current offerings imported; site suspension does not prove venue closure."
+        }
+      ],
+      "features": [],
+      "note": "Indexed official site confirms 114 Christopher Street, but direct page is an account-suspended notice. No menu or current offerings imported; site suspension does not prove venue closure."
+    },
+    {
+      "camis": "50008323",
+      "name": "Via Carota",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "website": "https://www.viacarota.com/",
+      "features": [
+        {
+          "label": "Italian dining",
+          "summary": "Via Carota's published website documents italian dining.",
+          "sourceUrl": "https://www.viacarota.com/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Via Carota's published website documents pasta.",
+          "sourceUrl": "https://www.viacarota.com/text"
+        },
+        {
+          "label": "Terrace dining",
+          "summary": "Via Carota's published website documents terrace dining.",
+          "sourceUrl": "https://www.viacarota.com/"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.viacarota.com/",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        },
+        {
+          "url": "https://www.viacarota.com/text",
+          "note": "Previously checked official venue or merchant-linked menu source, retained with the original check date."
+        }
+      ]
+    },
+    {
+      "camis": "41021523",
+      "name": "VILLAGE VANGUARD",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://villagevanguard.com/",
+          "note": "Official jazz performance calendar checked for the longstanding club at 178 Seventh Avenue South. No food or wait-time claims."
+        }
+      ],
+      "features": [
+        {
+          "label": "Live jazz",
+          "summary": "Official calendar lists jazz performances and the Vanguard Jazz Orchestra.",
+          "sourceUrl": "https://villagevanguard.com/"
+        }
+      ],
+      "note": "Official jazz performance calendar checked for the longstanding club at 178 Seventh Avenue South. No food or wait-time claims.",
+      "website": "https://villagevanguard.com/"
+    },
+    {
+      "camis": "41447856",
+      "name": "WILD",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://wildrestaurantnyc.com/",
+          "note": "Official venue page at 535 Hudson Street has named dishes. No dietary-safety claim imported despite gluten-free marketing."
+        }
+      ],
+      "features": [
+        {
+          "label": "Pizza",
+          "summary": "Official food listing includes pepperoni and burrata-prosciutto pizzas.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Pasta",
+          "summary": "Official food listing includes garganelli, rigatoni and ravioli.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official food listing includes a classic burger.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Seafood",
+          "summary": "Official food listing includes pan-seared salmon.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        },
+        {
+          "label": "Pancakes",
+          "summary": "Official food listing includes pancakes or waffles.",
+          "sourceUrl": "https://wildrestaurantnyc.com/"
+        }
+      ],
+      "note": "Official venue page at 535 Hudson Street has named dishes. No dietary-safety claim imported despite gluten-free marketing.",
+      "website": "https://wildrestaurantnyc.com/"
+    },
+    {
+      "camis": "41372275",
+      "name": "WILFIE & NELL",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.wilfieandnell.com/menu/",
+          "note": "Official menu checked; homepage confirms 228 W4th Street."
+        },
+        {
+          "url": "https://www.wilfieandnell.com/",
+          "note": "Exact location at 228 W4th Street confirmed."
+        }
+      ],
+      "features": [
+        {
+          "label": "Burgers",
+          "summary": "Official dinner menu lists veggie and dry-aged burgers.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official menu lists grilled cheese and chicken and steak sandwiches.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Chicken wings",
+          "summary": "Official menu lists hot wings.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Fish and chips",
+          "summary": "Official dinner menu lists beer-battered hake with fries.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        },
+        {
+          "label": "Cocktails",
+          "summary": "Official menu provides a cocktail section.",
+          "sourceUrl": "https://www.wilfieandnell.com/menu/"
+        }
+      ],
+      "note": "Official menu checked; homepage confirms 228 W4th Street.",
+      "website": "https://www.wilfieandnell.com/menu/"
+    },
+    {
+      "camis": "41011581",
+      "name": "WOGIES",
+      "checkedAt": "2026-11-07",
+      "status": "checked_offerings",
+      "sources": [
+        {
+          "url": "https://www.wogies.com/west-village-menu",
+          "note": "West Village menu checked; linked location page confirms 39 Greenwich Avenue."
+        },
+        {
+          "url": "https://www.wogies.com/west-village-home",
+          "note": "Exact location confirmed."
+        }
+      ],
+      "features": [
+        {
+          "label": "Cheesesteaks",
+          "summary": "Official West Village menu lists steak and chicken cheesesteaks.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        },
+        {
+          "label": "Sandwiches",
+          "summary": "Official West Village menu lists cheesesteaks and chicken sandwiches.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        },
+        {
+          "label": "Burgers",
+          "summary": "Official West Village menu lists a smashburger.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        },
+        {
+          "label": "Chicken wings",
+          "summary": "Official West Village menu lists wings.",
+          "sourceUrl": "https://www.wogies.com/west-village-menu"
+        }
+      ],
+      "note": "West Village menu checked; linked location page confirms 39 Greenwich Avenue.",
+      "website": "https://www.wogies.com/west-village-menu"
+    },
+    {
+      "camis": "41381373",
+      "name": "WXOU RADIO",
+      "checkedAt": "2026-11-07",
+      "status": "source_unavailable",
+      "sources": [],
+      "features": [],
+      "note": "Exact-name/address research for 558 Hudson Street found no confirmed primary menu. Michigan radio-station wxou.org is unrelated and was not used."
+    }
+  ]
+}

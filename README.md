@@ -1,6 +1,6 @@
 # Elsewhere
 
-The current prototype is limited to **96 identity-matched venues in West Village, Manhattan (NYC boundary MN0203)**. Choose a listed venue on Discover. Search uses the bundled dataset without live Geoapify or Gemini requests. Identity, address and coordinates agree across the two datasets. NYC registry cuisine categories support broad comparisons; specific offerings require separate venue sources. Unsupported fields are omitted.
+The West Village prototype retains **96 matched identity records**, all reviewed against primary venue sources. **66 places have separately sourced food, drink or experience details and are enabled for discovery.** The remaining records are retained for research; no offering is invented when a menu cannot be checked or a location conflicts. Search uses the bundled dataset without live Geoapify or Gemini requests. NYC registry cuisine categories are not used as menu evidence. See [the complete source review](docs/WEST_VILLAGE_SOURCE_REVIEW.md).
 
 **Everyone’s going there. Find somewhere better.**
 
