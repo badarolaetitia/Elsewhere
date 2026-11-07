@@ -102,6 +102,10 @@ test('distance applies immediately; other draft filters, repeated updates and st
   };
   const jsx = (type,props,key) => ({type,props,key});
   const screen = load('src/app/results.tsx', {
+    '../components/area-heatmap':{default:()=>null},
+    '../lib/use-area-agent':{useAreaAgent:()=>({result:null,loading:false,error:'',now:Date.now()})},
+    '../lib/crowd-agent':load('src/lib/crowd-agent.ts',{'./pilot-catalog':{checkedVenues:[]},'./crowd-evidence':{evaluateCrowd:()=>({label:'unknown',reports:0})}}),
+    '../lib/crowd-evidence':{describeReading:()=>''},
     '../components/search-suggestions':{default:()=>null},
     '../components/booking-panel':{default:()=>null},
     '../components/brand':{default:()=>null},

@@ -1,4 +1,5 @@
 import {POST} from '../src/app/places+api';
+import {POST as crowdPOST} from '../src/app/crowd+api';
 import {guardSearch} from './search-guard';
 import {assets} from './assets.generated';
 
@@ -8,13 +9,13 @@ export default {
   async fetch(request:Request,env:Environment){
     const url=new URL(request.url);
     if(url.pathname.length>2000||url.search.length>10000)return new Response('URL too long',{status:414});
-    if(url.pathname==='/places'){
+    if(url.pathname==='/places'||url.pathname==='/crowd'){
       if(request.method!=='POST')return new Response('Method not allowed',{status:405,headers:{Allow:'POST'}});
       const origin=request.headers.get('origin');
       if(origin&&origin!==url.origin&&origin!==env.PUBLIC_SITE_ORIGIN)return new Response('Forbidden',{status:403});
       const denied=await guardSearch(request,env);
       if(denied)return denied;
-      const response=await POST(request,env);
+      const response=url.pathname==='/crowd'?await crowdPOST(request):await POST(request,env);
       for(const [key,value] of Object.entries(headers))response.headers.set(key,value);
       response.headers.set('Cache-Control','no-store');
       return response;

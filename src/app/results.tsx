@@ -5,6 +5,9 @@ import BookingPanel from "../components/booking-panel";
 import { normalizeSearchContext, type SearchContext } from "../lib/search-context";
 import { readSavedPlaces, toggleSavedPlace } from "../lib/taste-profile";
 import SearchSuggestions from "../components/search-suggestions";
+import AreaHeatmap from '../components/area-heatmap';
+import {coordinateArea} from '../lib/crowd-agent';
+import {useAreaAgent} from '../lib/use-area-agent';
 import {
     router,
     useLocalSearchParams,
@@ -81,6 +84,7 @@ type SearchedPlace = {
 };
 
 type Recommendation = {
+  crowdPriorityKey?: string;
   metadata?: Record<string,string>;
   name: string;
   address: string;
@@ -217,6 +221,13 @@ export default function ResultsScreen() {
 }
 
 function SearchResults({ searchedQuery, initialContext }: { searchedQuery: string; initialContext?: SearchContext }) {
+  const [preferQuiet,setPreferQuiet]=useState(false);
+  const [selectedMapId,setSelectedMapId]=useState<string|null>(null);
+  const pageRef=useRef<ScrollView|null>(null);
+  const contentRef=useRef<View|null>(null);
+  const cardRefs=useRef<Record<string,View|null>>({});
+  const mapRef=useRef<View|null>(null);
+  function scrollToView(target:View|null){if(target&&contentRef.current)target.measureLayout(contentRef.current,(_x,y)=>pageRef.current?.scrollTo({y:Math.max(0,y-12),animated:true}),()=>{});}
   const {dataVersion}=useAccount();
   const [savedPlaces, setSavedPlaces] = useState(readSavedPlaces());
   useFocusEffect(useCallback(()=>{setSavedPlaces(readSavedPlaces());},[]));
@@ -459,17 +470,23 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
   const activePreferenceOptions = researchStatus==='dataset'
     ? preferenceOptions.filter(option=>option.value==='local'||option.value==='closest').map(option=>option.value==='local'?{...option,label:'Best match',description:'Shared documented features'}:option)
     : preferenceOptions;
+  const areaAgent=useAreaAgent(researchStatus==='dataset'?recommendations.flatMap(v=>v.placeId?[v.placeId]:[]):[],initialContext?.mode==='tonight'&&initialContext.date?`${initialContext.date}T${initialContext.time}:00`:undefined);
+  const visibleRecommendations=coordinateArea(recommendations,areaAgent.result,{preferQuiet,closest:displayedFilters?.preference==='closest',now:areaAgent.now});
+  const areaById=new Map(areaAgent.result?.venues.map(v=>[v.id,v])??[]);
+  const mapInvestigation=areaAgent.result?{...areaAgent.result,venues:visibleRecommendations.flatMap(v=>{const area=areaById.get(v.placeId??'');return area?[area]:[];})}:null;
   const topAlternative =
-    recommendations[0] ??
+    visibleRecommendations[0] ??
     null;
 
   return (
     <ScrollView
+      ref={pageRef}
       style={styles.page}
       contentContainerStyle={
         styles.content
       }
     >
+      <View ref={contentRef} style={{width:'100%'}}>
       <Pressable
         onPress={() =>
           router.replace("/")
@@ -761,6 +778,15 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
       {discoverySummary.length>0 && <Text style={[styles.helperText,{marginBottom:12}]} accessibilityLiveRegion="polite">{discoverySummary}</Text>}
       {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
       {researchStatus==='dataset'&&<Text style={[styles.helperText,{marginBottom:18}]}>West Village · Published offerings and experiences checked November 7, 2026. Match scores compare documented details.</Text>}
+      {researchStatus==='dataset'&&recommendations.length>0&&<View style={{gap:8,marginBottom:20}}>
+        <Pressable accessibilityRole="switch" accessibilityLabel="Prefer less busy areas" accessibilityState={{checked:preferQuiet}} onPress={()=>setPreferQuiet(value=>!value)} style={{alignSelf:'flex-start',padding:12,borderRadius:20,backgroundColor:preferQuiet?'#174D43':'#EEE9DF'}}><Text style={{color:preferQuiet?'white':'#174D43',fontWeight:'600'}}>{preferQuiet?'✓ Prefer less busy areas':'Prefer less busy areas'}</Text></Pressable>
+        {preferQuiet&&<Text style={styles.helperText} accessibilityLiveRegion="polite">{displayedFilters?.preference==='closest'?'Closest first stays in distance order.':areaAgent.loading?'The Crowd Agent is researching area activity. Experience matches stay in their original order while it works.':!areaAgent.result?.venues.some(v=>v.reading.value!==null)?'Not enough area evidence to change the order.': 'The Coordinator favours lower estimated area activity only among similarly matched places with evidence.'}</Text>}
+      </View>}
+      {researchStatus==='dataset'&&recommendations.length>0&&<View ref={mapRef}>
+        {areaAgent.loading&&<Text style={[styles.helperText,{marginBottom:18}]} accessibilityLiveRegion="polite">Crowd Agent · checking public station history and permitted events…</Text>}
+        {!!areaAgent.error&&<View style={{gap:8,marginBottom:18}}><Text style={styles.helperText}>{areaAgent.error} Your experience matches are unchanged.</Text><Pressable accessibilityRole="button" onPress={areaAgent.retry}><Text style={{color:'#174D43'}}>Retry area research</Text></Pressable></View>}
+        {mapInvestigation&&<AreaHeatmap investigation={mapInvestigation} selectedId={selectedMapId} onSelect={setSelectedMapId} onViewPlace={id=>scrollToView(cardRefs.current[id])}/>}
+      </View>}
       {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Showing general alternatives. Product and atmosphere matches couldn’t be checked right now.</Text>}
 
       <View
@@ -862,19 +888,20 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
           </Text>
         </View>
       ) : (
-        recommendations.map(
+        visibleRecommendations.map(
           (
             recommendation,
             index
           ) => (
             <View
               testID="recommendation-card"
+              ref={node=>{if(recommendation.placeId)cardRefs.current[recommendation.placeId]=node;}}
               key={
                 recommendation.placeId ??
                 `${recommendation.name}-${index}`
               }
               style={
-                styles.alternativeCard
+                [styles.alternativeCard,selectedMapId===recommendation.placeId?{borderColor:'#174D43',borderWidth:2}:null]
               }
             >
               <View
@@ -959,6 +986,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
               </Text>}
 
               {recommendation.personalizationReason ? <Text style={[styles.reasonText,{color:"#174D43",marginTop:8}]}>{recommendation.personalizationReason}</Text> : null}
+              {areaById.has(recommendation.placeId??'')&&<Pressable accessibilityRole="button" onPress={()=>{setSelectedMapId(recommendation.placeId);scrollToView(mapRef.current);}}><Text style={{color:'#58685C',fontSize:13,marginTop:8}}>{index+1} · Show on map{areaById.get(recommendation.placeId??'')?.reading.value!==null?` · ${areaById.get(recommendation.placeId??'')?.reading.label} estimated area activity`:''}</Text></Pressable>}
               <Pressable accessibilityRole="button" onPress={() => setSavedPlaces(toggleSavedPlace({id:recommendation.placeId ?? `${recommendation.name}:${recommendation.address}`,name:recommendation.name,address:recommendation.address,categoryFamily:classification?.categoryFamily,interests:Object.entries(recommendation.experienceEvidence ?? {}).filter(([,e])=>e.status==='SUPPORTED').map(([keyword])=>keyword)}))}>
                 <Text style={[styles.reasonLabel,{marginTop:14}]}>{savedPlaces.some(item=>item.id===(recommendation.placeId ?? `${recommendation.name}:${recommendation.address}`))?'♥ Saved':'♡ Save'}</Text>
               </Pressable>
@@ -1008,6 +1036,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
           {recommendations.length} results
         </Text>
       )}
+      </View>
 
     </ScrollView>
   );

@@ -44,4 +44,8 @@ export function applyCloud(kind:Collection,items:Item[],user:string){
 }
 export function importGuestData(){if(owner==='guest')throw Error('Sign in before importing.');for(const kind of ['saved','visits','plans'] as const){const current=readCollection(kind);const ids=new Set(current.map(item=>item.id));writeCollection(kind,[...current,...readCollection(kind,'guest').filter(item=>!ids.has(item.id))]);}}
 export function clearGuestData(){for(const kind of ['saved','visits','plans'] as const)write(storageKey(kind,'guest'),'[]');emit();}
-export function clearAccountCache(user:string){for(const kind of ['saved','visits','plans'] as const)write(storageKey(kind,user),'[]');writePending([],user);emit();}
+export function clearAccountCache(user:string){for(const kind of ['saved','visits','plans'] as const)write(storageKey(kind,user),'[]');write(crowdStorageKey(user),'[]');writePending([],user);emit();}
+
+export function crowdStorageKey(user=owner){return `elsewhere.user.${user}.crowd-reports.v1`;}
+export function readDeviceCrowd():unknown[]{try{const value=JSON.parse(read(crowdStorageKey())??'[]');return Array.isArray(value)?value:[];}catch{return [];}}
+export function writeDeviceCrowd(reports:Item[]){write(crowdStorageKey(),JSON.stringify(reports));emit();}

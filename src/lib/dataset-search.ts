@@ -59,7 +59,7 @@ export async function searchPilotDataset(request:Request,env:DiscoveryEnvironmen
   }).filter(candidate=>matchesVerifiedPreferences(candidate,required));
   const recommendations=rankCandidates(personalizeCandidates(candidates,context.taste,Boolean(customIntent),context.avoid),preference,required,distance)
     .sort((a,b)=>preference==='closest'?a.distance-b.distance:b.focusMatchScore-a.focusMatchScore||plan.preferredFeatures.reduce((score,label,index)=>score+(plan.preferredFeatures.length-index)*(Number(Boolean(b.experienceEvidence[label]))-Number(Boolean(a.experienceEvidence[label]))),0)||b.similarityScore-a.similarityScore||b.personalizationTieBreak-a.personalizationTieBreak||a.distance-b.distance)
-    .map(({localScore,distinctivenessScore,chainLikelihood,popularityScore,...candidate})=>({...candidate,elsewhereScore:candidate.similarityScore}));
+    .map(({localScore,distinctivenessScore,chainLikelihood,popularityScore,...candidate})=>({...candidate,elsewhereScore:candidate.similarityScore,crowdPriorityKey:JSON.stringify([plan.preferredFeatures.map(label=>Boolean(candidate.experienceEvidence[label])),candidate.personalizationTieBreak])}));
   return Response.json({success:true,searchId:snapshotId,
     discoveryPlan:{query:place,intent:context.intent,plan},
     discovery:{mode:discovery.mode,summary:[`Alternatives to ${original.name}`,required.length?`matching ${required.join(', ')}`:'',plan.preferredFeatures.length?`prefer ${plan.preferredFeatures.join(', ')}`:'',distance?`within ${distance} km`:'across West Village'].filter(Boolean).join(' · '),steps:[{step:'interpret',status:'complete'},{step:'search_checked_dataset',status:'complete',count:checkedVenues.length},{step:'filter_and_rank',status:'complete',count:recommendations.length}]},
