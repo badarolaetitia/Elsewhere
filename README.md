@@ -1,5 +1,7 @@
 # Elsewhere
 
+The current prototype supports **New York City only**, including all five boroughs. Searches outside NYC are rejected before AI research.
+
 **Everyone’s going there. Find somewhere better.**
 
 Find alternatives to places you want to visit, based on the food, style,

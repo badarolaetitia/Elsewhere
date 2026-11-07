@@ -1,3 +1,4 @@
+import {DISCOVERY_CITY,DISCOVERY_SCOPE_MESSAGE,isSupportedCity,isNycFeature} from '../lib/discovery-scope';
 import {venueDestination,venueLink} from "../lib/venue-links";
 import { lookupPlace, PlaceLookupUnavailableError } from "../lib/place-lookup";
 import { personalizeCandidates } from "../lib/personalization";
@@ -429,7 +430,7 @@ async function discoverCityCandidates({
       `&filter=${encodeURIComponent(cityPlaceId ? `place:${cityPlaceId}` : `circle:${searchedLongitude},${searchedLatitude},15000`)}` +
       `&limit=100&apiKey=${geoapifyApiKey}`;
     const data = await fetchJson(url, requestSignal);
-    return data.features.map((feature: any) =>
+    return data.features.filter(isNycFeature).map((feature: any) =>
       featureToCandidate(feature, searchedLatitude, searchedLongitude));
   }));
   requestSignal.throwIfAborted();
@@ -590,6 +591,8 @@ export async function POST(
     }
 
     const context = normalizeSearchContext(body?.context);
+    if(!isSupportedCity(context.city))return Response.json({success:false,error:DISCOVERY_SCOPE_MESSAGE},{status:400});
+    context.city=DISCOVERY_CITY;
     if (context.mode === 'tonight' && (!context.city || !context.date || context.time !== body?.context?.time || context.partySize !== Number(body?.context?.partySize))) {
       return Response.json({success:false,error:"Add a valid destination city, date, time and party size (1–12)."},{status:400});
     }
@@ -691,13 +694,15 @@ export async function POST(
         {
           success: false,
           error:
-            "Place not found.",
+            "We couldn’t find that place in New York City. Check the name and try again.",
         },
         {
           status: 404,
         }
       );
     }
+
+    if(!isNycFeature(originalFeature))return Response.json({success:false,error:DISCOVERY_SCOPE_MESSAGE},{status:400});
 
     const originalProperties =
       originalFeature
@@ -971,13 +976,7 @@ Requirements:
 
 
 
-    const cityQuery =
-      [
-        searchedPlace.city,
-        searchedPlace.country,
-      ]
-        .filter(Boolean)
-        .join(", ");
+    const cityQuery = 'New York City, New York, United States';
 
     let cityPlaceId:
       | string

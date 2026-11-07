@@ -675,7 +675,12 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
                 aria-checked={selected}
                 accessibilityState={{checked: selected}}
                 disabled={!classification}
-                onPress={() => setDraftFilters(current => ({...current, distance: option.value}))}
+                onPress={() => {
+                  if (draftFilters.distance === option.value && appliedFilters.distance === option.value) return;
+                  const next = {...draftFilters, distance: option.value};
+                  setDraftFilters(next);
+                  setAppliedFilters(next);
+                }}
                 style={[
                   styles.distanceButton,
                   selected &&
@@ -734,7 +739,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
       )}
 
       {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
-      {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Some details could not be verified. Check with the venue before visiting.</Text>}
+      {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Showing general alternatives. Product and atmosphere matches couldn’t be checked right now.</Text>}
 
       <View
         style={
@@ -877,7 +882,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
                     }
                   </Text>
                 </View>
-
+                {researchStatus !== 'metadata-only' && <View accessibilityLabel={`Match score ${Math.round(recommendation.elsewhereScore)} out of 100`} style={styles.scoreBubble}><Text style={styles.scoreText}>{Math.round(recommendation.elsewhereScore)}</Text><Text style={{color:'white',fontSize:10}}>Match / 100</Text></View>}
               </View>
 
               <Text

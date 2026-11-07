@@ -1,3 +1,4 @@
+import {DISCOVERY_CITY} from '../lib/discovery-scope';
 import ScheduleInput from "../components/schedule-input";
 import {useAccount} from '../components/account-provider';
 import Brand from "../components/brand";
@@ -24,7 +25,7 @@ export default function HomeScreen() {
   const [showPreferences, setShowPreferences] = useState(false);
   const [priorities, setPriorities] = useState<string[]>([]);
   const [intent, setIntent] = useState("");
-  const [city, setCity] = useState("");
+  const city = DISCOVERY_CITY;
   const [mode, setMode] = useState<'discover' | 'tonight'>("discover");
   const [date, setDate] = useState(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; });
   const [time, setTime] = useState("19:00");
@@ -45,7 +46,7 @@ export default function HomeScreen() {
 
     const context = normalizeSearchContext({intent: [...priorities.map((value,index)=>`Priority ${index+1}: ${value}`),intent].filter(Boolean).join("; "), city, mode, date, time, partySize, taste: useTaste ? learnedTaste(visits) : [], avoid: useTaste ? learnedAvoids(visits) : []});
     if (mode === 'tonight' && (!city.trim() || !context.date || context.time !== time || String(context.partySize) !== partySize)) {
-      setFormError("Enter a city, a valid date and time, and a party size between 1 and 12.");
+      setFormError("Enter a valid date and time, and a party size between 1 and 12.");
       return;
     }
     setFormError("");
@@ -76,19 +77,19 @@ export default function HomeScreen() {
             Find somewhere better.
           </Text>
 
-          {desktop&&<Text style={styles.desktopDescription}>Keep what you love. Discover somewhere new.</Text>}
+          {desktop&&<Text style={styles.desktopDescription}>Discover alternatives across New York City.</Text>}
           </View>
           <View style={desktop?styles.desktopForm:undefined}>
           <View style={styles.searchSection}>
             <Text style={styles.question}>
-              Search a place
+              Search a place in New York City
             </Text>
 
             <TextInput
               value={searchQuery}
               onChangeText={setSearchQuery}
               accessibilityLabel="Place to find alternatives for"
-              placeholder="e.g. Cédric Grolet, Paris"
+              placeholder="e.g. Lilia or Levain Bakery"
               placeholderTextColor="#8A8A8A"
               style={styles.input}
               returnKeyType="search"
@@ -111,7 +112,7 @@ export default function HomeScreen() {
             </View>}
             {mode==='tonight' && <View style={{gap:10,padding:18,backgroundColor:'#E7EBD8',borderRadius:18}}>
               <Text style={styles.question}>Dinner plans</Text>
-              <TextInput accessibilityLabel="Destination city" value={city} onChangeText={setCity} placeholder="City" style={styles.input} />
+              <Text style={{color:'#174D43',fontWeight:'600'}}>New York City</Text>
               <Text>Date</Text>
               <ScheduleInput kind="date" label="Dinner date" value={date} onChange={setDate} />
               <View style={{flexDirection:'row',gap:12}}>

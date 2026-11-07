@@ -155,3 +155,8 @@ The home page is the search page. Desktop screens use a two-column layout; small
 ## Preference verification update
 
 The verification pass now runs two candidate batches concurrently within a shared 90-second research budget, with a 30-second limit per provider attempt. Website URLs supplied by place metadata are passed to the existing Gemini URL Context tool alongside Google Search. Only source-linked evidence is accepted; successful website retrieval alone is insufficient. Inaccessible sites and provider quota failures remain unknown and never satisfy a selected preference. This is a bounded prototype search across at most 30 researched candidates, not a complete city inventory. Google Search attribution remains required when its grounding is used. No custom scraper, paid provider, or booking availability connection was added.
+
+
+## New York City pilot
+
+Discovery is restricted to New York City and its five boroughs. The homepage fixes the destination to NYC. Server checks reject other destinations and filter out venues outside the supported area, including nearby New Jersey cities. Existing saved records are retained. Place lookup tries autocomplete first and calls the alternate endpoint only when needed. This reduces successful lookup requests, but AI research still has its existing per-search workload and quota limits.

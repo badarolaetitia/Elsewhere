@@ -14,7 +14,7 @@ async function post(place, filters = {}) {
   return data;
 }
 (async()=>{
-  for(const place of queries.length ? queries : ['Cédric Grolet Opéra','Shakespeare and Company, Paris']) {
+  for(const place of queries.length ? queries : ['Lilia, New York','Levain Bakery, New York']) {
     const start=Date.now();
     const initial=await post(place);
     assert.ok(initial.recommendations.length,'Expected recommendations');

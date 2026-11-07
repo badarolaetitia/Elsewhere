@@ -8,9 +8,10 @@ function load(file, imports = {}, extra = {}) {
   const source = fs.readFileSync(file, 'utf8') + (extra.append || '');
   const code = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX}}).outputText;
   const exports = {};
-  vm.runInNewContext(code, {exports, require: id => imports[id] ?? (id === '../lib/venue-links' ? venueLinks : id === '../lib/signed-search' ? signedSearch : id === '../lib/search-auth' ? {searchAuthHeaders:async()=>({})} : id === '../lib/place-lookup' ? {PlaceLookupUnavailableError:placeLookup.PlaceLookupUnavailableError,lookupPlace:async(query,city,key,signal,get)=>(await get('https://api.geoapify.com/v1/geocode/search?text='+encodeURIComponent([query,city].filter(Boolean).join(', ')),signal)).features?.[0]} : id === '../lib/gemini-json' ? {...geminiJson,createJsonGenerator:(ai,signal)=>geminiJson.createJsonGenerator(ai,signal)} : id === '../lib/place-evidence' ? evidence : id === '../lib/search-context' ? contextLib : id === '../lib/taste-profile' ? tasteLib : id === '../lib/personalization' ? personalization : id === './local-data' ? (extra.localStorage ? load('src/lib/local-data.ts',{}, {localStorage:extra.localStorage}) : localData) : require(id)), console, Buffer, TextEncoder,TextDecoder,Uint8Array,btoa,atob,AggregateError,URL, Request, Response, AbortController, AbortSignal, crypto: webcrypto, setTimeout, process: {env: {GEOAPIFY_API_KEY:'test', GEMINI_API_KEY:'test'}}, ...extra});
+  vm.runInNewContext(code, {exports, require: id => imports[id] ?? ((id === '../lib/discovery-scope'||id === './discovery-scope') ? discoveryScope : id === '../lib/venue-links' ? venueLinks : id === '../lib/signed-search' ? signedSearch : id === '../lib/search-auth' ? {searchAuthHeaders:async()=>({})} : id === '../lib/place-lookup' ? {PlaceLookupUnavailableError:placeLookup.PlaceLookupUnavailableError,lookupPlace:async(query,city,key,signal,get)=>(await get('https://api.geoapify.com/v1/geocode/search?text='+encodeURIComponent([query,city].filter(Boolean).join(', ')),signal)).features?.[0]} : id === '../lib/gemini-json' ? {...geminiJson,createJsonGenerator:(ai,signal)=>geminiJson.createJsonGenerator(ai,signal)} : id === '../lib/place-evidence' ? evidence : id === '../lib/search-context' ? contextLib : id === '../lib/taste-profile' ? tasteLib : id === '../lib/personalization' ? personalization : id === './local-data' ? (extra.localStorage ? load('src/lib/local-data.ts',{}, {localStorage:extra.localStorage}) : localData) : require(id)), console, Buffer, TextEncoder,TextDecoder,Uint8Array,btoa,atob,AggregateError,URL, Request, Response, AbortController, AbortSignal, crypto: webcrypto, setTimeout, process: {env: {GEOAPIFY_API_KEY:'test', GEMINI_API_KEY:'test'}}, ...extra});
   return exports;
 }
+const discoveryScope=load('src/lib/discovery-scope.ts');
 const venueLinks=load('src/lib/venue-links.ts');
 const signedSearch=load('src/lib/signed-search.ts');
 const placeLookup=load('src/lib/place-lookup.ts');
@@ -50,7 +51,7 @@ test('distance limits are inclusive, exclude unknown distance, and all removes t
 for (const [query, family, keyword] of [["Cédric Grolet Opéra",'bakery_pastry',"trompe-l'oeil desserts"],['City bookstore','books','rare editions'],['Skyline lookout','viewpoint','sunset photography']]) {
   test(`${family}: real API handler preserves chips and reranks without repeat provider calls`, async () => {
     let calls = 0, generations = 0;
-    const feature = (id, lat = 0) => ({properties:{name:id, place_id:id, city:'City', country:'Country', categories:[family]}, geometry:{coordinates:[0,lat]}});
+    const feature = (id, lat = 0) => ({properties:{name:id, place_id:id, city:'New York', country:'United States', categories:[family]}, geometry:{coordinates:[-74,40.7+lat]}});
     const mockFetch = async url => {
       calls++;
       if (url.includes('/v2/places')) return Response.json({features:[feature('original'), {...feature('alternate-original-id'), properties:{...feature('original').properties, place_id:'alternate-original-id'}}, feature('broad',0.02),feature('focus',0.005),feature('focus',0.005),feature('far',0.05)]});
@@ -89,7 +90,7 @@ for (const [query, family, keyword] of [["Cédric Grolet Opéra",'bakery_pastry'
   });
 }
 
-test('draft filters require explicit apply; repeated updates, stale responses, failures and draft edits remain safe', async () => {
+test('distance applies immediately; other draft filters, repeated updates and stale responses remain safe', async () => {
   const slots = [], pendingEffects = [], requests = [];
   let cursor = 0;
   const react = {
@@ -126,10 +127,12 @@ test('draft filters require explicit apply; repeated updates, stale responses, f
   await press('Filters & preferences');
   assert.equal(summary(),'Local · Citywide');
   assert.equal(button('Apply filters').props.disabled,true);
-  await press('Rare editions');await press('Hidden gems');await press('2 km');
+  await press('Rare editions');await press('Hidden gems');
   assert.equal(requests.length,1,'Draft edits must not fetch');
   assert.ok(JSON.stringify(tree).includes('initial'));
   assert.equal(summary(),'Local · Citywide');
+  await press('2 km');
+  assert.equal(requests.length,2,'Distance must update results without Apply filters');
   const apply=button('Apply filters').props.onPress;
   apply();apply();apply();render();await new Promise(setImmediate);
   assert.equal(requests.length,2,'Repeated taps submit once');
@@ -156,7 +159,7 @@ test('draft filters require explicit apply; repeated updates, stale responses, f
   await press('Apply filters');await resolve(4,'retried');
   assert.equal(summary(),'Popular · within 2 km · Rare editions');
   await press('Apply filters');assert.equal(requests.length,5,'Already applied filters must not refetch');
-  await press('1 km');await press('Apply filters');assert.equal(JSON.parse(requests[5].options.body).distanceKm,1);
+  await press('1 km');assert.equal(requests.length,6,'Radius changes need just one tap');await press('Apply filters');assert.equal(JSON.parse(requests[5].options.body).distanceKm,1);
   for(const slot of slots) slot?.cleanup?.();
   const before=JSON.stringify(slots);
   requests[5].resolve(Response.json({success:true,recommendations:[{name:'unmounted'}]}));
@@ -169,7 +172,7 @@ for (const failure of ['invalid JSON', 'truncated JSON', 'missing candidate', 'm
   test(`API recovers from ${failure} after rate-limited model fallback`, async () => {
     const models = [];
     let rankingAttempts = 0;
-    const feature = (id, lat=0) => ({properties:{name:id,place_id:id,city:'City',country:'Country'},geometry:{coordinates:[0,lat]}});
+    const feature = (id, lat=0) => ({properties:{name:id,place_id:id,city:'New York',country:'United States'},geometry:{coordinates:[-74,40.7+lat]}});
     class AI {models = {generateContent: async ({model,contents,config}) => {
       models.push(model);
       if(!(model==='gemini-2.5-flash'&&config.tools))assert.ok(config.responseJsonSchema);
@@ -240,7 +243,7 @@ test('specific experiences require claim-linked provider citations; missing evid
 });
 
 test('API never promotes uncited experience guesses into focus scores', async () => {
-  const feature=id=>({properties:{name:id,place_id:id,city:'City',country:'Country',categories:['commercial.books']},geometry:{coordinates:[0,0]}});
+  const feature=id=>({properties:{name:id,place_id:id,city:'New York',country:'United States',categories:['commercial.books']},geometry:{coordinates:[-74,40.7]}});
   class AI { models={generateContent:async ({contents,config})=> {
     if(contents.includes('experience-understanding'))return {text:JSON.stringify({category:'Books',categoryFamily:'books',experienceKeywords:['Rare editions','Reading room']})};
     assert.ok(config.tools[0].googleSearch);
@@ -284,7 +287,7 @@ test('dinner matching uses intent, preserves plans across filters and rejects ch
   assert.equal(initial.recommendations[0].booking.partySize,2);
   assert.match(decodeURIComponent(calls[0]),/Famous restaurant, New York/);
   const filtered=await(await post({searchId:initial.searchId,preference:'closest'})).json();
-  assert.deepEqual(filtered.context,plain(context));assert.equal(generations,2);
+  assert.deepEqual(filtered.context,plain({...context,city:'New York City'}));assert.equal(generations,2);
   assert.equal((await post({searchId:initial.searchId,context:{...context,partySize:4}})).status,410);
 });
 
@@ -427,7 +430,7 @@ test('category discovery starts together and retains real matches when one categ
     append:'\nexport {discoverCityCandidates};',
     fetch:async url=>{const category=new URL(url).searchParams.get('categories');started.push(category);if(started.length===2)release();await barrier;
       if(category==='catering.cafe')return Response.json({},{status:503});
-      return Response.json({features:[{properties:{name:'A bakery',place_id:'bakery',categories:['commercial.food_and_drink.bakery']},geometry:{coordinates:[2.3,48.8]}}]});},
+      return Response.json({features:[{properties:{name:'A bakery',place_id:'bakery',city:'New York',country:'United States',categories:['commercial.food_and_drink.bakery']},geometry:{coordinates:[-74,40.7]}}]});},
   });
   const result=await api.discoverCityCandidates({cityPlaceId:'paris',categories:['catering.cafe','commercial.food_and_drink.bakery'],searchedLatitude:48.8,searchedLongitude:2.3,searchedPlaceId:'original',searchedPlaceName:'Original',originalQuery:'Original',geoapifyApiKey:'test',requestSignal:new AbortController().signal});
   assert.equal(result.length,1);assert.equal(result[0].name,'A bakery');
@@ -436,13 +439,13 @@ test('category discovery starts together and retains real matches when one categ
 
 test('city-boundary failure falls back to a real nearby search and preserves its scope on reranking', async () => {
   let radiusQueries=0;
-  const feature=id=>({properties:{name:id,place_id:id,city:'Lyon',country:'France',categories:['commercial.books']},geometry:{coordinates:[4.8,45.7]}});
+  const feature=id=>({properties:{name:id,place_id:id,city:'New York',country:'United States',categories:['commercial.books']},geometry:{coordinates:[-74,40.7]}});
   class AI {models={generateContent:async({contents})=>contents.includes('experience-understanding')
     ?{text:JSON.stringify({category:'Books',categoryFamily:'books',experienceKeywords:['Rare editions','Reading room']})}
     :grounded([{candidateId:'candidate-0',similarityScore:80,localScore:60,distinctivenessScore:60,chainLikelihood:0,popularityScore:30,keywordScores:[80,50]}],['Rare editions','Reading room'])};}
   const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async url=>{
     if(url.includes('type=city'))return Response.json({},{status:503});
-    if(url.includes('/v2/places')){assert.equal(new URL(url).searchParams.get('filter'),'circle:4.8,45.7,15000');radiusQueries++;return Response.json({features:[feature('Alternative')]});}
+    if(url.includes('/v2/places')){assert.equal(new URL(url).searchParams.get('filter'),'circle:-74,40.7,15000');radiusQueries++;return Response.json({features:[feature('Alternative')]});}
     return Response.json({features:[feature('Original')]});
   }});
   const post=async body=>{const response=await api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:'Original bookstore',...body})}));assert.equal(response.status,200);return response.json();};
@@ -534,4 +537,30 @@ test('booking destinations preserve supplied official links without constructing
  assert.equal(venueLinks.venueDestination('https://venue.com','https://bookings.provider.com/venue/123').url,'https://bookings.provider.com/venue/123');
  assert.equal(venueLinks.venueDestination(undefined),null);
  for(const url of ['javascript:alert(1)','https://user:password@venue.com','https://127.0.0.1','https://venue.local'])assert.equal(venueLinks.venueDestination(url),null,url);
+});
+
+test('ranking returns all matching researched candidates instead of truncating at ten',()=>{
+ const places=Array.from({length:30},(_,i)=>candidate(String(i),{distance:i/10}));
+ assert.equal(ranking.rankCandidates(places,'local',[],null).length,30);
+ const nearby=ranking.rankCandidates(places,'local',[],1);
+ assert.equal(nearby.length,11);assert.ok(nearby.every(place=>place.distance<=1));
+});
+
+test('NYC scope accepts all five boroughs and rejects nearby cities, other countries and invalid coordinates',()=>{
+ const feature=(city,lon=-74,lat=40.7,state='New York',country='United States')=>({properties:{city,state,country},geometry:{coordinates:[lon,lat]}});
+ for(const city of ['New York','New York City','Manhattan','Brooklyn','Queens','Bronx','Staten Island'])assert.equal(discoveryScope.isNycFeature(feature(city)),true,city);
+ for(const item of [feature('Jersey City'),feature('New York',-74,40.7,'New Jersey'),feature('New York',2.3,48.8),feature('Paris'),feature('New York',-74,40.7,'New York','France'),feature('New York',NaN)])assert.equal(discoveryScope.isNycFeature(item),false);
+});
+test('outside-NYC requests and resolved venues stop before AI research',async()=>{
+ let providerCalls=0,generations=0;
+ class AI {models={generateContent:async()=>{generations++;throw Error('Research must not run');}};}
+ const api=load('src/app/places+api.ts',{'@google/genai':{GoogleGenAI:AI},'../lib/places-ranking':ranking},{fetch:async()=>{providerCalls++;return Response.json({features:[{properties:{name:'Girafe',city:'Paris',country:'France'},geometry:{coordinates:[2.3,48.8]}}]});}});
+ const post=context=>api.POST(new Request('http://localhost/places',{method:'POST',body:JSON.stringify({place:'Girafe',context})}));
+ assert.equal((await post({city:'Paris'})).status,400);assert.equal(providerCalls,0);
+ assert.equal((await post({})).status,400);assert.equal(generations,0);
+});
+test('successful venue lookup uses a single provider request',async()=>{
+ let calls=0;
+ const result=await placeLookup.lookupPlace('Lilia','New York City','key',new AbortController().signal,async()=>{calls++;return {features:[{properties:{name:'Lilia',city:'Brooklyn',state:'New York',country:'United States',result_type:'amenity'},geometry:{coordinates:[-73.95,40.71]}}]};});
+ assert.equal(result.properties.name,'Lilia');assert.equal(calls,1);
 });

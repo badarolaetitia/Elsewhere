@@ -464,5 +464,5 @@ export function rankCandidates<
    * candidateCount is handled separately by
    * the API and is NOT this number.
    */
-  return ranked.slice(0, 10);
+  return ranked;
 }
