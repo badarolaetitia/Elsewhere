@@ -102,6 +102,7 @@ test('distance applies immediately; other draft filters, repeated updates and st
   };
   const jsx = (type,props,key) => ({type,props,key});
   const screen = load('src/app/results.tsx', {
+    '../lib/discovery-profile':{readDiscoveryProfile:()=>({signals:[]})},
     '../components/area-heatmap':{default:()=>null},
     '../lib/use-area-agent':{useAreaAgent:()=>({result:null,loading:false,error:'',now:Date.now()})},
     '../lib/crowd-agent':load('src/lib/crowd-agent.ts',{'./pilot-catalog':{checkedVenues:[]},'./crowd-evidence':{evaluateCrowd:()=>({label:'unknown',reports:0})}}),
@@ -126,7 +127,8 @@ test('distance applies immediately; other draft filters, repeated updates and st
     await new Promise(setImmediate);render();
   }
   render();await new Promise(setImmediate);
-  assert.deepEqual(JSON.parse(requests[0].options.body),{place:'Bookstore',preference:'local',distanceKm:'all',selectedKeywords:[]});
+  const emptyContext=plain(contextLib.normalizeSearchContext({tasteProfile:[]}));
+  assert.deepEqual(JSON.parse(requests[0].options.body),{place:'Bookstore',context:emptyContext,preference:'local',distanceKm:'all',selectedKeywords:[]});
   await resolve(0,'initial');
   await press('Filters & preferences');
   assert.equal(summary(),'Local · Citywide');
@@ -140,7 +142,7 @@ test('distance applies immediately; other draft filters, repeated updates and st
   const apply=button('Apply filters').props.onPress;
   apply();apply();apply();render();await new Promise(setImmediate);
   assert.equal(requests.length,2,'Repeated taps submit once');
-  assert.deepEqual(JSON.parse(requests[1].options.body),{place:'Bookstore',searchId:'snapshot',preference:'hidden-gem',distanceKm:2,selectedKeywords:['Rare editions']});
+  assert.deepEqual(JSON.parse(requests[1].options.body),{place:'Bookstore',context:emptyContext,searchId:'snapshot',preference:'hidden-gem',distanceKm:2,selectedKeywords:['Rare editions']});
   assert.equal(summary(),'Local · Citywide','Summary stays with displayed results while updating');
   assert.ok(JSON.stringify(tree).includes('initial'),'Old cards stay visible while updating');
   await press('Closest');await press('Apply filters');

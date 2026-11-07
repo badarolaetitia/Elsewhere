@@ -1,4 +1,5 @@
 export type SearchContext = {
+  tasteProfile?: {feature:string;score:number;source:'save'|'rating'|'like'|'dislike'|'manual'|'mixed';evidenceCount:number}[];
   intent: string;
   city: string;
   mode: 'discover' | 'tonight';
@@ -15,6 +16,7 @@ export function normalizeSearchContext(raw: any): SearchContext {
   const time = clean(raw?.time, 5);
   const parsedDate = new Date(`${date}T12:00:00Z`);
   return {
+    ...(Array.isArray(raw?.tasteProfile)?{tasteProfile:raw.tasteProfile.slice(0,16).filter((s:any)=>s&&typeof s.feature==='string'&&s.feature.length<=60&&Number.isFinite(s.score)&&Math.abs(s.score)<=12&&['save','rating','like','dislike','manual','mixed'].includes(s.source)).map((s:any)=>({feature:s.feature,score:s.score,source:s.source,evidenceCount:Math.max(1,Math.min(100,Math.floor(Number(s.evidenceCount)||1)))}))}:{}),
     intent: clean(raw?.intent, 240), city: clean(raw?.city, 100),
     mode: raw?.mode === 'tonight' ? 'tonight' : 'discover',
     date: /^\d{4}-\d{2}-\d{2}$/.test(date) && Number.isFinite(parsedDate.getTime()) && parsedDate.toISOString().slice(0,10) === date ? date : '',

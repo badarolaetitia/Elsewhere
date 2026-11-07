@@ -3,9 +3,10 @@ import {DISCOVERY_CITY} from '../lib/discovery-scope';
 import ScheduleInput from "../components/schedule-input";
 import {useAccount} from '../components/account-provider';
 import Brand from "../components/brand";
-import { learnedTaste, learnedAvoids, readVisits } from "../lib/visit-feedback";
+import { readVisits } from "../lib/visit-feedback";
+import {buildDiscoveryProfile} from '../lib/discovery-profile';
 import { normalizeSearchContext } from "../lib/search-context";
-import { readSavedPlaces } from "../lib/taste-profile";
+import { readSavedPlaces,readTasteSettings,writeTasteSettings } from "../lib/taste-profile";
 import { router, useFocusEffect } from "expo-router";
 import { useState, useCallback, useEffect } from "react";
 import {
@@ -31,12 +32,13 @@ export default function HomeScreen() {
   const [date, setDate] = useState(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; });
   const [time, setTime] = useState("19:00");
   const [partySize, setPartySize] = useState("2");
-  const [useTaste, setUseTaste] = useState(true);
+  const [tasteSettings,setTasteSettings]=useState(readTasteSettings);
   const [formError, setFormError] = useState("");
   const [visits,setVisits] = useState(readVisits());
   const [saved,setSaved] = useState(readSavedPlaces());
-  useEffect(()=>{setSaved(readSavedPlaces());setVisits(readVisits());},[dataVersion]);
-  useFocusEffect(useCallback(()=>{setSaved(readSavedPlaces());setVisits(readVisits());},[]));
+  useEffect(()=>{setSaved(readSavedPlaces());setVisits(readVisits());setTasteSettings(readTasteSettings());},[dataVersion]);
+  useFocusEffect(useCallback(()=>{setSaved(readSavedPlaces());setVisits(readVisits());setTasteSettings(readTasteSettings());},[]));
+  const profile=buildDiscoveryProfile(saved,visits,tasteSettings);
 
   function handleSearch() {
     const cleanedQuery = searchQuery.trim();
@@ -45,7 +47,7 @@ export default function HomeScreen() {
       return;
     }
 
-    const context = normalizeSearchContext({intent: [...priorities.map((value,index)=>`Priority ${index+1}: ${value}`),intent].filter(Boolean).join("; "), city, mode, date, time, partySize, taste: useTaste ? learnedTaste(visits) : [], avoid: useTaste ? learnedAvoids(visits) : []});
+    const context = normalizeSearchContext({intent: [...priorities.map((value,index)=>`Priority ${index+1}: ${value}`),intent].filter(Boolean).join("; "), city, mode, date, time, partySize, tasteProfile:profile.signals,taste:[],avoid:[]});
     if (mode === 'tonight' && (!city.trim() || !context.date || context.time !== time || String(context.partySize) !== partySize)) {
       setFormError("Enter a valid date and time, and a party size between 1 and 12.");
       return;
@@ -124,7 +126,7 @@ export default function HomeScreen() {
               </View>
               <Text style={{color:'#625C53',fontSize:13}}>Reservations are completed on the booking site.</Text>
             </View>}
-            {(learnedTaste(visits).length>0 || learnedAvoids(visits).length>0) && <Pressable accessibilityRole="checkbox" accessibilityState={{checked:useTaste}} onPress={()=>setUseTaste(!useTaste)}><Text style={{color:'#174D43'}}>{useTaste?'☑':'☐'} Personalize using my ratings</Text></Pressable>}
+            {profile.traits.length>0 && <Pressable accessibilityRole="checkbox" accessibilityLabel="Personalize from saves and ratings" aria-checked={tasteSettings.enabled} accessibilityState={{checked:tasteSettings.enabled}} onPress={()=>setTasteSettings(writeTasteSettings({...readTasteSettings(),enabled:!tasteSettings.enabled}))}><Text style={{color:'#174D43'}}>{tasteSettings.enabled?'☑':'☐'} Personalize from saves and ratings</Text></Pressable>}
             {formError.length > 0 && <Text accessibilityRole="alert" style={{color:'#A42D24',marginTop:12}}>{formError}</Text>}
 
             <Pressable

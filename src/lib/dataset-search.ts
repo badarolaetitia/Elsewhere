@@ -1,5 +1,5 @@
 import catalog, {checkedVenues} from './pilot-catalog';
-import {discover, plainDiscoveryPlan, validateDiscoveryPlan, type DiscoveryEnvironment} from './discovery-agent';
+import {discover, plainDiscoveryPlan, validateDiscoveryPlan, personalizeDiscovery, type DiscoveryEnvironment} from './discovery-agent';
 import {normalizeSearchContext} from './search-context';
 import {calculateDistanceKm,normalizeKeywords,rankCandidates} from './places-ranking';
 import {matchesVerifiedPreferences,type ExperienceEvidence} from './place-evidence';
@@ -57,12 +57,14 @@ export async function searchPilotDataset(request:Request,env:DiscoveryEnvironmen
       whySimilar:`Documented details in common: ${shared.join(', ')||'none checked'}.`,
       whyTryInstead:'Compare the linked source details before visiting.',checkedAt:venue.checkedAt};
   }).filter(candidate=>matchesVerifiedPreferences(candidate,required));
-  const recommendations=rankCandidates(personalizeCandidates(candidates,context.taste,Boolean(customIntent),context.avoid),preference,required,distance)
+  const tasteTool=personalizeDiscovery(candidates,context.tasteProfile);
+  const personalized=context.tasteProfile!==undefined?tasteTool.candidates:personalizeCandidates(candidates,context.taste,Boolean(customIntent),context.avoid);
+  const recommendations=rankCandidates(personalized,preference,required,distance)
     .sort((a,b)=>preference==='closest'?a.distance-b.distance:b.focusMatchScore-a.focusMatchScore||plan.preferredFeatures.reduce((score,label,index)=>score+(plan.preferredFeatures.length-index)*(Number(Boolean(b.experienceEvidence[label]))-Number(Boolean(a.experienceEvidence[label]))),0)||b.similarityScore-a.similarityScore||b.personalizationTieBreak-a.personalizationTieBreak||a.distance-b.distance)
     .map(({localScore,distinctivenessScore,chainLikelihood,popularityScore,...candidate})=>({...candidate,elsewhereScore:candidate.similarityScore,crowdPriorityKey:JSON.stringify([plan.preferredFeatures.map(label=>Boolean(candidate.experienceEvidence[label])),candidate.personalizationTieBreak])}));
   return Response.json({success:true,searchId:snapshotId,
     discoveryPlan:{query:place,intent:context.intent,plan},
-    discovery:{mode:discovery.mode,summary:[`Alternatives to ${original.name}`,required.length?`matching ${required.join(', ')}`:'',plan.preferredFeatures.length?`prefer ${plan.preferredFeatures.join(', ')}`:'',distance?`within ${distance} km`:'across West Village'].filter(Boolean).join(' · '),steps:[{step:'interpret',status:'complete'},{step:'search_checked_dataset',status:'complete',count:checkedVenues.length},{step:'filter_and_rank',status:'complete',count:recommendations.length}]},
+    discovery:{mode:discovery.mode,summary:[`Alternatives to ${original.name}`,required.length?`matching ${required.join(', ')}`:'',plan.preferredFeatures.length?`prefer ${plan.preferredFeatures.join(', ')}`:'',distance?`within ${distance} km`:'across West Village',tasteTool.signals?'personalized using your activity':''].filter(Boolean).join(' · '),steps:[{step:'interpret',status:'complete'},{step:'read_taste_profile',status:'complete',count:tasteTool.signals},{step:'search_checked_dataset',status:'complete',count:checkedVenues.length},{step:'filter_and_rank',status:'complete',count:recommendations.length}]},
     searchedPlace:{name:original.name,formatted:original.address,city:DISCOVERY_CITY,country:'United States',latitude:original.latitude,longitude:original.longitude,placeId:original.id},
     classification:{category:original.categoryFamily==='bakery_pastry'?'Bakery and pastries':original.categoryFamily==='cafe'?'Cafe':'Food and drink',categoryFamily:original.categoryFamily,experienceKeywords:keywords,intentSummary:customIntent},
     recommendations,selectedKeywords,preference,distanceKm:distance,candidateCount:candidates.filter(candidate=>distance===null||candidate.distance<=distance).length,

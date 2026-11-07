@@ -83,3 +83,5 @@ The invite-only prototype is available at https://elsewhere-discover.readylime71
 ## Matched dataset pilot
 
 See [the matching report](docs/NYC_MATCHING_REPORT.md) and [the checked pilot JSON](src/data/nyc-pilot-venues.json). The previous provider-based search is retained in `src/lib/live-place-search.ts` for comparison and its regression tests, but the public `/places` route calls only the dataset search. The Discovery Agent interprets natural language into a validated plan, then searches only this dataset. See [the agent workflow](docs/DISCOVERY_AGENT.md).
+
+Discovery also owns a taste-profile tool: saves provide weak interest signals, explicit visit feedback carries more weight, and editable preferences override inference. Personalization only matches source-backed offerings and breaks ties after the current request's priorities and experience fit. Profile corrections sync privately through the existing account store. No extra model request or third agent is required. See [personalization and privacy](docs/DISCOVERY_PERSONALIZATION.md) and [the agent-driven area heatmap](docs/CROWD_AGENT_INTEGRATION.md).

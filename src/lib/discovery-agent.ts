@@ -1,4 +1,8 @@
 import {checkedVenues} from './pilot-catalog';
+import {applyTasteProfile,validateTasteSignals} from './discovery-taste';
+import type {ExperienceEvidence} from './place-evidence';
+
+export function personalizeDiscovery<T extends {experienceEvidence:Record<string,ExperienceEvidence>}>(candidates:T[],profile:unknown){return {candidates:applyTasteProfile(candidates,profile),signals:validateTasteSignals(profile).length};}
 
 export type DiscoveryPlan = {
   venueId:string; requiredFeatures:string[]; preferredFeatures:string[];

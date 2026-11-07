@@ -32,7 +32,7 @@ Existing email-link sign-in remains useful only for approved recipients who can 
 
 Ratings and notes are private account information, not public restaurant reviews or aggregate star scores. Removing a saved place does not remove its visit history. Users can edit or delete their ratings separately.
 
-Personalization currently uses explicit preferences from ratings. It is not a full understanding of someone's taste, and it should not infer a detailed preference from a free-text note without a clear implementation and user control. Matching should favor a person's current request and use their history as secondary guidance. More nuanced learning from dislikes and repeat visits is a development target, not a guarantee of the first prototype.
+The Discovery Agent's taste-profile tool uses saves as weak interest signals and explicit visit likes/dislikes as stronger signals. Profile shows the learned traits and lets people prefer, avoid, ignore or return each trait to activity-based learning. These corrections sync with the private account data. Personalization can be switched off; current-request priorities, checked experience fit and radius still come first. Private notes are not sent to Gemini or interpreted as new venue facts. See [personalization details](DISCOVERY_PERSONALIZATION.md).
 
 ## 3. How recommendations work
 
@@ -134,7 +134,7 @@ Before implementing this, decide how restaurants verify ownership, update availa
 
 1. Reliable venue lookup, clear failures, accurate evidence, and search usage protection.
 2. Hosted invite-only access, manually confirmed Elsewhere accounts, and a small tester group; later, SMTP-backed public registration and recovery.
-3. Better personalization, especially explicit dislikes and useful controls for editing taste history.
+3. Evaluate the weighted personalization and editable taste profiles with testers before adding richer learning or repeat-visit modelling.
 4. A measured decision on paid place-data or research capacity.
 5. Authorized reservation availability and confirmation.
 6. A restaurant pilot for relevant, transparently sponsored same-night placements.

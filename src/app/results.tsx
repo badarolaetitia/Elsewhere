@@ -8,6 +8,7 @@ import SearchSuggestions from "../components/search-suggestions";
 import AreaHeatmap from '../components/area-heatmap';
 import {coordinateArea} from '../lib/crowd-agent';
 import {useAreaAgent} from '../lib/use-area-agent';
+import {readDiscoveryProfile} from '../lib/discovery-profile';
 import {
     router,
     useLocalSearchParams,
@@ -229,6 +230,8 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
   const mapRef=useRef<View|null>(null);
   function scrollToView(target:View|null){if(target&&contentRef.current)target.measureLayout(contentRef.current,(_x,y)=>pageRef.current?.scrollTo({y:Math.max(0,y-12),animated:true}),()=>{});}
   const {dataVersion}=useAccount();
+  const tasteProfile=readDiscoveryProfile();
+  const tasteKey=JSON.stringify(tasteProfile.signals);
   const [savedPlaces, setSavedPlaces] = useState(readSavedPlaces());
   useFocusEffect(useCallback(()=>{setSavedPlaces(readSavedPlaces());},[]));
   useEffect(()=>{setSavedPlaces(readSavedPlaces());},[dataVersion]);
@@ -356,7 +359,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
                   place:
                     searchedQuery,
 
-                  ...(initialContext ? {context: initialContext} : {}),
+                  context:normalizeSearchContext({...initialContext,tasteProfile:tasteProfile.signals,taste:[],avoid:[]}),
                   searchId: searchIdRef.current,
                   discoveryPlan: discoveryPlanRef.current,
                   preference: appliedFilters.preference,
@@ -463,6 +466,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
     searchedQuery,
     appliedFilters,
     retryVersion,
+    tasteKey,
   ]);
 
   const selectedKeywords = displayedFilters?.selectedKeywords ?? [];
