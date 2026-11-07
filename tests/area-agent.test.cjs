@@ -60,6 +60,6 @@ test('Crowd endpoint rejects unchecked IDs, oversized bodies and unsupported dat
  const request=body=>new Request('http://localhost/crowd',{method:'POST',body:JSON.stringify(body)});
  const withheld=catalog.venues.find(v=>!v.features?.length);
  assert.equal((await POST(request({venueIds:[withheld.id]}))).status,400);
- assert.equal((await POST(request({venueIds:[checked[0].id],atLocal:'2020-01-01T12:00:00'}))).status,400);
+ const dated=await POST(request({venueIds:[checked[0].id],atLocal:'2020-01-01T12:00:00'}));assert.equal(dated.status,400);assert.match((await dated.json()).error,/next seven days/);
  assert.equal((await POST(request({venueIds:[],extra:'x'.repeat(10001)}))).status,413);
 });

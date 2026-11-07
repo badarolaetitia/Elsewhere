@@ -100,6 +100,7 @@ export default function HomeScreen() {
             />
 
             <Text style={{color:'#686D60',fontSize:12}}>{checkedVenues.length} places with checked offerings · West Village. Search by name or select a suggestion.</Text>
+            <View style={{gap:6,marginVertical:8}}><Text style={{color:'#625C53',fontSize:13}}>Discovery matches your request and taste. Crowd researches activity around the alternatives.</Text><Pressable accessibilityRole="button" onPress={()=>router.navigate({pathname:'/results',params:{place:'Via Carota'}})}><Text style={{color:'#174D43',fontWeight:'600'}}>See the agents and heatmap →</Text></Pressable></View>
             <View style={{flexDirection:'row',flexWrap:'wrap',gap:6}}>{checkedVenues.filter(venue=>!searchQuery.trim() || [venue.name,...venue.aliases].some(name=>name.toLowerCase().includes(searchQuery.trim().toLowerCase()))).slice(0,8).map(venue=><Pressable accessibilityRole="button" key={venue.id} onPress={()=>setSearchQuery(venue.name)} style={{padding:8,borderRadius:16,borderWidth:1,borderColor:'#D6CFC3'}}><Text style={{color:'#174D43',fontSize:12}}>{venue.name}</Text></Pressable>)}</View>
             <Text style={{fontSize:15,fontWeight:'600',marginTop:8}}>Your priorities</Text>
             <Text style={{color:"#686D60",fontSize:12}}>Select your preferences in order of importance.</Text>

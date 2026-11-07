@@ -9,6 +9,9 @@ import AreaHeatmap from '../components/area-heatmap';
 import {coordinateArea} from '../lib/crowd-agent';
 import {useAreaAgent} from '../lib/use-area-agent';
 import {readDiscoveryProfile} from '../lib/discovery-profile';
+import AgentActivity from '../components/agent-activity';
+import {agentProgress} from '../lib/agent-progress';
+import {unassessedMap} from '../lib/area-crowd-agent';
 import {
     router,
     useLocalSearchParams,
@@ -476,8 +479,10 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
     : preferenceOptions;
   const areaAgent=useAreaAgent(researchStatus==='dataset'?recommendations.flatMap(v=>v.placeId?[v.placeId]:[]):[],initialContext?.mode==='tonight'&&initialContext.date?`${initialContext.date}T${initialContext.time}:00`:undefined);
   const visibleRecommendations=coordinateArea(recommendations,areaAgent.result,{preferQuiet,closest:displayedFilters?.preference==='closest',now:areaAgent.now});
-  const areaById=new Map(areaAgent.result?.venues.map(v=>[v.id,v])??[]);
-  const mapInvestigation=areaAgent.result?{...areaAgent.result,venues:visibleRecommendations.flatMap(v=>{const area=areaById.get(v.placeId??'');return area?[area]:[];})}:null;
+  const mapContext=areaAgent.result??unassessedMap(recommendations.flatMap(v=>v.placeId?[v.placeId]:[]),areaAgent.now);
+  const areaById=new Map(mapContext.venues.map(v=>[v.id,v]));
+  const mapInvestigation={...mapContext,venues:visibleRecommendations.flatMap(v=>{const area=areaById.get(v.placeId??'');return area?[area]:[];})};
+  const progress=agentProgress({loading,error,needsClarification,resultCount:recommendations.length,discoverySummary,tasteSignals:tasteProfile.signals.length,areaLoading:areaAgent.loading,areaError:areaAgent.error,investigation:areaAgent.result,preferQuiet,closest:displayedFilters?.preference==='closest'});
   const topAlternative =
     visibleRecommendations[0] ??
     null;
@@ -531,6 +536,8 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
         </Text>
       )}
 
+      <AgentActivity steps={progress}/>
+      {researchStatus==='dataset'&&recommendations.length>0&&<Pressable accessibilityRole="button" onPress={()=>scrollToView(mapRef.current)} style={{alignSelf:'flex-start',paddingVertical:10,marginBottom:8}}><Text style={{color:'#174D43',fontWeight:'600'}}>View heatmap ↓</Text></Pressable>}
       <Pressable accessibilityRole="button" accessibilityState={{expanded:showAdjustments}} onPress={()=>setShowAdjustments(!showAdjustments)} style={{paddingVertical:16,marginVertical:12,borderTopWidth:1,borderBottomWidth:1,borderColor:'#D8D3CB'}}>
         <Text style={{fontSize:16,fontWeight:'600'}}>{showAdjustments?'Close filters':'Filters & preferences'}</Text>
       </Pressable>
@@ -783,13 +790,12 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
       {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
       {researchStatus==='dataset'&&<Text style={[styles.helperText,{marginBottom:18}]}>West Village · Published offerings and experiences checked November 7, 2026. Match scores compare documented details.</Text>}
       {researchStatus==='dataset'&&recommendations.length>0&&<View style={{gap:8,marginBottom:20}}>
-        <Pressable accessibilityRole="switch" accessibilityLabel="Prefer less busy areas" accessibilityState={{checked:preferQuiet}} onPress={()=>setPreferQuiet(value=>!value)} style={{alignSelf:'flex-start',padding:12,borderRadius:20,backgroundColor:preferQuiet?'#174D43':'#EEE9DF'}}><Text style={{color:preferQuiet?'white':'#174D43',fontWeight:'600'}}>{preferQuiet?'✓ Prefer less busy areas':'Prefer less busy areas'}</Text></Pressable>
+        <Pressable accessibilityRole="switch" accessibilityLabel="Prefer less busy areas" aria-checked={preferQuiet} accessibilityState={{checked:preferQuiet}} onPress={()=>setPreferQuiet(value=>!value)} style={{alignSelf:'flex-start',padding:12,borderRadius:20,backgroundColor:preferQuiet?'#174D43':'#EEE9DF'}}><Text style={{color:preferQuiet?'white':'#174D43',fontWeight:'600'}}>{preferQuiet?'✓ Prefer less busy areas':'Prefer less busy areas'}</Text></Pressable>
         {preferQuiet&&<Text style={styles.helperText} accessibilityLiveRegion="polite">{displayedFilters?.preference==='closest'?'Closest first stays in distance order.':areaAgent.loading?'The Crowd Agent is researching area activity. Experience matches stay in their original order while it works.':!areaAgent.result?.venues.some(v=>v.reading.value!==null)?'Not enough area evidence to change the order.': 'The Coordinator favours lower estimated area activity only among similarly matched places with evidence.'}</Text>}
       </View>}
       {researchStatus==='dataset'&&recommendations.length>0&&<View ref={mapRef}>
-        {areaAgent.loading&&<Text style={[styles.helperText,{marginBottom:18}]} accessibilityLiveRegion="polite">Crowd Agent · checking public station history and permitted events…</Text>}
-        {!!areaAgent.error&&<View style={{gap:8,marginBottom:18}}><Text style={styles.helperText}>{areaAgent.error} Your experience matches are unchanged.</Text><Pressable accessibilityRole="button" onPress={areaAgent.retry}><Text style={{color:'#174D43'}}>Retry area research</Text></Pressable></View>}
-        {mapInvestigation&&<AreaHeatmap investigation={mapInvestigation} selectedId={selectedMapId} onSelect={setSelectedMapId} onViewPlace={id=>scrollToView(cardRefs.current[id])}/>}
+        {!!areaAgent.error&&<View style={{gap:8,marginBottom:18}}><Text style={styles.helperText}>{areaAgent.error}</Text><Pressable accessibilityRole="button" onPress={areaAgent.retry}><Text style={{color:'#174D43'}}>Retry area research</Text></Pressable></View>}
+        <AreaHeatmap investigation={mapInvestigation} researchState={areaAgent.loading||(!areaAgent.result&&!areaAgent.error)?'loading':areaAgent.error?'unavailable':'ready'} selectedId={selectedMapId} onSelect={setSelectedMapId} onViewPlace={id=>scrollToView(cardRefs.current[id])}/>
       </View>}
       {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Showing general alternatives. Product and atmosphere matches couldn’t be checked right now.</Text>}
 

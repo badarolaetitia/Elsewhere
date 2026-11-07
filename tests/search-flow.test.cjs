@@ -103,6 +103,9 @@ test('distance applies immediately; other draft filters, repeated updates and st
   const jsx = (type,props,key) => ({type,props,key});
   const screen = load('src/app/results.tsx', {
     '../lib/discovery-profile':{readDiscoveryProfile:()=>({signals:[]})},
+    '../components/agent-activity':{default:()=>null},
+    '../lib/agent-progress':load('src/lib/agent-progress.ts'),
+    '../lib/area-crowd-agent':{unassessedMap:()=>({venues:[],sources:[],heat:[],activity:[]})},
     '../components/area-heatmap':{default:()=>null},
     '../lib/use-area-agent':{useAreaAgent:()=>({result:null,loading:false,error:'',now:Date.now()})},
     '../lib/crowd-agent':load('src/lib/crowd-agent.ts',{'./pilot-catalog':{checkedVenues:[]},'./crowd-evidence':{evaluateCrowd:()=>({label:'unknown',reports:0})}}),

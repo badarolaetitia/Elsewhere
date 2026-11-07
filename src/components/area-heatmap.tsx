@@ -4,15 +4,15 @@ import {mapViewport} from '../lib/map-projection';
 import type {AreaInvestigation} from '../lib/area-crowd';
 
 const colors={lower:'#38796A',typical:'#B28B34',higher:'#B05C44',insufficient:'#727A76'};
-export default function AreaHeatmap({investigation,onSelect,onViewPlace,selectedId}:{investigation:AreaInvestigation;onSelect:(id:string)=>void;onViewPlace:(id:string)=>void;selectedId:string|null}){
+export default function AreaHeatmap({investigation,onSelect,onViewPlace,selectedId,researchState='ready'}:{investigation:AreaInvestigation;onSelect:(id:string)=>void;onViewPlace:(id:string)=>void;selectedId:string|null;researchState?:'loading'|'unavailable'|'ready'}){
   const [width,setWidth]=useState(360),[zoom,setZoom]=useState(15),[tilesFailed,setTilesFailed]=useState(false),[showLog,setShowLog]=useState(false);
   const [center,setCenter]=useState({lat:40.73475,lng:-74.00425});
   const height=420,view=mapViewport(width,height,zoom,center);
   const selected=investigation.venues.find(v=>v.id===selectedId);
   return <View style={{gap:12,marginBottom:24}}>
-    <Text style={{fontSize:22,fontWeight:'700',color:'#174D43'}}>Around your alternatives</Text>
-    <Text style={{color:'#625C53',lineHeight:20}}>Estimated area activity · {investigation.atLocal.slice(0,16).replace('T',' ')} New York time. Shading reflects historical station entries and located permitted events, not live restaurant crowds.</Text>
-    <View onLayout={event=>setWidth(Math.max(240,event.nativeEvent.layout.width))} style={{height,borderRadius:20,overflow:'hidden',backgroundColor:'#E5E8DF',borderWidth:1,borderColor:'#D7D0C4'}}>
+    <Text style={{fontSize:22,fontWeight:'700',color:'#174D43'}}>Neighbourhood heatmap</Text>
+    <Text style={{color:'#625C53',lineHeight:20}} accessibilityLiveRegion="polite">{researchState==='loading'?'Real venue locations are shown now. The Crowd Agent is researching area activity; pins stay neutral until evidence arrives.':researchState==='unavailable'?'Area research is unavailable. These are real venue locations; neutral pins do not mean quiet.':`Estimated area activity · ${investigation.atLocal.slice(0,16).replace('T',' ')} New York time. Shading reflects historical station entries and located permitted events, not live restaurant crowds.`}</Text>
+    <View testID="area-map" onLayout={event=>setWidth(Math.max(240,event.nativeEvent.layout.width))} style={{height,borderRadius:20,overflow:'hidden',backgroundColor:'#E5E8DF',borderWidth:1,borderColor:'#D7D0C4'}}>
       {view.tiles.map(tile=><Image key={`${zoom}-${tile.x}-${tile.y}`} accessibilityIgnoresInvertColors accessible={false} onError={()=>setTilesFailed(true)} source={{uri:`https://tile.openstreetmap.org/${zoom}/${tile.x}/${tile.y}.png`}} style={{position:'absolute',left:tile.left,top:tile.top,width:256,height:256}}/>)}
       {investigation.heat.map((cell,i)=>{const p=view.position(cell.lat,cell.lng);return <View pointerEvents="none" key={i} style={{position:'absolute',left:p.left-28,top:p.top-28,width:56,height:56,borderRadius:28,backgroundColor:colors[cell.reading.label],opacity:0.16}}/>;})}
       {investigation.venues.map((venue,i)=>{const p=view.position(venue.latitude,venue.longitude);return <Pressable key={venue.id} accessibilityRole="button" accessibilityLabel={`${venue.name}, ${venue.reading.label==='insufficient'?'no area estimate':`${venue.reading.label} estimated area activity`}`} accessibilityState={{selected:venue.id===selectedId}} onPress={()=>onSelect(venue.id)} style={{position:'absolute',left:p.left-15,top:p.top-15,width:30,height:30,borderRadius:15,backgroundColor:venue.id===selectedId?'#174D43':'#FFFDF6',borderWidth:2,borderColor:colors[venue.reading.label],alignItems:'center',justifyContent:'center',zIndex:venue.id===selectedId?3:1}}><Text style={{fontWeight:'700',fontSize:12,color:venue.id===selectedId?'white':'#174D43'}}>{i+1}</Text></Pressable>;})}
@@ -29,7 +29,7 @@ export default function AreaHeatmap({investigation,onSelect,onViewPlace,selected
       {selected.reading.sources.map(url=><Pressable key={url} accessibilityRole="link" onPress={()=>Linking.openURL(url)}><Text style={{color:'#174D43'}}>View source ↗</Text></Pressable>)}
       <Pressable accessibilityRole="button" onPress={()=>onViewPlace(selected.id)}><Text style={{fontWeight:'600',color:'#174D43'}}>View recommendation ↓</Text></Pressable>
     </View>}
-    <Pressable accessibilityRole="button" accessibilityState={{expanded:showLog}} onPress={()=>setShowLog(v=>!v)}><Text style={{fontWeight:'600',color:'#174D43'}}>{showLog?'Hide agent activity':'How the agents compared these places'}</Text></Pressable>
+    {investigation.activity.length>0&&<Pressable accessibilityRole="button" accessibilityState={{expanded:showLog}} onPress={()=>setShowLog(v=>!v)}><Text style={{fontWeight:'600',color:'#174D43'}}>{showLog?'Hide research details':'Sources and research details'}</Text></Pressable>}
     {showLog&&<View style={{gap:8}}>{investigation.activity.map((step,i)=><Text key={i} style={{color:'#625C53',lineHeight:20}}>{step.agent}: {step.message}</Text>)}{investigation.sources.map(source=><Pressable key={source.kind} accessibilityRole="link" onPress={()=>Linking.openURL(source.url)}><Text style={{color:'#174D43',fontSize:12}}>{source.kind==='transit'?'MTA station history':'NYC permitted events'} · {source.status} · retrieved {source.fetchedAt.slice(0,16).replace('T',' ')} UTC ↗</Text></Pressable>)}</View>}
   </View>;
 }
