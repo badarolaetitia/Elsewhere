@@ -90,7 +90,7 @@ export default function HomeScreen() {
               value={searchQuery}
               onChangeText={setSearchQuery}
               accessibilityLabel="Place to find alternatives for"
-              placeholder="e.g. Via Carota or Magnolia Bakery"
+              placeholder="Like Via Carota, for pasta, within 1 km"
               placeholderTextColor="#8A8A8A"
               style={styles.input}
               returnKeyType="search"
@@ -110,7 +110,7 @@ export default function HomeScreen() {
             </View>
             {(showPreferences || priorities.length>0) && <View style={{gap:12,paddingVertical:10}}>
               <Text style={styles.question}>What are you looking for?</Text>
-              <TextInput accessibilityLabel="Preferences" value={intent} onChangeText={setIntent} maxLength={240} placeholder="Choose a documented detail on the results page" style={styles.input} />
+              <TextInput accessibilityLabel="Preferences" value={intent} onChangeText={setIntent} maxLength={240} placeholder="e.g. Mainly pasta; a terrace would be a bonus" style={styles.input} />
 
             </View>}
             {mode==='tonight' && <View style={{gap:10,padding:18,backgroundColor:'#E7EBD8',borderRadius:18}}>

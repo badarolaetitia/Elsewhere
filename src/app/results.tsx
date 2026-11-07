@@ -127,6 +127,9 @@ type PlacesResponse = {
 
   distanceKm?: number | null;
 
+  discoveryPlan?: unknown;
+  discovery?: {mode:string; summary:string};
+  needsClarification?: boolean;
   error?: string;
 };
 
@@ -228,6 +231,9 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
     router.replace({pathname:'/results',params:{place:searchedQuery,context:JSON.stringify(context)}});
   }
   const searchIdRef = useRef<string | undefined>(undefined);
+  const discoveryPlanRef = useRef<unknown>(undefined);
+  const [discoverySummary,setDiscoverySummary] = useState('');
+  const [needsClarification,setNeedsClarification] = useState(false);
   const [draftFilters, setDraftFilters] = useState<SearchFilters>(DEFAULT_FILTERS);
   const [searchArea, setSearchArea] = useState("city");
   const [researchStatus, setResearchStatus] = useState<string>("grounded");
@@ -341,6 +347,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
 
                   ...(initialContext ? {context: initialContext} : {}),
                   searchId: searchIdRef.current,
+                  discoveryPlan: discoveryPlanRef.current,
                   preference: appliedFilters.preference,
                   selectedKeywords: appliedFilters.selectedKeywords,
                   distanceKm: appliedFilters.distance,
@@ -356,6 +363,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
           !response.ok ||
           !result.success
         ) {
+          setNeedsClarification(Boolean(result.needsClarification));
           throw new Error(
             result.error ||
               "Could not find alternatives."
@@ -370,7 +378,16 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
           return;
         }
 
+        const firstInterpretation=!searchIdRef.current && Boolean(result.discoveryPlan);
         searchIdRef.current = result.searchId;
+        discoveryPlanRef.current = result.discoveryPlan;
+        setNeedsClarification(false);
+        setDiscoverySummary(result.discovery?.summary ?? '');
+        const resolvedFilters=firstInterpretation ? {preference:result.preference ?? appliedFilters.preference,selectedKeywords:result.selectedKeywords ?? [],distance:([1,2,5].includes(result.distanceKm ?? 0)?result.distanceKm:'all') as DistanceOption} : appliedFilters;
+        if(firstInterpretation){
+          setDraftFilters(resolvedFilters);
+          if(filterKey(resolvedFilters)!==filterKey(appliedFilters))setAppliedFilters(resolvedFilters);
+        }
 
         setSearchedPlace(
           result.searchedPlace ??
@@ -380,7 +397,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
         setClassification(
           (current) =>
             current ??
-            (result.classification ? {...result.classification, experienceKeywords: normalizeKeywords(result.classification.experienceKeywords)} : null)
+            (result.classification ? {...result.classification, experienceKeywords: [...new Set(result.classification.experienceKeywords)]} : null)
         );
 
         setCandidateCount(
@@ -388,7 +405,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
             0
         );
 
-        setDisplayedFilters(appliedFilters);
+        setDisplayedFilters(resolvedFilters);
         setSearchSuggestions(result.searchSuggestions ?? []);
         setSearchArea(result.searchArea ?? "city");
         setResearchStatus(result.researchStatus ?? "grounded");
@@ -741,6 +758,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
         <Text style={styles.errorText} accessibilityRole="alert">{error} Previous results are shown below.</Text>
       )}
 
+      {discoverySummary.length>0 && <Text style={[styles.helperText,{marginBottom:12}]} accessibilityLiveRegion="polite">{discoverySummary}</Text>}
       {searchArea === "nearby" && <Text style={[styles.helperText,{marginBottom:18}]}>Showing alternatives within 15 km. Citywide search is temporarily unavailable.</Text>}
       {researchStatus==='dataset'&&<Text style={[styles.helperText,{marginBottom:18}]}>West Village · Published offerings and experiences checked November 7, 2026. Match scores compare documented details.</Text>}
       {selectedKeywords.length===0&&researchStatus === "metadata-only" && <Text accessibilityRole="alert" style={[styles.helperText,{marginBottom:18}]}>Showing general alternatives. Product and atmosphere matches couldn’t be checked right now.</Text>}
@@ -806,7 +824,7 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
               styles.errorTitle
             }
           >
-            Couldn’t finish this search
+            {needsClarification ? 'A little more detail' : 'Couldn’t finish this search'}
           </Text>
 
           <Text
@@ -816,6 +834,10 @@ function SearchResults({ searchedQuery, initialContext }: { searchedQuery: strin
           >
             {error}
           </Text>
+          {needsClarification && <View style={{gap:10}}>
+            <TextInput accessibilityLabel="Clarify your search" value={refinement} onChangeText={setRefinement} placeholder="Like Via Carota, for pasta, within 1 km" style={{borderWidth:1,borderColor:'#D6CFC3',borderRadius:12,padding:14}} />
+            <Pressable accessibilityRole="button" disabled={!refinement.trim()} onPress={()=>router.replace({pathname:'/results',params:{place:refinement.trim(),context:JSON.stringify(normalizeSearchContext({...initialContext,intent:''}))}})}><Text style={styles.back}>Search →</Text></Pressable>
+          </View>}
           <Pressable accessibilityRole="button" onPress={() => setRetryVersion(value => value + 1)}><Text style={styles.back}>Try again →</Text></Pressable>
         </View>
       ) : recommendations.length ===

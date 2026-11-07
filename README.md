@@ -1,6 +1,6 @@
 # Elsewhere
 
-The West Village prototype retains **96 matched identity records**, all reviewed against primary venue sources. **66 places have separately sourced food, drink or experience details and are enabled for discovery.** The remaining records are retained for research; no offering is invented when a menu cannot be checked or a location conflicts. Search uses the bundled dataset without live Geoapify or Gemini requests. NYC registry cuisine categories are not used as menu evidence. See [the complete source review](docs/WEST_VILLAGE_SOURCE_REVIEW.md).
+The West Village prototype retains **96 matched identity records**, all reviewed against primary venue sources. **66 places have separately sourced food, drink or experience details and are enabled for discovery.** The remaining records are retained for research; no offering is invented when a menu cannot be checked or a location conflicts. Venue retrieval uses the bundled dataset, with no live Geoapify calls. The Discovery Agent can use Gemini to interpret natural-language requests; it never generates venue facts. NYC registry cuisine categories are not used as menu evidence. See [the complete source review](docs/WEST_VILLAGE_SOURCE_REVIEW.md).
 
 **Everyone’s going there. Find somewhere better.**
 
@@ -82,4 +82,4 @@ The invite-only prototype is available at https://elsewhere-discover.readylime71
 
 ## Matched dataset pilot
 
-See [the matching report](docs/NYC_MATCHING_REPORT.md) and [the checked pilot JSON](src/data/nyc-pilot-venues.json). The previous provider-based search is retained in `src/lib/live-place-search.ts` for comparison and its regression tests, but the public `/places` route calls only the dataset search. Request interpretation currently accepts the listed feature labels rather than using a live language model.
+See [the matching report](docs/NYC_MATCHING_REPORT.md) and [the checked pilot JSON](src/data/nyc-pilot-venues.json). The previous provider-based search is retained in `src/lib/live-place-search.ts` for comparison and its regression tests, but the public `/places` route calls only the dataset search. The Discovery Agent interprets natural language into a validated plan, then searches only this dataset. See [the agent workflow](docs/DISCOVERY_AGENT.md).

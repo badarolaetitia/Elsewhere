@@ -34,9 +34,9 @@ The Hugging Face data contains unsupported menu combinations. For example, its D
 
 ## Runtime behavior
 
-The public `/places` route resolves names against the 96 bundled identities, but only the 66 with separately sourced offerings enter discovery and does not call Geoapify or Gemini. Unlisted or ambiguous names return a clear pilot-coverage message. Feature selection requires recorded evidence. Missing evidence excludes a venue from a requested feature; it does not establish that the venue lacks that offering. Match scores are deterministic comparisons of documented feature overlap, not measured quality or model accuracy. No popularity or independence statistics are available in this pilot. The interface offers Best match and Closest; unsupported local/hidden/popular distinctions are not offered.
+The public `/places` route resolves names against the 96 bundled identities, but only the 66 with separately sourced offerings enter discovery and does not use live place search. Gemini can interpret the request, but cannot add venue facts. Unlisted or ambiguous names return a clear pilot-coverage message. Feature selection requires recorded evidence. Missing evidence excludes a venue from a requested feature; it does not establish that the venue lacks that offering. Match scores are deterministic comparisons of documented feature overlap, not measured quality or model accuracy. No popularity or independence statistics are available in this pilot. The interface offers Best match and Closest; unsupported local/hidden/popular distinctions are not offered.
 
-The pilot currently accepts exact supported feature labels for request details; it has no live Gemini request reader. Existing saves, ratings, plans and account sync remain available. A future crowd agent can consume the stable `nyc-dohmh:<CAMIS>` venue IDs without inventing a baseline crowd level.
+The Discovery Agent now interprets natural-language requests into validated venue IDs, feature labels, distance and preference ordering. A plain-search fallback handles simple requests if Gemini is unavailable. Existing saves, ratings, plans and account sync remain available. A future crowd agent can consume the stable `nyc-dohmh:<CAMIS>` venue IDs without inventing a baseline crowd level.
 
 ## Sources and reproduction
 

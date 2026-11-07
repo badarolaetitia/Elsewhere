@@ -36,10 +36,10 @@ test('source-backed preferences and radius filters work against the saved datase
  assert.equal(terrace.recommendations.length,0);
 });
 test('unsupported places, stale snapshots, other cities and unchecked free-text requests fail honestly',async()=>{
- assert.equal((await post({place:'Lilia'})).status,404);
+ assert.equal((await post({place:'Lilia'})).status,422);
  assert.equal((await post({place:'Via Carota',context:{city:'Paris'}})).status,400);
  assert.equal((await post({place:'Via Carota',searchId:'old-snapshot'})).status,410);
- assert.equal((await post({place:'Via Carota',context:{intent:'frozen yogurt'}})).status,400);
+ assert.equal((await post({place:'Via Carota',context:{intent:'frozen yogurt'}})).status,422);
  assert.equal((await post({place:'Via Carota',context:{intent:'Pasta'}})).status,200);
 });
 test('every pilot record has matched identity, in-area coordinates and sources for every accepted claim',()=>{
